@@ -96,7 +96,7 @@
                             <div class="downlist downlist4 _none" style="">
                                 <div class="d_menu">
                                     @foreach($houses as $v)
-                                    <a href="{{ url('/house/'.$v->id) }}">{{ $v->title or '' }}</a>
+                                        <a href="{{ url('/house/'.$v->id) }}">{{ $v->title or '' }}</a>
                                     @endforeach
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                     <i class="fa fa-mobile"></i>
                     <span>
                         敬请来电 <br>
-                        <a href="tel:4009909092"><strong>400-990-9092</strong></a>
+                        <a href="tel:{{ config('company.info.telephone') }}"><strong>{{ config('company.info.telephone') }}</strong></a>
                     </span>
                 </div>
             </div>

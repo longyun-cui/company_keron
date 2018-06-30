@@ -6,15 +6,15 @@
         'host' => [
 
             'local' => [
-                'root' => 'http://local-shengbei.com',
-                'www' => 'http://www.local-shengbei.com',
-                'cdn' => 'http://cdn.local-shengbei.com',
+                'root' => 'http://local-hanmeng.com',
+                'www' => 'http://www.local-hanmeng.com',
+                'cdn' => 'http://cdn.local-hanmeng.com',
             ],
 
             'online' => [
-                'root' => 'http://live8.pub',
-                'www' => 'http://www.live8.pub',
-                'cdn' => 'http://cdn.live8.pub',
+                'root' => 'http://tinymax.cn',
+                'www' => 'http://www.tinymax.cn',
+                'cdn' => 'http://cdn.tinymax.cn',
             ],
 
             'front' => [
