@@ -60,6 +60,7 @@
             overflow: hidden;
         }
         #site-nav .downlist a {
+            display:inline-block;
             width: 100%;
             height: auto;
             padding: 8px 16px;
@@ -70,6 +71,9 @@
             -khtml-opacity: 1;
             -moz-opacity:1;
             opacity: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            float:left;
         }
         #site-nav li {
             padding-left: 8px;
