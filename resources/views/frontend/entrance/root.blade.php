@@ -245,7 +245,7 @@
 
 
     {{--下载APP--}}
-    <section id="announcement-section" class="text-center">
+    <section id="announcement-section" style="display:none;" class="text-center">
         <div class="container ">
             <h2 class="title wow slideInLeft">权威发布</h2>
             <p class="wow slideInRight font-20px">发布最新升值最快房源信息，扫码关注官方微信！</p>
@@ -256,7 +256,7 @@
 
 
     {{--最新资讯--}}
-    <section id="home-property-for-rent-listing" style="display:none-;">
+    <section id="home-property-for-rent-listing" style="display:none;">
         <header class="section-header home-section-header text-center">
             <div class="container">
                 <h2 class="wow slideInLeft">最新资讯</h2>
@@ -304,7 +304,7 @@
         }
     </style>
     {{--优势--}}
-    <section id="home-features-section" class="text-center">
+    <section id="home-features-section" style="display:none;" class="text-center">
         <header class="section-header home-section-header">
             <div class="container">
                 <h2 class="wow slideInRight">为什么选择我们？</h2>
