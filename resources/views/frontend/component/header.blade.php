@@ -87,7 +87,8 @@
         <div class="row">
             <div class="col-md-3">
                 <figure id="site-logo">
-                    <a href="{{ url('/') }}"><img src="{{ url('/templates/moban2030/assets/images/logo.png') }}" alt="Logo"></a>
+                    {{--<a href="{{ url('/') }}"><img src="{{ url('/templates/moban2030/assets/images/logo.png') }}" alt="Logo"></a>--}}
+                    <a href="{{ url('/') }}"><img src="{{ config('company.info.logo') }}" alt="Logo"></a>
                 </figure>
             </div>
             <div class="col-md-6 col-sm-8">
