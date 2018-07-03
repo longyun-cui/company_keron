@@ -25,4 +25,27 @@
         ],
 
 
+        'district' => [
+            'suzhou' => '苏州市',
+            'suzhouyuanqu' => '苏州园区',
+            'suzhouxinqu' => '苏州新区',
+            'suzhouwuzhong' => '苏州吴中区',
+            'suzhouwujiang' => '苏州吴江区',
+            'suzhouxiangcheng' => '苏州相城区',
+            'kunshan' => '昆山市',
+            'taicang' => '太仓市',
+            'wuxi' => '无锡市',
+            'jiangyin' => '江阴市',
+            'zhangjiagang' => '张家港市',
+            'changshu' => '常熟市',
+            'huzhou' => '湖州市',
+            'nantong' => '南通市',
+            'jiaxing' => '嘉兴市',
+            'jiashan' => '嘉兴嘉善县',
+            'haining' => '嘉兴海宁市',
+            'shanghai' => '上海市',
+            'wuhan' => '武汉市',
+        ],
+
+
     ];
