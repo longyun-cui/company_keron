@@ -64,14 +64,24 @@ class IndexController extends Controller
         return $this->repo->message_contact(request()->all());
     }
     //
-    public function message_book_appointment()
+    public function message_grab_yy()
     {
-        return $this->repo->message_book_appointment(request()->all());
+        return $this->repo->message_grab_yy(request()->all());
     }
     //
-    public function message_grab_ticket()
+    public function message_grab_zc()
     {
-        return $this->repo->message_grab_ticket(request()->all());
+        return $this->repo->message_grab_zc(request()->all());
+    }
+    //
+    public function message_grab_jg()
+    {
+        return $this->repo->message_grab_jg(request()->all());
+    }
+    //
+    public function message_grab_kp()
+    {
+        return $this->repo->message_grab_kp(request()->all());
     }
 
 

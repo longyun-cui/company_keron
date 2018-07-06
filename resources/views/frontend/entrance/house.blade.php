@@ -40,6 +40,27 @@
 
     <script>
 
+        $(".show-modal-zc").on('click',function(){
+            $('#dialog-zc').show();
+            $('#dialog-jg').hide();
+            $('#dialog-kp').hide();
+            $('#grab-modal').modal();
+        });
+
+        $(".show-modal-jg").on('click',function(){
+            $('#dialog-zc').hide();
+            $('#dialog-jg').show();
+            $('#dialog-kp').hide();
+            $('#grab-modal').modal();
+        });
+
+        $(".show-modal-kp").on('click',function(){
+            $('#dialog-zc').hide();
+            $('#dialog-jg').hide();
+            $('#dialog-kp').show();
+            $('#grab-modal').modal();
+        });
+
         $('#house-type-images').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
