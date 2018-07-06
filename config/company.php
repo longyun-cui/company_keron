@@ -13,6 +13,7 @@
             'slogan' => '让企业更出色',
             'favicon' => '/favicon-240.png',
             'logo' => '/custom/images/logo-hanmeng.png',
+            'logo2' => '/custom/images/logo-hanmeng2.png',
             'address' => '江苏省 昆山市 绿地大道189弄',
             'linkman' => '李经理',
             'telephone' => '400-990-9092',

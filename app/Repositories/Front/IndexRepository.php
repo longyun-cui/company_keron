@@ -39,6 +39,7 @@ class IndexRepository {
         {
             $item->custom = json_decode($item->custom);
             $item->custom2 = json_decode($item->custom2);
+            $item->custom3 = json_decode($item->custom3);
         }
         $informations = RootItem::where(['category'=>31, 'active'=>1])->orderby('id', 'desc')->get();
 
@@ -76,6 +77,7 @@ class IndexRepository {
         {
             $item->custom = json_decode($item->custom);
             $item->custom2 = json_decode($item->custom2);
+            $item->custom3 = json_decode($item->custom3);
         }
 
         $html = view('frontend.entrance.houses')->with(['houses'=>$houses])->__toString();
@@ -92,6 +94,7 @@ class IndexRepository {
         else $house = RootItem::orderby('id', 'desc')->first();
         $house->custom = json_decode($house->custom);
         $house->custom2 = json_decode($house->custom2);
+        $house->custom3 = json_decode($house->custom3);
 
         $ticket_total = RootMessage::where('category', 12)->count();
 
@@ -100,6 +103,7 @@ class IndexRepository {
         {
             $item->custom = json_decode($item->custom);
             $item->custom2 = json_decode($item->custom2);
+            $item->custom3 = json_decode($item->custom3);
         }
 
         $html = view('frontend.entrance.house')->with(['houses'=>$houses, 'house'=>$house, 'ticket_total'=>$ticket_total])->__toString();

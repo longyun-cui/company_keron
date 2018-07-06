@@ -34,40 +34,58 @@
                                 <img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->cover_pic }}" alt="Agent Image">
                             </div>
                             <div class="col-sm-7 col-xs-12 pull-left" style="margin: 8px 0">
+
+                                <style>
+                                    .property-single-meta .custom-average { color: #ff6d6f; font-size: 24px; }
+                                    .property-single-meta ul li a { padding:4px 8px; margin-left:8px; border-radius: 2px; border: 1px solid #ff6d6f; color: #ff6d6f; font-size:12px; }
+                                </style>
                                 <ul class="clearfix">
-                                    <li><span>参考单价 :</span> {{ $data->custom->average or '' }} </li>
+                                    <li>
+                                        <span>参考单价 :</span>
+                                        <span class="custom-average"><b>{{ $data->custom->average or '' }}/m²</b></span>
+                                        <a class="show-leave-info" href="javascript:void(0);">获取最新价格变动</a>
+                                    </li>
                                     <li><span>参考总价 :</span> {{ $data->custom->total or '' }} </li>
                                     <li><span>楼盘户型 :</span> {{ $data->custom->type or '' }} </li>
                                     <li><span>楼盘地址 :</span> {{ $data->custom->position or '' }} </li>
-                                    <li><span>开盘时间 :</span> {{ $data->custom->start_time or '' }} </li>
+                                    <li><span>开发商 :</span> {{ $data->custom->developer or '' }} </li>
+                                    <li><span>交房时间 :</span> {{ $data->custom->live_time or '' }} </li>
+                                    <li><span>物业公司 :</span> {{ $data->custom->manager_company or '' }} </li>
+                                    <li>
+                                        <span>最新开盘时间 :</span> {{ $data->custom->start_time or '' }}
+                                        <a class="show-leave-info" href="javascript:void(0);">关注下次开盘时间</a>
+                                    </li>
                                 </ul>
+
+
+                                <style>
+                                    .free-car { width:100%; border: 1px solid #eee; padding: 16px; margin-top: 16px; border-radius: 4px; z-index: 1000; }
+                                    .free-car .car-top { width:auto; padding: 8px 0; border-bottom: 1px solid #f4f4f4; }
+                                    .free-car .car-bottom { width:auto; padding: 8px 0; margin: 16px 0 8px; }
+                                    .free-car .num { color: #ff6d6f; }
+                                    .free-car .ticket { padding: 12px 24px; border-radius: 2px; font-size:20px; color: #ff6d6f; border: 2px solid #ff6d6f; }
+                                    .free-car .ticket:hover { color: #22f3ae; border: 2px solid #22f3ae; }
+                                </style>
+                                <!--免费专车-->
+                                <div class="row">
+                                    <div class="free-car">
+                                        <div class="car-top">
+                                            <p class="tit"><b>免费专车</b></p>
+                                            <p class="describe">全城免费专车接送看房，人均节省<span class="num">827元</span>路费</p>
+                                        </div>
+                                        <div class="car-bottom">
+                                            <a class="ticket grab-ticket" href="javascript:void(0);" data-toggle="modal" data-target="#grab-modal">
+                                                <i class="fa fa-car"></i> <b>抢专车券</b>
+                                            </a> &nbsp; &nbsp;
+                                            <span class="num">{{ $ticket_total or 257 }}人</span>已抢
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
 
-                    <style>
-                        .free-car { width:100%; border: 1px solid #eee; padding: 16px; margin-top: 16px; border-radius: 4px; z-index: 1000; }
-                        .free-car .car-top { width:auto; padding: 8px 0; border-bottom: 1px solid #f4f4f4; }
-                        .free-car .car-bottom { width:auto; padding: 8px 0; margin: 16px 0 8px; }
-                        .free-car .num { color: #ff6d6f; }
-                        .free-car .ticket { padding: 12px 24px; border-radius: 2px; font-size:20px; color: #ff6d6f; border: 2px solid #ff6d6f; }
-                        .free-car .ticket:hover { color: #22f3ae; border: 2px solid #22f3ae; }
-                    </style>
 
-                    <!--免费专车-->
-                    <div class="row">
-                        <div class="free-car">
-                            <div class="car-top">
-                                <p class="tit"><b>免费专车</b></p>
-                                <p class="describe">全城免费专车接送看房，人均节省<span class="num">827元</span>路费</p>
-                            </div>
-                            <div class="car-bottom">
-                                <a class="ticket grab-ticket" href="javascript:void(0);" data-toggle="modal" data-target="#grab-modal">
-                                    <i class="fa fa-car"></i> <b>抢专车券</b>
-                                </a> &nbsp; &nbsp;
-                                <span class="num">{{ $ticket_total or 257 }}人</span>已抢
-                            </div>
-                        </div>
                     </div>
 
                 </section>
@@ -194,7 +212,7 @@
 
 
             {{--图片--}}
-            <div class="col-lg-12 col-md-12">
+            <div class="col-lg-12 col-md-12 _none">
                 <img src="{{ url('/custom/images/box-img.jpg') }}" alt="" />
             </div>
 
@@ -206,7 +224,7 @@
                 .property-contents td { width:50%;float:left; }
             </style>
             {{--基本信息--}}
-            <div class="col-lg-12 col-md-12">
+            <div class="col-lg-12 col-md-12 _none">
                 <section class="property-contents common">
                     <div class="entry-title clearfix">
                         <h3 class="text-center"> 基本信息 </h3>
@@ -221,7 +239,7 @@
                                     <span>{{ $data->custom->start_time or '' }}</span>
                                 </td>
                                 <td>
-                                    <label>入住时间：</label>
+                                    <label>交房时间：</label>
                                     <span>{{ $data->custom->live_time or '' }}</span>
                                 </td>
                             </tr>
@@ -299,6 +317,30 @@
                     <div id="house-type-images">
                         @if(count($data->custom2) > 0)
                             @foreach($data->custom2 as $img)
+                                <article class="property clearfix">
+                                    <figure class="feature-image">
+                                        <a class="zoom-" target="_blank">
+                                            <img data-action="zoom-" src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$img->img)}}" alt="" />
+                                        </a>
+                                    </figure>
+                                </article>
+                            @endforeach
+                        @endif
+                    </div>
+                </section>
+            </div>
+
+
+            {{--样板图--}}
+            <div class="col-lg-12 col-md-12">
+                <section class="property-contents common">
+                    <div class="entry-title clearfix">
+                        <h3 class="text-center"> 样板图 </h3>
+                        <a class="pull-right print-btn _none" href="javascript:window.print()">Print This Property <i class="fa fa-print"></i></a>
+                    </div>
+                    <div id="house-template-images">
+                        @if(count($data->custom3) > 0)
+                            @foreach($data->custom3 as $img)
                                 <article class="property clearfix">
                                     <figure class="feature-image">
                                         <a class="zoom-" target="_blank">
@@ -949,7 +991,7 @@
 
 
 <div class="modal fade in" id="grab-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-dismiss="modal" aria-hidden="true" data-keyboard="false">
-    <div style="margin-top:64px;margin-bottom:64px;padding-top:32px;">
+    <div style="margin-top:32px;margin-bottom:32px;padding-top:32px;">
 
         <div class="modal-dialog">
 
