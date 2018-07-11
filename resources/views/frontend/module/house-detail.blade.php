@@ -1,15 +1,15 @@
 {{--house-detail--}}
-<div id="property-single">
+<div id="property-single" style="padding:80px 0 60px;">
 
     <style>
         #main-slider .slick-slide img { width: 100%; height: 480px; object-fit:cover; }
         #property-single .common .entry-title { padding-bottom: 8px; }
         #property-single .common .entry-title .text-center { margin-top: 16px; }
     </style>
-    <div id="main-slider">
-        <div class="slide"><img src="{{ url('/common/images/banner01.jpeg') }}" alt="Slide"></div>
-        <div class="slide"><img src="{{ url('/common/images/banner02.jpeg') }}" alt="Slide"></div>
-        <div class="slide"><img src="{{ url('/common/images/banner03.jpeg') }}" alt="Slide"></div>
+    <div id="main-slider _none">
+        {{--<div class="slide"><img src="{{ url('/common/images/banner01.jpeg') }}" alt="Slide"></div>--}}
+        {{--<div class="slide"><img src="{{ url('/common/images/banner02.jpeg') }}" alt="Slide"></div>--}}
+        {{--<div class="slide"><img src="{{ url('/common/images/banner03.jpeg') }}" alt="Slide"></div>--}}
         {{--<div class="slide"><img src="{{ url('/templates/moban2030/assets/images/slider/1.jpg') }}" alt="Slide"></div>--}}
         {{--<div class="slide"><img src="{{ url('/templates/moban2030/assets/images/slider/2.jpg') }}" alt="Slide"></div>--}}
         {{--<div class="slide"><img src="{{ url('/templates/moban2030/assets/images/slider/3.jpg') }}" alt="Slide"></div>--}}
