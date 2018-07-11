@@ -12,9 +12,9 @@
             ],
 
             'online' => [
-                'root' => 'http://tinymax.cn',
-                'www' => 'http://www.tinymax.cn',
-                'cdn' => 'http://cdn.tinymax.cn',
+                'root' => 'http://juafc.com',
+                'www' => 'http://www.juafc.com',
+                'cdn' => 'http://cdn.juafc.com',
             ],
 
             'front' => [
