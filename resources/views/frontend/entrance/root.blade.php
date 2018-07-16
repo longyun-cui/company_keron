@@ -33,9 +33,12 @@
     {{--banner--}}
     <div class="main-slider-wrapper clearfix">
         <div id="main-slider">
-            <div class="slide"><img src="{{ url('/common/images/banner01.jpeg') }}" alt="Slide"></div>
-            <div class="slide"><img src="{{ url('/common/images/banner02.jpeg') }}" alt="Slide"></div>
-            <div class="slide"><img src="{{ url('/common/images/banner03.jpeg') }}" alt="Slide"></div>
+            <div class="slide"><img src="{{ url('/common/images/banner11.jpg') }}" alt="Slide"></div>
+            <div class="slide"><img src="{{ url('/common/images/banner12.jpg') }}" alt="Slide"></div>
+            <div class="slide"><img src="{{ url('/common/images/banner13.jpg') }}" alt="Slide"></div>
+            {{--<div class="slide"><img src="{{ url('/common/images/banner01.jpeg') }}" alt="Slide"></div>--}}
+            {{--<div class="slide"><img src="{{ url('/common/images/banner02.jpeg') }}" alt="Slide"></div>--}}
+            {{--<div class="slide"><img src="{{ url('/common/images/banner03.jpeg') }}" alt="Slide"></div>--}}
             {{--<div class="slide"><img src="{{ url('/templates/moban2030/assets/images/slider/1.jpg') }}" alt="Slide"></div>--}}
             {{--<div class="slide"><img src="{{ url('/templates/moban2030/assets/images/slider/2.jpg') }}" alt="Slide"></div>--}}
             {{--<div class="slide"><img src="{{ url('/templates/moban2030/assets/images/slider/3.jpg') }}" alt="Slide"></div>--}}
