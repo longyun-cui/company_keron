@@ -29,6 +29,8 @@
 
     <style>
         .slide.slick-slide img { width: 100%; height: 480px; object-fit:cover; }
+        #slider-contents { filter:alpha(opacity=90); -moz-opacity:0.9; -khtml-opacity:0.9; opacity:0.9; }
+        /*#slider-contents h1 { filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity:0.5; opacity:0.5; }*/
     </style>
     {{--banner--}}
     <div class="main-slider-wrapper clearfix">
@@ -49,7 +51,7 @@
                 <div class="jumbotron">
                     <h1>{{ config('company.info.short_name') }}</h1>
                     <div class="contents clearfix">
-                        <p class="font-24px"><b>邻里中心  领衔未来人居</b></p>
+                        <p class="font-24px"><b>因为用心，所以专业</b></p>
                     </div>
                     <a class="btn btn-warning btn-lg btn-3d" data-hover="预约看房" href="{{ url('/contact') }}" role="button">预约看房</a>
                     <a class="btn btn-default btn-border btn-lg" href="javascript:void(0);" role="button">Get a Quote</a>

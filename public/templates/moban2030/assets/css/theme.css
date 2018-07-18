@@ -127,7 +127,7 @@ img[data-action="zoom"] {
 .zoom-img,
 .zoom-img-wrap {
   position: relative;
-  z-index: 999;
+  z-index: 999999;
   transition: all 300ms;
 }
 img.zoom-img {
@@ -598,7 +598,7 @@ img.zoom-img {
   bottom: 0;
   top: 0;
   margin: auto;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 .main-slider-wrapper .jumbotron {
@@ -609,7 +609,7 @@ img.zoom-img {
   background: none;
   padding: 0;
   margin: auto;
-  margin-top: -123px;
+  margin-top: -32px;
 }
 .main-slider-wrapper h1 {
   color: #fff;
@@ -621,7 +621,7 @@ img.zoom-img {
   color: #fff;
 }
 .main-slider-wrapper .contents {
-  margin-bottom: 45px;
+  margin-bottom: 16px;
 }
 .main-slider-wrapper .btn {
   margin-right: 10px;
@@ -2085,7 +2085,7 @@ img.zoom-img {
     background: none;
   }
   #slider-contents {
-    display: none;
+    /*display: none;*/
   }
   .main-page #adv-search-form input,
   .main-page #adv-search-form select {

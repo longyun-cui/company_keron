@@ -27,6 +27,7 @@
         <link href="{{ asset('/templates/moban2030/assets/css/theme.css') }}" rel="stylesheet">
         <link href="https://cdn.bootcss.com/layer/3.0.3/skin/default/layer.min.css" rel="stylesheet">
         {{--<link href="https://cdn.bootcss.com/bootstrap-modal/2.2.6/css/bootstrap-modal.min.css" rel="stylesheet">--}}
+        <link href="https://cdn.bootcss.com/lightcase/2.5.0/css/lightcase.min.css" rel="stylesheet">
 
 {{--        <link href="{{ asset('/templates/moban2030/assets/others/common.css') }}" rel="stylesheet">--}}
         <link href="{{ asset('/common/css/common.css') }}" rel="stylesheet">
@@ -36,15 +37,15 @@
         @yield('custom-css')
         @yield('custom-style')
 
-        <script>
-            var _hmt = _hmt || [];
-            (function() {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?8748ca4876522f586e2d5303dbc8e8d5";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
+        {{--<script>--}}
+            {{--var _hmt = _hmt || [];--}}
+            {{--(function() {--}}
+                {{--var hm = document.createElement("script");--}}
+                {{--hm.src = "https://hm.baidu.com/hm.js?8748ca4876522f586e2d5303dbc8e8d5";--}}
+                {{--var s = document.getElementsByTagName("script")[0];--}}
+                {{--s.parentNode.insertBefore(hm, s);--}}
+            {{--})();--}}
+        {{--</script>--}}
 
     </head>
     <body class="">
@@ -95,6 +96,7 @@
         <script src="{{ asset('/templates/moban2030/assets/js/theme.js') }}"></script>
         <script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
         {{--<script src="https://cdn.bootcss.com/bootstrap-modal/2.2.6/js/bootstrap-modal.min.js"></script>--}}
+        <script src="https://cdn.bootcss.com/lightcase/2.5.0/js/lightcase.min.js"></script>
 
         <script src="{{ asset('/templates/moban2030/assets/others/common.js') }}"></script>
 
