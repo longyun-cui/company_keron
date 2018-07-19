@@ -98,13 +98,13 @@
                         <li class="nav_nohover hlzb"  drop-down='downlist4'>
                             <a href="{{ url('/houses') }}">楼盘</a>
 
-                            <div class="downlist downlist4 _none" style="">
-                                <div class="d_menu">
-                                    @foreach($houses as $v)
-                                        <a href="{{ url('/house/'.$v->id) }}">{{ $v->title or '' }}</a>
-                                    @endforeach
-                                </div>
-                            </div>
+                            {{--<div class="downlist downlist4 _none" style="">--}}
+                                {{--<div class="d_menu">--}}
+                                    {{--@foreach($houses as $v)--}}
+                                        {{--<a href="{{ url('/house/'.$v->id) }}">{{ $v->title or '' }}</a>--}}
+                                    {{--@endforeach--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                         </li>
                         <li><a href="{{ url('/informations') }}">资讯动态</a></li>
                         {{--<li><a href="single-property.html">Property</a></li>--}}
