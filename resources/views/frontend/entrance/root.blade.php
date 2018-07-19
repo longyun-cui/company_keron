@@ -49,8 +49,9 @@
         <div id="slider-contents">
             <div class="container text-center">
                 <div class="jumbotron">
-                    <h1>{{ config('company.info.short_name') }}</h1>
-                    <div class="contents clearfix">
+{{--                    <h1>{{ config('company.info.short_name') }}</h1>--}}
+                    <h1>因为用心，所以专业</h1>
+                    <div class="contents clearfix _none">
                         <p class="font-24px"><b>因为用心，所以专业</b></p>
                     </div>
                     <a class="btn btn-warning btn-lg btn-3d" data-hover="预约看房" href="{{ url('/contact') }}" role="button">预约看房</a>
