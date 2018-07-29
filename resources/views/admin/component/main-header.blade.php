@@ -6,7 +6,7 @@
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>轻</b></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>汉盟地产</b></span>
+            <span class="logo-lg"><b>{{ config('company.info.short_name') }}</b></span>
         </a>
 
         <!-- Header Navbar -->
@@ -28,31 +28,43 @@
                         <ul class="dropdown-menu">
                             <li class="header _none">
                                 <a href="{{url('/admin/module/create')}}">
-                                    <i class="fa fa-plus text-green"></i> 添加模块
+                                    <i class="fa fa-plus text-blue"></i> 添加模块
                                 </a>
                             </li>
-                            <li class="header _none">
+                            <li class="header"> <b>目录</b> </li>
+                            <li class="header">
                                 <a href="{{url('/admin/menu/create')}}">
-                                    <i class="fa fa-plus text-green"></i> 添加目录
+                                    <i class="fa fa-plus text-aqua"></i> 添加目录
                                 </a>
                             </li>
+                            <li class="header"> <b>内容</b> </li>
                             <li class="header">
                                 <a href="{{url('/admin/item/create?category=about')}}">
-                                    <i class="fa fa-plus text-green"></i> 添加关于企业内容
+                                    <i class="fa fa-plus text-green"></i> 关于我们
                                 </a>
                             </li>
                             <li class="header">
-                                <a href="{{url('/admin/item/create?category=house')}}">
-                                    <i class="fa fa-plus text-green"></i> 添加楼盘内容
+                                <a href="{{url('/admin/item/create?category=advantage')}}">
+                                    <i class="fa fa-plus text-green"></i> 选择优势
                                 </a>
                             </li>
                             <li class="header">
-                                <a href="{{url('/admin/item/create?category=information')}}">
-                                    <i class="fa fa-plus text-green"></i> 添加资讯内容
+                                <a href="{{url('/admin/item/create?category=service')}}">
+                                    <i class="fa fa-plus text-green"></i> 服务项目
+                                </a>
+                            </li>
+                            <li class="header">
+                                <a href="{{url('/admin/item/create?category=faq')}}">
+                                    <i class="fa fa-plus text-green"></i> 常见问题
+                                </a>
+                            </li>
+                            <li class="header">
+                                <a href="{{url('/admin/item/create?category=coverage')}}">
+                                    <i class="fa fa-plus text-green"></i> 资讯动态
                                 </a>
                             </li>
 
-                            <li class="footer"><a href="#">See All Messages</a></li>
+                            <li class="footer"><a href="#">&nbsp;</a></li>
                         </ul>
                     </li>
 

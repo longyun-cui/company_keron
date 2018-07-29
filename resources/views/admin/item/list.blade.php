@@ -18,24 +18,39 @@
 
             <div class="box-header with-border" style="margin:16px 0;">
                 <h3 class="box-title">
-                    @if($category == 'about') 关于我们
-                    @elseif($category == 'house') 楼盘列表
-                    @elseif($category == 'information') 资讯列表
+                    @if($category == 'info') 基本信息
+                    @elseif($category == 'about') 关于我们
+                    @elseif($category == 'why') 选择我们
+                    @elseif($category == 'service') 服务项目
+                    @elseif($category == 'faq') 常见问题
+                    @elseif($category == 'coverage') 资讯动态
                     @else 全部内容
                     @endif
                 </h3>
                 <div class="pull-right">
-                    @if($category == 'about')
+                    @if($category == 'info')
+                        <a href="{{url('/admin/item/create')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加内容</button>
+                        </a>
+                    @elseif($category == 'about')
                         <a href="{{url('/admin/item/create?category=about')}}">
-                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加关于企业内容</button>
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加关于我们</button>
                         </a>
-                    @elseif($category == 'house')
-                        <a href="{{url('/admin/item/create?category=house')}}">
-                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加楼盘内容</button>
+                    @elseif($category == 'why')
+                        <a href="{{url('/admin/item/create?category=why')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加选择我们</button>
                         </a>
-                    @elseif($category == 'information')
-                        <a href="{{url('/admin/item/create?category=information')}}">
-                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加资讯内容</button>
+                    @elseif($category == 'service')
+                        <a href="{{url('/admin/item/create?category=service')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加服务项目</button>
+                        </a>
+                    @elseif($category == 'faq')
+                        <a href="{{url('/admin/item/create?category=faq')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 常见问题</button>
+                        </a>
+                    @elseif($category == 'coverage')
+                        <a href="{{url('/admin/item/create?category=coverage')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 资讯动态</button>
                         </a>
                     @else
                         {{--<a href="{{url('/admin/item/create')}}">--}}
@@ -54,7 +69,7 @@
                         <th>所属类别</th>
                         <th>所属目录</th>
                         <th>管理员</th>
-                        <th>浏览次数</th>
+                        {{--<th>浏览次数</th>--}}
                         <th>状态</th>
                         <th>创建时间</th>
                         <th>修改时间</th>
@@ -65,7 +80,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        {{--<td></td>--}}
                         <td></td>
                         <td></td>
                         <td></td>
@@ -147,10 +162,11 @@
                         render: function(data, type, row, meta) {
                             var category;
                             if(row.category == 0) category = 'custom';
-                            else if(row.category == 1) category = 'about';
+                            else if(row.category == 2) category = 'about';
                             else if(row.category == 9) category = 'cooperation';
-                            else if(row.category == 11) category = 'house';
-                            else if(row.category == 31) category = 'information';
+                            else if(row.category == 11) category = 'service';
+                            else if(row.category == 18) category = 'FAQ';
+                            else if(row.category == 21) category = 'coverage';
                             return '<a target="_blank" href="/'+category+'/'+row.id+'">'+row.title+'</a>';
                         }
                     },
@@ -158,27 +174,27 @@
                         'data': 'category',
                         'orderable': false,
                         render: function(data, type, row, meta) {
-                            if(data == 0) return '自定义内容';
-                            else if(data == 1) return '关于企业';
-                            else if(data == 9) return '合作加盟';
-                            else if(data == 11) return '楼盘';
-                            else if(data == 12) return '宴会模块';
-                            else if(data == 19) return '礼服模块';
-                            else if(data == 21) return '活动模块';
-                            else if(data == 31) return '资讯';
-                            else return '未知模块';
+                            if(data == 0) return '<small class="label bg-teal">未定义</small>';
+                            else if(data == 2) return '<small class="label bg-olive">关于我们</small>';
+                            else if(data == 5) return '<small class="label bg-green">选择我们</small>';
+                            else if(data == 9) return '<small class="label bg-purple">合作加盟</small>';
+                            else if(data == 11) return '<small class="label bg-primary">服务项目</small>';
+                            else if(data == 12) return '<small class="label bg-teal">未定义</small>';
+                            else if(data == 18) return '<small class="label bg-orange">常见问题</small>';
+                            else if(data == 21) return '<small class="label bg-maroon">资讯动态</small>';
+                            else return '<small class="label bg-navy">未知模块</small>';
                         }
                     },
                     {
-                        'data': 'pivot_menus',
+                        'data': 'menu_id',
                         'orderable': false,
                         render: function(data, type, row, meta) {
-//                            return row.menu == null ? '未分类' : row.menu.name;
-                            var html = '';
-                            $.each(data,function( key, val ) {
-                                html += '<a href="/admin/menu/items?id='+this.encode_id+'">'+this.title+'</a><br>';
-                            });
-                            return html;
+                            return row.menu == null ? '未分类' : row.menu.title;
+//                            var html = '';
+//                            $.each(data,function( key, val ) {
+//                                html += '<a href="/admin/menu/items?id='+this.encode_id+'">'+this.title+'</a><br>';
+//                            });
+//                            return html;
                         }
                     },
                     {
@@ -188,13 +204,13 @@
                             return row.admin == null ? '未知' : row.admin.nickname;
                         }
                     },
-                    {
-                        'data': 'visit_num',
-                        'orderable': false,
-                        render: function(data, type, row, meta) {
-                            return data == null ? 0 : data;
-                        }
-                    },
+//                    {
+//                        'data': 'visit_num',
+//                        'orderable': false,
+//                        render: function(data, type, row, meta) {
+//                            return data == null ? 0 : data;
+//                        }
+//                    },
                     {
                         'data': 'active',
                         'orderable': false,

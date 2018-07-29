@@ -47,8 +47,17 @@
                             <button type="button" class="btn">
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="category" value="1"
-                                           @if($operate == 'edit' && $data->category == 1) checked="checked" @endif> 关于企业模块
+                                        <input type="radio" name="category" value="0"
+                                               @if($operate == 'create' || ($operate == 'edit' && $data->category == 0)) checked="checked" @endif> 未定义
+                                    </label>
+                                </div>
+                            </button>
+
+                            <button type="button" class="btn">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="category" value="2"
+                                           @if($operate == 'edit' && $data->category == 2) checked="checked" @endif> 关于我们
                                     </label>
                                 </div>
                             </button>
@@ -57,7 +66,7 @@
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="category" value="11"
-                                           @if($operate == 'edit' && $data->category == 11) checked="checked" @endif> 楼盘模块
+                                           @if($operate == 'edit' && $data->category == 11) checked="checked" @endif> 服务项目
                                     </label>
                                 </div>
                             </button>
@@ -65,17 +74,8 @@
                             <button type="button" class="btn">
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="category" value="31"
-                                               @if($operate == 'edit' && $data->category == 31) checked="checked" @endif> 资讯模块
-                                    </label>
-                                </div>
-                            </button>
-
-                            <button type="button" class="btn">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="category" value="0"
-                                           @if($operate == 'create' || ($operate == 'edit' && $data->category == 0)) checked="checked" @endif> 自定义内容
+                                        <input type="radio" name="category" value="21"
+                                               @if($operate == 'edit' && $data->category == 21) checked="checked" @endif> 资讯动态
                                     </label>
                                 </div>
                             </button>
@@ -83,6 +83,35 @@
                         </div>
                     </div>
                 </div>
+
+                {{--目录--}}
+                <div class="form-group _none">
+                    <label class="control-label col-md-2">目录</label>
+                    <div class="col-md-8 ">
+                        <select class="form-control" onchange="select_menu()">
+                            <option data-id="0">未分类</option>
+                            {{--@if(!empty($data->menu_id))--}}
+                            {{--@foreach($menus as $v)--}}
+                            {{--<option data-id="{{$v->id}}" @if($data->menu_id == $v->id) selected="selected" @endif>{{$v->title}}</option>--}}
+                            {{--@endforeach--}}
+                            {{--@else--}}
+                            {{--@foreach($menus as $v)--}}
+                            {{--<option data-id="{{$v->id}}">{{$v->title}}</option>--}}
+                            {{--@endforeach--}}
+                            {{--@endif--}}
+                        </select>
+                        <input type="hidden" value="{{$data->menu_id or 0}}" name="menu_id" id="menu-selected">
+                    </div>
+                </div>
+                {{--目录--}}
+                {{--<div class="form-group _none">--}}
+                    {{--<label class="control-label col-md-2">添加目录</label>--}}
+                    {{--<div class="col-md-8 ">--}}
+                        {{--<select name="menus[]" id="menus" multiple="multiple" style="width:100%;">--}}
+                            {{--<option value="{{$data->people_id or 0}}">{{$data->people->name or '请选择作者'}}</option>--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
                 {{--标题--}}
                 <div class="form-group">
@@ -98,81 +127,11 @@
                         <div><input type="text" class="form-control" name="subtitle" placeholder="请输入副标题" value="{{$data->subtitle or ''}}"></div>
                     </div>
                 </div>
-                {{--说明--}}
+                {{--描述--}}
                 <div class="form-group">
                     <label class="control-label col-md-2">描述</label>
                     <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="description" placeholder="描述" value="{{$data->description or ''}}"></div>
-                    </div>
-                </div>
-                {{--均价--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">均价</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="custom[average]" placeholder="均价" value="{{$data->custom->average or ''}}"></div>
-                    </div>
-                </div>
-                {{--总价--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">总价</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="custom[total]" placeholder="总价" value="{{$data->custom->total or ''}}"></div>
-                    </div>
-                </div>
-                {{--户型--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">户型</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="custom[type]" placeholder="户型" value="{{$data->custom->type or ''}}"></div>
-                    </div>
-                </div>
-                {{--位置--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">位置</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="custom[position]" placeholder="位置" value="{{$data->custom->position or ''}}"></div>
-                    </div>
-                </div>
-                {{--位置--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">开盘时间</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="custom[start_time]" placeholder="开盘时间" value="{{$data->custom->start_time or ''}}"></div>
-                    </div>
-                </div>
-                {{--说明--}}
-                <div class="form-group _none">
-                    <label class="control-label col-md-2">链接地址</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="link_url" placeholder="链接地址" value="{{$data->link_url or ''}}"></div>
-                    </div>
-                </div>
-                {{--目录--}}
-                <div class="form-group _none">
-                    <label class="control-label col-md-2">目录</label>
-                    <div class="col-md-8 ">
-                        <select class="form-control" onchange="select_menu()">
-                            <option data-id="0">未分类</option>
-                            {{--@if(!empty($data->menu_id))--}}
-                                {{--@foreach($menus as $v)--}}
-                                    {{--<option data-id="{{$v->id}}" @if($data->menu_id == $v->id) selected="selected" @endif>{{$v->title}}</option>--}}
-                                {{--@endforeach--}}
-                            {{--@else--}}
-                                {{--@foreach($menus as $v)--}}
-                                    {{--<option data-id="{{$v->id}}">{{$v->title}}</option>--}}
-                                {{--@endforeach--}}
-                            {{--@endif--}}
-                        </select>
-                        <input type="hidden" value="{{$data->menu_id or 0}}" name="menu_id" id="menu-selected">
-                    </div>
-                </div>
-                {{--目录--}}
-                <div class="form-group _none">
-                    <label class="control-label col-md-2">添加目录</label>
-                    <div class="col-md-8 ">
-                        <select name="menus[]" id="menus" multiple="multiple" style="width:100%;">
-                            {{--<option value="{{$data->people_id or 0}}">{{$data->people->name or '请选择作者'}}</option>--}}
-                        </select>
+                        <div><input type="text" class="form-control" name="description" placeholder="请输入描述" value="{{$data->description or ''}}"></div>
                     </div>
                 </div>
                 {{--内容--}}
@@ -191,6 +150,54 @@
                                 });
                             </script>
                         </div>
+                    </div>
+                </div>
+
+                {{--英文标题--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）标题</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="title_en" placeholder="请输入（英文）标题" value="{{$data->title_en or ''}}"></div>
+                    </div>
+                </div>
+                {{--英文副标题--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）副标题</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="subtitle_en" placeholder="请输入（英文）副标题" value="{{$data->subtitle_en or ''}}"></div>
+                    </div>
+                </div>
+                {{--英文描述--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）描述</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="description_en" placeholder="请输入（英文）描述" value="{{$data->description_en or ''}}"></div>
+                    </div>
+                </div>
+                {{--英文内容详情--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）内容详情</label>
+                    <div class="col-md-8 ">
+                        <div>
+                        {{--@include('UEditor::head')--}}
+                        <!-- 加载编辑器的容器 -->
+                            <script id="container-en" name="content_en" type="text/plain">{!! $data->content_en or '' !!}</script>
+                            <!-- 实例化编辑器 -->
+                            <script type="text/javascript">
+                                var ue = UE.getEditor('container-en');
+                                ue.ready(function() {
+                                    ue.execCommand('serverparam', '_token', '{{ csrf_token() }}');//此处为支持laravel5 csrf ,根据实际情况修改,目的就是设置 _token 值.
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                {{--链接地址--}}
+                <div class="form-group _none">
+                    <label class="control-label col-md-2">链接地址</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="link_url" placeholder="链接地址" value="{{$data->link_url or ''}}"></div>
                     </div>
                 </div>
 

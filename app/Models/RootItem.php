@@ -9,6 +9,7 @@ class RootItem extends Model
     protected $fillable = [
         'sort', 'category', 'type', 'admin_id', 'menu_id', 'active',
         'name', 'title', 'subtitle', 'description', 'content', 'custom', 'custom2', 'custom3', 'link_url', 'cover_pic',
+        'title_en', 'subtitle_en', 'description_en', 'content_en',
         'visit_num', 'share_num'
     ];
     protected $dateFormat = 'U';

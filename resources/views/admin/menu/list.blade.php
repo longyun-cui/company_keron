@@ -38,6 +38,7 @@
                     <thead>
                     <tr role='row' class='heading'>
                         <th>标题</th>
+                        <th>所属类别</th>
                         <th>内容数量</th>
                         <th>管理员</th>
                         <th>访问数</th>
@@ -49,6 +50,7 @@
                         <th>操作</th>
                     </tr>
                     <tr>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -136,6 +138,20 @@
                         'orderable': false,
                         render: function(data, type, row, meta) {
                             return '<a target="_blank" href="/org/menu/'+data+'">'+row.title+'</a>';
+                        }
+                    },
+                    {
+                        'data': 'category',
+                        'orderable': false,
+                        render: function(data, type, row, meta) {
+                            if(data == 0) return '<small class="label bg-teal">未定义</small>';
+                            else if(data == 2) return '<small class="label bg-olive">关于我们</small>';
+                            else if(data == 9) return '<small class="label bg-purple">合作加盟</small>';
+                            else if(data == 11) return '<small class="label bg-primary">服务项目</small>';
+                            else if(data == 12) return '<small class="label bg-teal">未定义</small>';
+                            else if(data == 18) return '<small class="label bg-orange">常见问题</small>';
+                            else if(data == 21) return '<small class="label bg-maroon">资讯动态</small>';
+                            else return '<small class="label bg-grey">未知模块</small>';
                         }
                     },
                     {

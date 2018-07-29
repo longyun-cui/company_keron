@@ -23,37 +23,68 @@ class IndexController extends Controller
     // 返回【主页】视图
     public function view_root()
     {
-        return $this->repo->root();
+        return $this->repo->view_root();
     }
 
     // 返回【主页】视图
     public function view_contact()
     {
-        return $this->repo->contact();
+        return $this->repo->view_contact();
     }
 
 
-    // 返回【楼盘】【列表】视图
-    public function view_houses()
+    // 返回【关于我们】【详情】视图
+    public function view_about($id=0)
     {
-        return $this->repo->houses();
-    }
-    // 返回【楼盘】【详情】视图
-    public function view_house($id=0)
-    {
-        return $this->repo->house($id);
+        return $this->repo->view_about($id);
     }
 
 
-    // 返回【楼盘】【列表】视图
-    public function view_informations()
+    // 返回【优势】【列表】视图
+    public function view_advantages()
     {
-        return $this->repo->informations();
+        return $this->repo->view_advantages();
     }
-    // 返回【楼盘】【详情】视图
-    public function view_information($id=0)
+    // 返回【优势】【详情】视图
+    public function view_advantage($id=0)
     {
-        return $this->repo->information($id);
+        return $this->repo->view_advantage($id);
+    }
+
+
+    // 返回【产品服务】【列表】视图
+    public function view_services($id=0)
+    {
+        return $this->repo->view_services($id);
+    }
+    // 返回【产品服务】【详情】视图
+    public function view_service($id=0)
+    {
+        return $this->repo->view_service($id);
+    }
+
+
+    // 返回【常见问题】【列表】视图
+    public function view_faqs()
+    {
+        return $this->repo->view_faqs();
+    }
+    // 返回【常见问题】【详情】视图
+    public function view_faq($id=0)
+    {
+        return $this->repo->view_faq($id);
+    }
+
+
+    // 返回【新闻动态】【列表】视图
+    public function view_coverages()
+    {
+        return $this->repo->view_coverages();
+    }
+    // 返回【新闻动态】【详情】视图
+    public function view_coverage($id=0)
+    {
+        return $this->repo->view_coverage($id);
     }
 
 
@@ -62,26 +93,6 @@ class IndexController extends Controller
     public function message_contact()
     {
         return $this->repo->message_contact(request()->all());
-    }
-    //
-    public function message_grab_yy()
-    {
-        return $this->repo->message_grab_yy(request()->all());
-    }
-    //
-    public function message_grab_zc()
-    {
-        return $this->repo->message_grab_zc(request()->all());
-    }
-    //
-    public function message_grab_jg()
-    {
-        return $this->repo->message_grab_jg(request()->all());
-    }
-    //
-    public function message_grab_kp()
-    {
-        return $this->repo->message_grab_kp(request()->all());
     }
 
 

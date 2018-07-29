@@ -6,15 +6,15 @@
         'host' => [
 
             'local' => [
-                'root' => 'http://local-hanmeng.com',
-                'www' => 'http://www.local-hanmeng.com',
-                'cdn' => 'http://cdn.local-hanmeng.com',
+                'root' => 'http://local-keron.com',
+                'www' => 'http://www.local-keron.com',
+                'cdn' => 'http://cdn.local-keron.com',
             ],
 
             'online' => [
-                'root' => 'http://juafc.com',
-                'www' => 'http://www.juafc.com',
-                'cdn' => 'http://cdn.juafc.com',
+                'root' => 'http://tinymin.cn',
+                'www' => 'http://www.tinymin.cn',
+                'cdn' => 'http://cdn.tinymin.cn',
             ],
 
             'front' => [

@@ -28,13 +28,16 @@ class ItemRepository {
     public function get_list_datatable($post_data)
     {
         $admin = Auth::guard('admin')->user();
-        $query = RootItem::select("*")->with(['admin','pivot_menus']);
+        $query = RootItem::select("*")->with(['admin','menu']);
 
         $category = $post_data['category'];
-        if($category == "about") $query->where('category', 1);
+        if($category == "info") $query->where('category', 1);
+        else if($category == "about") $query->where('category', 2);
+        else if($category == "advantage") $query->where('category', 5);
         else if($category == "cooperation") $query->where('category', 9);
-        else if($category == "house") $query->where('category', 11);
-        else if($category == "information") $query->where('category', 31);
+        else if($category == "service") $query->where('category', 11);
+        else if($category == "faq") $query->where('category', 18);
+        else if($category == "coverage") $query->where('category', 21);
 
         $total = $query->count();
 
@@ -74,12 +77,19 @@ class ItemRepository {
     public function view_create()
     {
         $admin = Auth::guard('admin')->user();
-        $menus = RootMenu::get();
+
         $category = request("category",'');
-        if($category == 'about') $view_blade = 'admin.item.edit-about';
-        elseif($category == 'house') $view_blade = 'admin.item.edit-house';
-        elseif($category == 'information') $view_blade = 'admin.item.edit-information';
+
+        if($category == 'item') $view_blade = 'admin.item.edit';
+        elseif($category == 'about') $view_blade = 'admin.item.edit-about';
+        elseif($category == 'advantage') $view_blade = 'admin.item.edit-advantage';
+        elseif($category == 'service') $view_blade = 'admin.item.edit-service';
+        elseif($category == 'faq') $view_blade = 'admin.item.edit-faq';
+        elseif($category == 'coverage') $view_blade = 'admin.item.edit-coverage';
         else $view_blade = 'admin.item.edit';
+
+        if($category == 'service') $menus = RootMenu::where(['category'=>11])->get();
+        else $menus = [];
 
         return view($view_blade)->with(['operate'=>'create', 'encode_id'=>encode(0), 'menus'=>$menus]);
     }
@@ -97,7 +107,7 @@ class ItemRepository {
         }
         else
         {
-            $menus = RootMenu::get();
+
             $mine = RootItem::with([
                 'menu',
             ])->find($decode_id);
@@ -107,12 +117,19 @@ class ItemRepository {
                 $mine->custom = json_decode($mine->custom);
                 $mine->custom2 = json_decode($mine->custom2);
                 $mine->custom3 = json_decode($mine->custom3);
+
                 $category = $mine->category;
 
-                if($category == '1') $view_blade = 'admin.item.edit-about';
-                elseif($category == '11') $view_blade = 'admin.item.edit-house';
-                elseif($category == '31') $view_blade = 'admin.item.edit-information';
+                if($category == '0') $view_blade = 'admin.item.edit';
+                elseif($category == '2') $view_blade = 'admin.item.edit-about';
+                elseif($category == '5') $view_blade = 'admin.item.edit-advantage';
+                elseif($category == '11') $view_blade = 'admin.item.edit-service';
+                elseif($category == '18') $view_blade = 'admin.item.edit-faq';
+                elseif($category == '21') $view_blade = 'admin.item.edit-coverage';
                 else $view_blade = 'admin.item.edit';
+
+                if($category == '11') $menus = RootMenu::where(['category'=>11])->get();
+                else $menus = [];
 
                 return view($view_blade)->with(['operate'=>'edit', 'encode_id'=>$id, 'menus'=>$menus, 'data'=>$mine]);
             }

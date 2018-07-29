@@ -32,51 +32,33 @@
         <ul class="sidebar-menu">
 
             {{--机构基本信息--}}
-            <li class="header _none">机构(企业)管理</li>
+            <li class="header">机构(企业)管理</li>
             <!-- Optionally, you can add icons to the links -->
 
-            <li class="treeview _none">
+            <li class="treeview">
                 <a href="{{ url('/admin/info/index') }}">
-                    <i class="fa fa-sun-o text-aqua"></i> <span>基本信息</span>
+                    <i class="fa fa-sun-o text-default"></i> <span>基本信息</span>
                 </a>
             </li>
 
             <li class="treeview" style="display:none;">
                 <a href="{{ url('/admin/info/edit') }}">
-                    <i class="fa fa-circle-o text-aqua"></i> <span>编辑基本信息</span>
+                    <i class="fa fa-circle-o text-red"></i> <span>编辑基本信息</span>
                 </a>
             </li>
 
             <li class="treeview" style="display:none;">
-                <a href=""><i class="fa fa-th text-aqua"></i> <span>更多信息</span>
+                <a href="">
+                    <i class="fa fa-th text-aqua"></i>
+                    <span>更多信息</span>
                     <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
                 </a>
                 <ul class="treeview-menu">
                     <li style="display:none;">
                         <a href="{{ url('/admin/website/edit') }}">
                             <i class="fa fa-circle-o text-aqua"></i>详细编辑
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/admin/softorg/edit/home') }}">
-                            <i class="fa fa-circle-o text-aqua"></i>编辑展示主页
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/admin/softorg/edit/introduction') }}">
-                            <i class="fa fa-circle-o text-aqua"></i>编辑简介详情
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/admin/softorg/edit/contactus') }}">
-                            <i class="fa fa-circle-o text-aqua"></i>编辑联系我们
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/admin/softorg/edit/culture') }}">
-                            <i class="fa fa-circle-o text-aqua"></i>编辑企业文化
                         </a>
                     </li>
                     {{--<li><a href="{{ url('/admin/administrator/list') }}"><i class="fa fa-circle-o text-aqua"></i>管理员列表</a></li>--}}
@@ -85,29 +67,51 @@
 
 
             {{--目录管理--}}
-            <li class="header">模块管理</li>
+            <li class="header">目录管理</li>
+
+            <li class="treeview">
+                <a href="{{ url('/admin/menu/list') }}">
+                    <i class="fa fa-folder-o text-aqua"></i> <span>目录列表</span>
+                </a>
+            </li>
+
+
+            {{--内容管理--}}
+            <li class="header">内容管理</li>
 
             <li class="treeview">
                 <a href="{{ url('/admin/item/list') }}">
-                    <i class="fa fa-circle-o text-yellow"></i> <span>全部内容</span>
+                    <i class="fa fa-file-o text-green"></i> <span>全部内容</span>
                 </a>
             </li>
 
             <li class="treeview">
                 <a href="{{ url('/admin/item/list?category=about') }}">
-                    <i class="fa fa-circle-o text-yellow"></i> <span>关于企业模块</span>
+                    <i class="fa fa-circle-o text-green"></i> <span>关于我们</span>
                 </a>
             </li>
 
             <li class="treeview">
-                <a href="{{ url('/admin/item/list?category=house') }}">
-                    <i class="fa fa-circle-o text-yellow"></i> <span>楼盘模块</span>
+                <a href="{{ url('/admin/item/list?category=advantage') }}">
+                    <i class="fa fa-circle-o text-green"></i> <span>选择我们</span>
                 </a>
             </li>
 
             <li class="treeview">
-                <a href="{{ url('/admin/item/list?category=information') }}">
-                    <i class="fa fa-circle-o text-yellow"></i> <span>资讯模块</span>
+                <a href="{{ url('/admin/item/list?category=service') }}">
+                    <i class="fa fa-circle-o text-green"></i> <span>服务项目</span>
+                </a>
+            </li>
+
+            <li class="treeview">
+                <a href="{{ url('/admin/item/list?category=faq') }}">
+                    <i class="fa fa-circle-o text-green"></i> <span>常见问题</span>
+                </a>
+            </li>
+
+            <li class="treeview">
+                <a href="{{ url('/admin/item/list?category=coverage') }}">
+                    <i class="fa fa-circle-o text-green"></i> <span>资讯动态</span>
                 </a>
             </li>
 
@@ -119,31 +123,7 @@
 
             <li class="treeview">
                 <a href="{{ url('/admin/message/list?category=all') }}">
-                    <i class="fa fa-circle-o text-red"></i> <span>全部留言</span>
-                </a>
-            </li>
-
-            <li class="treeview">
-                <a href="{{ url('/admin/message/list?category=yy') }}">
-                    <i class="fa fa-circle-o text-aqua"></i> <span>预约看房列表</span>
-                </a>
-            </li>
-
-            <li class="treeview">
-                <a href="{{ url('/admin/message/list?category=zc') }}">
-                    <i class="fa fa-circle-o text-aqua"></i> <span>抢专车券列表</span>
-                </a>
-            </li>
-
-            <li class="treeview">
-                <a href="{{ url('/admin/message/list?category=jg') }}">
-                    <i class="fa fa-circle-o text-aqua"></i> <span>价格动态列表</span>
-                </a>
-            </li>
-
-            <li class="treeview">
-                <a href="{{ url('/admin/message/list?category=kp') }}">
-                    <i class="fa fa-circle-o text-aqua"></i> <span>开盘提醒列表</span>
+                    <i class="fa fa-commenting-o text-red"></i> <span>全部留言</span>
                 </a>
             </li>
 

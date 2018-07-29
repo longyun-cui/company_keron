@@ -21,9 +21,10 @@ class IndexRepository {
     }
 
 
-    // root
-    public function root()
+    // 【首页】root
+    public function view_root()
     {
+//        dd(empty(null));
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
@@ -34,132 +35,227 @@ class IndexRepository {
 //            ->with(['info'=>$info, 'menus'=>$menus, 'seoCases'=>$seoCases, 'websiteTemplates'=>$websiteTemplates])->__toString();
 //        return $html;
 
+//        dd(trans('custom.info.name'));
+
+        $services = RootMenu::where(['category'=>11, 'active'=>1])->orderby('updated_at', 'desc')->limit(4)->get();
+//        foreach($services as $item)
+//        {
+//            $item->custom = json_decode($item->custom);
+//            $item->custom2 = json_decode($item->custom2);
+//            $item->custom3 = json_decode($item->custom3);
+//        }
+        $advantages = RootItem::where(['category'=>5, 'active'=>1])->orderby('updated_at', 'desc')->get();
+        $cases = RootItem::where(['category'=>12, 'active'=>1])->orderby('updated_at', 'desc')->limit(6)->get();
+        $coverages = RootItem::where(['category'=>21, 'active'=>1])->orderby('updated_at', 'desc')->limit(6)->get();
+
+        $html = view('frontend.template-2933.entrance.root')
+            ->with(['services'=>$services,'advantages'=>$advantages,'cases'=>$cases,'coverages'=>$coverages])->__toString();
+        return $html;
+    }
+
+
+    // 【联系我们】contact
+    public function view_contact()
+    {
+
         $houses = RootItem::where(['category'=>11, 'active'=>1])->orderby('id', 'desc')->get();
         foreach($houses as $item)
+        {
+            $item->custom = json_decode($item->custom);
+            $item->custom2 = json_decode($item->custom2);
+        }
+
+        $html = view('frontend.template-2933.entrance.contact')->with(['houses'=>$houses])->__toString();
+        return $html;
+    }
+
+
+
+
+    // 【服务项目】【列表】
+    public function view_about($id = 0)
+    {
+//        $info = json_decode(json_encode(config('mitong.company.info')));
+//        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        if($id == 0)
+        {
+            $items = RootItem::where(['category'=>2, 'active'=>1])->orderby('updated_at', 'desc')->get();
+            foreach($items as $item)
+            {
+                $item->custom = json_decode($item->custom);
+                $item->custom2 = json_decode($item->custom2);
+                $item->custom3 = json_decode($item->custom3);
+            }
+            $html = view('frontend.template-2933.entrance.about')->with(['abouts'=>$items])->__toString();
+        }
+        else
+        {
+            $item = RootItem::where(['id'=>$id])->first();
+            $html = view('frontend.template-2933.entrance.item')->with(['item'=>$item])->__toString();
+        }
+
+        return $html;
+    }
+
+
+
+
+    // 【服务项目】【列表】
+    public function view_advantages()
+    {
+//        $info = json_decode(json_encode(config('mitong.company.info')));
+//        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        $items = RootItem::where(['category'=>5, 'active'=>1])->orderby('updated_at', 'desc')->paginate(16);
+        foreach($items as $item)
         {
             $item->custom = json_decode($item->custom);
             $item->custom2 = json_decode($item->custom2);
             $item->custom3 = json_decode($item->custom3);
         }
-        $informations = RootItem::where(['category'=>31, 'active'=>1])->orderby('id', 'desc')->get();
 
-        $html = view('frontend.entrance.root')->with(['houses'=>$houses,'informations'=>$informations])->__toString();
+        $html = view('frontend.template-2933.entrance.advantages')->with(['advantages'=>$items])->__toString();
         return $html;
     }
-
-
-    // contact
-    public function contact()
-    {
-
-        $houses = RootItem::where(['category'=>11, 'active'=>1])->orderby('id', 'desc')->get();
-        foreach($houses as $item)
-        {
-            $item->custom = json_decode($item->custom);
-            $item->custom2 = json_decode($item->custom2);
-        }
-
-        $html = view('frontend.entrance.contact')->with(['houses'=>$houses])->__toString();
-        return $html;
-    }
-
-
-
-
-    // houses
-    public function houses()
+    // 【服务项目】【详情】
+    public function view_advantage($id = 0)
     {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
-        $houses = RootItem::where(['category'=>11, 'active'=>1])->orderby('id', 'desc')->get();
-        foreach($houses as $item)
+        if($id == 0) $mine = RootItem::orderby('updated_at', 'desc')->first();
+        else $mine = RootItem::where(['id'=>$id])->first();
+        $mine->custom = json_decode($mine->custom);
+        $mine->custom2 = json_decode($mine->custom2);
+        $mine->custom3 = json_decode($mine->custom3);
+
+        $html = view('frontend.template-2933.entrance.advantage')->with(['advantage'=>$mine])->__toString();
+        return $html;
+    }
+
+
+
+
+    // 【服务项目】【列表】
+    public function view_services($id = 0)
+    {
+//        $info = json_decode(json_encode(config('mitong.company.info')));
+//        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        if($id == 0)
+        {
+            $items = RootMenu::with(['items'=>function($query) { $query->where(['active'=>1])->orderby('updated_at', 'desc'); }])
+                ->where(['category'=>11, 'active'=>1])->orderby('updated_at', 'desc')->get();
+        }
+        else
+        {
+            $items = RootMenu::with(['items'=>function($query) { $query->where(['active'=>1])->orderby('updated_at', 'desc'); }])
+                ->where(['id'=>$id])->orderby('updated_at', 'desc')->get();
+        }
+        foreach($items as $item)
         {
             $item->custom = json_decode($item->custom);
             $item->custom2 = json_decode($item->custom2);
             $item->custom3 = json_decode($item->custom3);
         }
 
-        $html = view('frontend.entrance.houses')->with(['houses'=>$houses])->__toString();
+        $html = view('frontend.template-2933.entrance.services')->with(['services'=>$items])->__toString();
         return $html;
     }
-
-    // house
-    public function house($id = 0)
+    // 【服务项目】【详情】
+    public function view_service($id = 0)
     {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
-        if($id != 0) $house = RootItem::where(['id'=>$id])->orderby('id', 'desc')->first();
-        else $house = RootItem::orderby('id', 'desc')->first();
-        $house->custom = json_decode($house->custom);
-        $house->custom2 = json_decode($house->custom2);
-        $house->custom3 = json_decode($house->custom3);
+        if($id == 0) $mine = RootItem::orderby('updated_at', 'desc')->first();
+        else $mine = RootItem::where(['id'=>$id])->first();
+        $mine->custom = json_decode($mine->custom);
+        $mine->custom2 = json_decode($mine->custom2);
+        $mine->custom3 = json_decode($mine->custom3);
 
-        $ticket_total = RootMessage::where('category', 12)->count();
+        $html = view('frontend.template-2933.entrance.service')->with(['service'=>$mine])->__toString();
+        return $html;
+    }
 
-        $houses = RootItem::where(['category'=>11, 'active'=>1])->where('id', '<>', $id)->orderby('id', 'desc')->get();
-        foreach($houses as $item)
+
+
+
+    // 【常见问题】【列表】
+    public function view_faqs()
+    {
+//        $info = json_decode(json_encode(config('mitong.company.info')));
+//        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        $items = RootItem::where(['category'=>18, 'active'=>1])->orderby('updated_at', 'desc')->paginate(16);
+        foreach($items as $item)
         {
             $item->custom = json_decode($item->custom);
             $item->custom2 = json_decode($item->custom2);
             $item->custom3 = json_decode($item->custom3);
         }
 
-        $html = view('frontend.entrance.house')->with(['houses'=>$houses, 'house'=>$house, 'ticket_total'=>$ticket_total])->__toString();
+        $html = view('frontend.template-2933.entrance.faqs')->with(['faqs'=>$items])->__toString();
         return $html;
     }
-
-
-
-
-    // informations
-    public function informations()
+    // 【常见问题】【详情】
+    public function view_faq($id = 0)
     {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
-        $houses = RootItem::where(['category'=>11, 'active'=>1])->orderby('id', 'desc')->get();
+        if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
+        else $mine = RootItem::orderby('id', 'desc')->first();
+        $mine->custom = json_decode($mine->custom);
+        $mine->custom2 = json_decode($mine->custom2);
+        $mine->custom3 = json_decode($mine->custom3);
 
-        $informations = RootItem::where(['category'=>31, 'active'=>1])->orderby('id', 'desc')->get();
-        foreach($informations as $item)
-        {
-            $item->custom = json_decode($item->custom);
-            $item->custom2 = json_decode($item->custom2);
-        }
-
-        $html = view('frontend.entrance.informations')->with(['houses'=>$houses, 'informations'=>$informations])->__toString();
+        $html = view('frontend.template-2933.entrance.faq')->with(['faq'=>$mine])->__toString();
         return $html;
     }
 
-    // information
-    public function information($id = 0)
+
+
+
+    // 【新闻动态】【列表】
+    public function view_coverages()
     {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
-        $houses = RootItem::where(['category'=>11, 'active'=>1])->orderby('id', 'desc')->get();
-
-        if($id != 0) $information = RootItem::where(['id'=>$id])->orderby('id', 'desc')->first();
-        else $information = RootItem::orderby('id', 'desc')->first();
-        $information->custom = json_decode($information->custom);
-
-
-        $informations = RootItem::where(['category'=>11, 'active'=>1])->where('id', '<>', $id)->orderby('id', 'desc')->get();
-        foreach($informations as $item)
+        $coverages = RootItem::where(['category'=>21, 'active'=>1])->orderby('updated_at', 'desc')->paginate(16);
+        foreach($coverages as $item)
         {
             $item->custom = json_decode($item->custom);
             $item->custom2 = json_decode($item->custom2);
+            $item->custom3 = json_decode($item->custom3);
         }
 
-        $html = view('frontend.entrance.information')->with(['houses'=>$houses, 'informations'=>$informations, 'information'=>$information,])->__toString();
+        $html = view('frontend.template-2933.entrance.coverages')->with(['coverages'=>$coverages])->__toString();
+        return $html;
+    }
+    // 【新闻动态】【详情】
+    public function view_coverage($id = 0)
+    {
+//        $info = json_decode(json_encode(config('mitong.company.info')));
+//        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
+        else $mine = RootItem::orderby('id', 'desc')->first();
+
+        $mine->custom = json_decode($mine->custom);
+        $mine->custom2 = json_decode($mine->custom2);
+        $mine->custom3 = json_decode($mine->custom3);
+
+        $html = view('frontend.template-2933.entrance.coverage')->with(['coverage'=>$mine])->__toString();
         return $html;
     }
 
 
 
 
-    // 留言
+    // 【留言】
     public function message_contact($post_data)
     {
         $messages = [
@@ -193,174 +289,6 @@ class IndexRepository {
         {
             DB::rollback();
             $msg = '提交失败，请重试！';
-//            $msg = $e->getMessage();
-//            exit($e->getMessage());
-            return response_fail([],$msg);
-        }
-
-
-
-    }
-
-
-    // 预约看房
-    public function message_grab_yy($post_data)
-    {
-        $messages = [
-            'name.required' => '请输入姓名',
-            'mobile.required' => '请输入电话',
-        ];
-        $v = Validator::make($post_data, [
-            'name' => 'required',
-            'mobile' => 'required'
-        ], $messages);
-        if ($v->fails())
-        {
-            $messages = $v->errors();
-            return response_error([],$messages->first());
-        }
-
-        // 启动数据库事务
-        DB::beginTransaction();
-        try
-        {
-            $post_data['category'] = 11;
-            $mine = new RootMessage;
-            $bool = $mine->fill($post_data)->save();
-            if(!$bool) throw new Exception("insert--message--fail");
-
-            DB::commit();
-            $msg = '预约成功！';
-            return response_success([],$msg);
-        }
-        catch (Exception $e)
-        {
-            DB::rollback();
-            $msg = '预约失败，请重试！';
-//            $msg = $e->getMessage();
-//            exit($e->getMessage());
-            return response_fail([],$msg);
-        }
-
-
-
-    }
-    // 专车券
-    public function message_grab_zc($post_data)
-    {
-        $messages = [
-            'mobile.required' => '请输入电话',
-        ];
-        $v = Validator::make($post_data, [
-            'mobile' => 'required'
-        ], $messages);
-        if ($v->fails())
-        {
-            $messages = $v->errors();
-            return response_error([],$messages->first());
-        }
-
-        // 启动数据库事务
-        DB::beginTransaction();
-        try
-        {
-            $post_data['category'] = 12;
-            $mine = new RootMessage;
-            $bool = $mine->fill($post_data)->save();
-            if(!$bool) throw new Exception("insert--message--fail");
-
-            DB::commit();
-            $msg = '抢专车券成功！';
-            return response_success([],$msg);
-        }
-        catch (Exception $e)
-        {
-            DB::rollback();
-            $msg = '抢专车券失败，请重试！';
-//            $msg = $e->getMessage();
-//            exit($e->getMessage());
-            return response_fail([],$msg);
-        }
-
-
-
-    }
-    // 价格动态
-    public function message_grab_jg($post_data)
-    {
-        $messages = [
-            'mobile.required' => '请输入电话',
-            'item_id.required' => '参数有误',
-        ];
-        $v = Validator::make($post_data, [
-            'mobile' => 'required',
-            'item_id' => 'required'
-        ], $messages);
-        if ($v->fails())
-        {
-            $messages = $v->errors();
-            return response_error([],$messages->first());
-        }
-
-        // 启动数据库事务
-        DB::beginTransaction();
-        try
-        {
-            $post_data['category'] = 13;
-            $mine = new RootMessage;
-            $bool = $mine->fill($post_data)->save();
-            if(!$bool) throw new Exception("insert--message--fail");
-
-            DB::commit();
-            $msg = '订阅成功！';
-            return response_success([],$msg);
-        }
-        catch (Exception $e)
-        {
-            DB::rollback();
-            $msg = '订阅失败，请重试！';
-//            $msg = $e->getMessage();
-//            exit($e->getMessage());
-            return response_fail([],$msg);
-        }
-
-
-
-    }
-    // 开盘提醒
-    public function message_grab_kp($post_data)
-    {
-        $messages = [
-            'mobile.required' => '请输入电话',
-            'item_id.required' => '参数有误',
-        ];
-        $v = Validator::make($post_data, [
-            'mobile' => 'required',
-            'item_id' => 'required'
-        ], $messages);
-        if ($v->fails())
-        {
-            $messages = $v->errors();
-            return response_error([],$messages->first());
-        }
-
-        // 启动数据库事务
-        DB::beginTransaction();
-        try
-        {
-            $post_data['category'] = 14;
-            $mine = new RootMessage;
-            $bool = $mine->fill($post_data)->save();
-            if(!$bool) throw new Exception("insert--message--fail");
-
-            DB::commit();
-            $msg = '已关注！';
-            return response_success([],$msg);
-        }
-        catch (Exception $e)
-        {
-            DB::rollback();
-            $msg = '关注失败，请重试！';
 //            $msg = $e->getMessage();
 //            exit($e->getMessage());
             return response_fail([],$msg);

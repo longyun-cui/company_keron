@@ -7,8 +7,9 @@ class RootMenu extends Model
     //
     protected $table = "root_menu";
     protected $fillable = [
-        'sort', 'type', 'admin_id', 'active',
+        'sort', 'category', 'type', 'admin_id', 'active',
         'name', 'title', 'subtitle', 'description', 'content', 'custom', 'link_url', 'cover_pic',
+        'title_en', 'subtitle_en', 'description_en', 'content_en',
         'visit_num', 'share_num'
     ];
     protected $dateFormat = 'U';

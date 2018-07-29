@@ -47,19 +47,22 @@ Route::group(['namespace' => 'Front'], function () {
     Route::get('/', $controller.'@view_root');
     Route::get('/contact', $controller.'@view_contact');
 
-    Route::get('houses', $controller.'@view_houses');
-    Route::get('house/{id?}', $controller.'@view_house');
+    Route::get('about/{id?}', $controller.'@view_about');
 
-    Route::get('informations', $controller.'@view_informations');
-    Route::get('information/{id?}', $controller.'@view_information');
+    Route::get('advantages', $controller.'@view_advantages');
+    Route::get('advantage/{id?}', $controller.'@view_advantage');
+
+    Route::get('services/{id?}', $controller.'@view_services');
+    Route::get('service/{id?}', $controller.'@view_services');
+
+    Route::get('faqs', $controller.'@view_faqs');
+    Route::get('faq/{id?}', $controller.'@view_faq');
+
+    Route::get('coverages', $controller.'@view_coverages');
+    Route::get('coverage/{id?}', $controller.'@view_coverage');
 
 
     Route::post('message/contact', $controller.'@message_contact');
-    //
-    Route::post('message/grab/yy', $controller.'@message_grab_yy');
-    Route::post('message/grab/zc', $controller.'@message_grab_zc');
-    Route::post('message/grab/jg', $controller.'@message_grab_jg');
-    Route::post('message/grab/kp', $controller.'@message_grab_kp');
 
 
 });
@@ -101,6 +104,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
             Route::match(['get','post'], 'password/reset', $controller.'@password_reset');
 
             Route::match(['get','post'], 'list', $controller.'@viewList');
+        });
+
+        // 管理员模块
+        Route::group(['prefix' => 'info'], function () {
+            $controller = "InfoController";
+
+            Route::get('/', $controller.'@index');
+            Route::get('index', $controller.'@index');
+            Route::match(['get','post'], 'edit', $controller.'@editAction');
         });
 
         // 样式模块

@@ -37,36 +37,9 @@
                 {{csrf_field()}}
                 <input type="hidden" name="operate" value="{{$operate or ''}}" readonly>
                 <input type="hidden" name="encode_id" value="{{$encode_id or encode(0)}}" readonly>
-                <input type="hidden" name="category" value="1" readonly>
+                <input type="hidden" name="category" value="2" readonly>
 
-                {{--标题--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">标题</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="title" placeholder="请输入标题" value="{{$data->title or ''}}"></div>
-                    </div>
-                </div>
-                {{--标题--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">副标题</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="subtitle" placeholder="请输入副标题" value="{{$data->subtitle or ''}}"></div>
-                    </div>
-                </div>
-                {{--说明--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">描述</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="description" placeholder="描述" value="{{$data->description or ''}}"></div>
-                    </div>
-                </div>
-                {{--说明--}}
-                <div class="form-group _none">
-                    <label class="control-label col-md-2">链接地址</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="link_url" placeholder="链接地址" value="{{$data->link_url or ''}}"></div>
-                    </div>
-                </div>
+
                 {{--目录--}}
                 <div class="form-group _none">
                     <label class="control-label col-md-2">目录</label>
@@ -74,25 +47,37 @@
                         <select class="form-control" onchange="select_menu()">
                             <option data-id="0">未分类</option>
                             {{--@if(!empty($data->menu_id))--}}
-                                {{--@foreach($menus as $v)--}}
-                                    {{--<option data-id="{{$v->id}}" @if($data->menu_id == $v->id) selected="selected" @endif>{{$v->title}}</option>--}}
-                                {{--@endforeach--}}
+                            {{--@foreach($menus as $v)--}}
+                            {{--<option data-id="{{$v->id}}" @if($data->menu_id == $v->id) selected="selected" @endif>{{$v->title}}</option>--}}
+                            {{--@endforeach--}}
                             {{--@else--}}
-                                {{--@foreach($menus as $v)--}}
-                                    {{--<option data-id="{{$v->id}}">{{$v->title}}</option>--}}
-                                {{--@endforeach--}}
+                            {{--@foreach($menus as $v)--}}
+                            {{--<option data-id="{{$v->id}}">{{$v->title}}</option>--}}
+                            {{--@endforeach--}}
                             {{--@endif--}}
                         </select>
                         <input type="hidden" value="{{$data->menu_id or 0}}" name="menu_id" id="menu-selected">
                     </div>
                 </div>
-                {{--目录--}}
-                <div class="form-group _none">
-                    <label class="control-label col-md-2">添加目录</label>
+                {{--标题--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">标题</label>
                     <div class="col-md-8 ">
-                        <select name="menus[]" id="menus" multiple="multiple" style="width:100%;">
-                            {{--<option value="{{$data->people_id or 0}}">{{$data->people->name or '请选择作者'}}</option>--}}
-                        </select>
+                        <div><input type="text" class="form-control" name="title" placeholder="请输入标题" value="{{$data->title or ''}}"></div>
+                    </div>
+                </div>
+                {{--副标题--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">副标题</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="subtitle" placeholder="请输入副标题" value="{{$data->subtitle or ''}}"></div>
+                    </div>
+                </div>
+                {{--描述--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">描述</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="description" placeholder="请输入描述" value="{{$data->description or ''}}"></div>
                     </div>
                 </div>
                 {{--内容--}}
@@ -114,6 +99,53 @@
                     </div>
                 </div>
 
+                {{--英文标题--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）标题</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="title_en" placeholder="请输入（英文）标题" value="{{$data->title_en or ''}}"></div>
+                    </div>
+                </div>
+                {{--英文副标题--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）副标题</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="subtitle_en" placeholder="请输入（英文）副标题" value="{{$data->subtitle_en or ''}}"></div>
+                    </div>
+                </div>
+                {{--英文描述--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）描述</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="description_en" placeholder="请输入（英文）描述" value="{{$data->description_en or ''}}"></div>
+                    </div>
+                </div>
+                {{--英文内容--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）内容详情</label>
+                    <div class="col-md-8 ">
+                        <div>
+                        {{--@include('UEditor::head')--}}
+                        <!-- 加载编辑器的容器 -->
+                            <script id="container-en" name="content_en" type="text/plain">{!! $data->content_en or '' !!}</script>
+                            <!-- 实例化编辑器 -->
+                            <script type="text/javascript">
+                                var ue = UE.getEditor('container-en');
+                                ue.ready(function() {
+                                    ue.execCommand('serverparam', '_token', '{{ csrf_token() }}');//此处为支持laravel5 csrf ,根据实际情况修改,目的就是设置 _token 值.
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                {{--链接地址--}}
+                <div class="form-group _none">
+                    <label class="control-label col-md-2">链接地址</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="link_url" placeholder="链接地址" value="{{$data->link_url or ''}}"></div>
+                    </div>
+                </div>
 
                 {{--cover 封面图片--}}
                 <div class="form-group">

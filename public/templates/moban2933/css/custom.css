@@ -1,0 +1,46 @@
+/* Your custom css code goes here */
+@media screen and (max-width:768px) {
+    #service-section .servic-item:nth-child(n+5) { display: none; }
+    #case-section .case-item { margin: 8px; }
+    #case-section .case-item:nth-child(n+5) { display: none; }
+    #coverage-section .coverage-item:nth-child(n+5) { display: none; }
+}
+
+.item-left-right-style { position: relative; }
+.item-left-right-style .image-container {
+    position: relative;
+    padding: 0;
+    padding-top: 25%;
+    overflow: hidden;
+}
+.item-left-right-style .image-container .image-box { position: absolute; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden; }
+.item-left-right-style .image-container .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.item-left-right-style { background: #efefef; }
+.item-left-right-style:nth-of-type(odd) { background: #efefef; }
+.item-left-right-style:nth-of-type(even) .image-container { float: right; }
+
+.item-left-right-style .text-box { padding: 32px; }
+.item-left-right-style .btn { padding: 10px 20px; border-radius: 0; font-size: 16px; }
+
+.service-item .title-row { text-align:center; }
+.service-item .title-row a { font-size:20px;font-weight:bold;color:#2d4d9b !important; }
+
+
+.color-blue { color:#2d4d9b; }
+.color-red { color:#ea5d5f; }
+.background-blue {
+    background: #2d4d9b;
+    background: -webkit-gradient(linear,left top,right top,from(#2d4d9b),to(#337ab7));
+    background: linear-gradient(to right,#2d4d9b 0,#337ab7 100%);
+}
+.background-red {
+     background: #f54ea2;
+     background: -webkit-gradient(linear,left top,right top,from(#f54ea2),to(#ff7676));
+     background: linear-gradient(to right,#f54ea2 0,#ff7676 100%);
+}

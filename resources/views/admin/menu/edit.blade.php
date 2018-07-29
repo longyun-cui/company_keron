@@ -38,6 +38,120 @@
                 <input type="hidden" name="operate" value="{{$operate or ''}}" readonly>
                 <input type="hidden" name="encode_id" value="{{$encode_id or encode(0)}}" readonly>
 
+                {{--类别--}}
+                <div class="form-group form-category">
+                    <label class="control-label col-md-2">类别</label>
+                    <div class="col-md-8">
+                        <div class="btn-group">
+
+                            @if($operate == 'edit')
+                                <button type="button" class="btn">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="category" value="{{ $data->category or 0 }}" checked="checked">
+                                            @if($data->category == 0) 未定义
+                                            @elseif($data->category == 2) 关于我们
+                                            @elseif($data->category == 11) 服务项目
+                                            @elseif($data->category == 18) 常见问题
+                                            @elseif($data->category == 21) 资讯动态
+                                            @endif
+                                        </label>
+                                    </div>
+                                </button>
+                            @elseif($operate == 'create')
+
+                                {{--<button type="button" class="btn">--}}
+                                    {{--<div class="radio">--}}
+                                        {{--<label>--}}
+                                            {{--<input type="radio" name="category" value="0" checked="checked"> 未定义--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                {{--</button>--}}
+
+                                {{--<button type="button" class="btn">--}}
+                                    {{--<div class="radio">--}}
+                                        {{--<label>--}}
+                                            {{--<input type="radio" name="category" value="2"> 关于我们--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                {{--</button>--}}
+
+                                <button type="button" class="btn">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="category" value="11" checked="checked"> 服务项目
+                                        </label>
+                                    </div>
+                                </button>
+
+                                {{--<button type="button" class="btn">--}}
+                                    {{--<div class="radio">--}}
+                                        {{--<label>--}}
+                                            {{--<input type="radio" name="category" value="11"> 常见问题--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                {{--</button>--}}
+
+                                {{--<button type="button" class="btn">--}}
+                                    {{--<div class="radio">--}}
+                                        {{--<label>--}}
+                                            {{--<input type="radio" name="category" value="21"> 资讯动态--}}
+                                        {{--</label>--}}
+                                    {{--</div>--}}
+                                {{--</button>--}}
+
+                            @endif
+
+                            @if(false)
+                                <button type="button" class="btn">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="category" value="0"
+                                                   @if($operate == 'create' || ($operate == 'edit' && $data->category == 0)) checked="checked" @endif> 未定义
+                                        </label>
+                                    </div>
+                                </button>
+
+                                <button type="button" class="btn">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="category" value="2"
+                                                   @if($operate == 'edit' && $data->category == 2) checked="checked" @endif> 关于我们
+                                        </label>
+                                    </div>
+                                </button>
+
+                                <button type="button" class="btn">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="category" value="11"
+                                                   @if($operate == 'edit' && $data->category == 11) checked="checked" @endif> 服务项目
+                                        </label>
+                                    </div>
+                                </button>
+
+                                <button type="button" class="btn">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="category" value="11"
+                                                   @if($operate == 'edit' && $data->category == 18) checked="checked" @endif> 常见问题
+                                        </label>
+                                    </div>
+                                </button>
+
+                                <button type="button" class="btn">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="category" value="21"
+                                                   @if($operate == 'edit' && $data->category == 21) checked="checked" @endif> 资讯动态
+                                        </label>
+                                    </div>
+                                </button>
+                            @endif
+
+                        </div>
+                    </div>
+                </div>
                 {{--标题--}}
                 <div class="form-group">
                     <label class="control-label col-md-2">标题</label>
@@ -45,20 +159,56 @@
                         <div><input type="text" class="form-control" name="title" placeholder="请输入标题" value="{{$data->title or ''}}"></div>
                     </div>
                 </div>
-                {{--说明--}}
+                {{--副标题--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">副标题</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="subtitle" placeholder="请输入副标题" value="{{$data->subtitle or ''}}"></div>
+                    </div>
+                </div>
+                {{--描述--}}
                 <div class="form-group">
                     <label class="control-label col-md-2">描述</label>
                     <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="description" placeholder="描述" value="{{$data->description or ''}}"></div>
+                        <div><input type="text" class="form-control" name="description" placeholder="请输入描述" value="{{$data->description or ''}}"></div>
                     </div>
                 </div>
-                {{--内容--}}
-                <div class="form-group" style="display:none;">
-                    <label class="control-label col-md-2">内容</label>
+                {{--内容详情--}}
+                {{--<div class="form-group">--}}
+                    {{--<label class="control-label col-md-2">内容详情</label>--}}
+                    {{--<div class="col-md-8 ">--}}
+                        {{--<div><input type="text" class="form-control" name="content" placeholder="内容" value="{{$data->content or ''}}"></div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+
+                {{--英文标题--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）标题</label>
                     <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="contents" placeholder="内容" value="{{$data->content or ''}}"></div>
+                        <div><input type="text" class="form-control" name="title_en" placeholder="请输入（英文）标题" value="{{$data->title_en or ''}}"></div>
                     </div>
                 </div>
+                {{--英文标题--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）副标题</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="subtitle_en" placeholder="请输入（英文）副标题" value="{{$data->subtitle_en or ''}}"></div>
+                    </div>
+                </div>
+                {{--英文描述--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">（英文）描述</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="description_en" placeholder="请输入（英文）描述" value="{{$data->description_en or ''}}"></div>
+                    </div>
+                </div>
+                {{--英文内容--}}
+                {{--<div class="form-group">--}}
+                    {{--<label class="control-label col-md-2">内容详情</label>--}}
+                    {{--<div class="col-md-8 ">--}}
+                        {{--<div><input type="text" class="form-control" name="content_en" placeholder="内容" value="{{$data->content_en or ''}}"></div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
                 {{--cover 封面图片--}}
                 <div class="form-group">
