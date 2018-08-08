@@ -1,8 +1,8 @@
 {{--<!-- START: module-link-contact -->--}}
 <section class="probootstrap-section probootstrap-section-colored" style="background:url('/custom/images/banner.jpg')">
     <div class="container">
-        <div class="row text-center">
-            <div class="col-md-12 mb30 section-heading probootstrap-animate-">
+        <div class="row mb30 text-center">
+            <div class="col-md-12 section-heading probootstrap-animate-">
                 <h2 class="module-title title-white">{{ trans('custom.text.video_title') }}</h2>
                 <p class="module-subtitle lead"><b>{{ trans('custom.text.video_subtitle') }}</b></p>
             </div>

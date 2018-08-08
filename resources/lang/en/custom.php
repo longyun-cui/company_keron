@@ -112,6 +112,13 @@ return [
         'contact_page_title' => 'CONTACT US',
         'contact_page_subtitle' => '',
 
+        'activity_title' => 'Special Offer',
+        'activity_subtitle' => '',
+        'activity_root_title' => 'Special Offer',
+        'activity_root_subtitle' => '',
+        'activity_page_title' => 'Special Offer',
+        'activity_page_subtitle' => '',
+
         'contact_message_name' => 'Name',
         'contact_message_phone' => 'Phone',
         'contact_message_email' => 'Email',

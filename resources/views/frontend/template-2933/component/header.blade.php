@@ -3,7 +3,7 @@
     <div class="full-screen">
 
         <a href="{{ url('/') }}" class="probootstrap-logo">
-            <img src="{{ url('/custom/images/logo_img.png') }}" alt="Image" style="height:64px;">
+            <img src="{{ url('/custom/images/logo-white.png') }}" alt="Image" style="height:40px;margin-top:-4px;">
         </a>
 
         <a href="javascript:void(0);" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
@@ -21,6 +21,7 @@
                         <strong>{{ config('company.info.telephone') }}</strong>
                     </a>
                 </li>
+                <li class="header-quote"><a href="{{ url('/quote') }}" style="color:#fff">{{ trans('custom.text.get_quote') }}</a></li>
                 @if(App::isLocale('en'))
                     <li class="header-language" id="change-language" role="button">
                         <a href="javascript:void(0);" title="切换到中文">
@@ -35,7 +36,6 @@
                         </a>
                     </li>
                 @endif
-                <li class="header-quote"><a href="{{ url('/quote') }}" style="color:#fff">{{ trans('custom.text.get_quote') }}</a></li>
             </ul>
             <div class="extra-text visible-xs">
                 <a href="javascript:void(0);" class="probootstrap-burger-menu"><i>Menu</i></a>

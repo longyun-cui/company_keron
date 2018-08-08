@@ -112,6 +112,13 @@ return [
         'contact_page_title' => '联系我们',
         'contact_page_subtitle' => '',
 
+        'activity_title' => '优惠活动',
+        'activity_subtitle' => '',
+        'activity_root_title' => '优惠活动',
+        'activity_root_subtitle' => '',
+        'activity_page_title' => '优惠活动',
+        'activity_page_subtitle' => '',
+
         'contact_message_name' => '姓名',
         'contact_message_phone' => '电话',
         'contact_message_email' => '邮件',

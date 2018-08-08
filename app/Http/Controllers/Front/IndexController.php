@@ -88,6 +88,13 @@ class IndexController extends Controller
     }
 
 
+    // 返回【优惠活动】【详情】视图
+    public function view_activity($id=0)
+    {
+        return $this->repo->view_activity($id);
+    }
+
+
 
 
     // 返回【联系我们】视图

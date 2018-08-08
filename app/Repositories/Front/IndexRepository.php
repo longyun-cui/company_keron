@@ -59,8 +59,11 @@ class IndexRepository {
 
         $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->limit(15)->get();
 
+        $activity = RootItem::where(['category'=>29, 'active'=>1])->orderby('updated_at', 'desc')->first();
+
         $html = view('frontend.template-2933.entrance.root')->with([
             'info'=>$info,
+            'activity'=>$activity,
             'services'=>$services,
             'advantages'=>$advantages,
             'cases'=>$cases,
@@ -141,11 +144,15 @@ class IndexRepository {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
-        if($id == 0) $mine = RootItem::orderby('updated_at', 'desc')->first();
-        else $mine = RootItem::where(['id'=>$id])->first();
-        $mine->custom = json_decode($mine->custom);
-        $mine->custom2 = json_decode($mine->custom2);
-        $mine->custom3 = json_decode($mine->custom3);
+        if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
+        else $mine = RootItem::where(['category'=>5])->orderby('updated_at', 'desc')->first();
+        if(isset($mine))
+        {
+            $mine->custom = json_decode($mine->custom);
+            $mine->custom2 = json_decode($mine->custom2);
+            $mine->custom3 = json_decode($mine->custom3);
+        }
+        else $mine = [];
 
         $html = view('frontend.template-2933.entrance.advantage-detail')->with(['advantage'=>$mine])->__toString();
         return $html;
@@ -186,11 +193,15 @@ class IndexRepository {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
-        if($id == 0) $mine = RootItem::orderby('updated_at', 'desc')->first();
-        else $mine = RootItem::where(['id'=>$id])->first();
-        $mine->custom = json_decode($mine->custom);
-        $mine->custom2 = json_decode($mine->custom2);
-        $mine->custom3 = json_decode($mine->custom3);
+        if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
+        else $mine = RootItem::where(['category'=>11])->orderby('updated_at', 'desc')->first();
+        if(isset($mine))
+        {
+            $mine->custom = json_decode($mine->custom);
+            $mine->custom2 = json_decode($mine->custom2);
+            $mine->custom3 = json_decode($mine->custom3);
+        }
+        else $mine = [];
 
         $html = view('frontend.template-2933.entrance.service-detail')->with(['service'=>$mine])->__toString();
         return $html;
@@ -223,10 +234,14 @@ class IndexRepository {
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
         if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
-        else $mine = RootItem::orderby('id', 'desc')->first();
-        $mine->custom = json_decode($mine->custom);
-        $mine->custom2 = json_decode($mine->custom2);
-        $mine->custom3 = json_decode($mine->custom3);
+        else $mine = RootItem::where(['category'=>18])->orderby('updated_at', 'desc')->first();
+        if(isset($mine))
+        {
+            $mine->custom = json_decode($mine->custom);
+            $mine->custom2 = json_decode($mine->custom2);
+            $mine->custom3 = json_decode($mine->custom3);
+        }
+        else $mine = [];
 
         $html = view('frontend.template-2933.entrance.faq-detail')->with(['faq'=>$mine])->__toString();
         return $html;
@@ -261,7 +276,7 @@ class IndexRepository {
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
         if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
-        else $mine = RootItem::where(['category'=>21])->orderby('id', 'desc')->first();
+        else $mine = RootItem::where(['category'=>21])->orderby('updated_at', 'desc')->first();
         if(isset($mine))
         {
             $mine->custom = json_decode($mine->custom);
@@ -279,15 +294,31 @@ class IndexRepository {
             {
                 if($mine->type != 2) return redirect('/coverages');
             }
-
         }
-        else
-        {
-            $mine = [];
-//            return redirect('/coverages');
-        }
+        else $mine = [];
 
         $html = view('frontend.template-2933.entrance.coverage-detail')->with(['coverage'=>$mine])->__toString();
+        return $html;
+    }
+
+
+    // 【优惠活动】【详情】
+    public function view_activity($id = 0)
+    {
+//        $info = json_decode(json_encode(config('mitong.company.info')));
+//        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
+        else $mine = RootItem::where(['category'=>29])->orderby('updated_at', 'desc')->first();
+        if(isset($mine))
+        {
+            $mine->custom = json_decode($mine->custom);
+            $mine->custom2 = json_decode($mine->custom2);
+            $mine->custom3 = json_decode($mine->custom3);
+        }
+        else $mine = [];
+
+        $html = view('frontend.template-2933.entrance.activity-detail')->with(['activity'=>$mine])->__toString();
         return $html;
     }
 
@@ -356,20 +387,92 @@ class IndexRepository {
 //            exit($e->getMessage());
             return response_fail([],$msg);
         }
-
-
-
     }
 
 
     // 【询价】
     public function message_quote($post_data)
     {
-//        $info = json_decode(json_encode(config('mitong.company.info')));
-//        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
-        dd($post_data);
-        return false;
+        // 启动数据库事务
+        DB::beginTransaction();
+        try
+        {
+            $insert_data['category'] = 11;
+            if($post_data['language'] == 'en') {
+                $insert_data['name'] = $post_data['submitted-first-name']." ".$post_data['submitted-last-name'];
+            } else {
+                $insert_data['name'] =$post_data['submitted-name'];
+            }
+            $insert_data['phone'] =$post_data['submitted-phone'];
+            $insert_data['email'] =$post_data['submitted-email'];
+
+            $service_type = $post_data['submitted-service'];
+            $custom['service_type'] = $service_type;
+            $custom['destination_type'] = $post_data['moving_destination_type'];
+            $custom['from_country'] = $post_data['moving-from-country'];
+            $custom['from_city'] = $post_data['moving-from-city'];
+            $custom['to_country'] = $post_data['moving-to-country'];
+            $custom['to_city'] = $post_data['moving-to-city'];
+            if($service_type == 'storage') {
+                $custom['date'] = $post_data['storage_date_year'].'/'.$post_data['storage_date_month'].'/'.$post_data['storage_date_day'];
+            } else {
+                $custom['date'] = $post_data['moving-date-year'].'/'.$post_data['moving-date-month'].'/'.$post_data['moving-date-day'];
+            }
+            if($service_type == 'moving') {
+                $custom['moving_type'] =$post_data['moving_type'];
+                $custom['pet_type'] =$post_data['pet_relocation_type'];
+                $custom['pet_type'] =$post_data['pet_relocation_type'];
+                $custom['employees_involved'] =$post_data['moving_employees_involved'];
+            }
+            $insert_data['custom'] = json_encode($custom);
+
+
+            $mine = new RootMessage;
+            $bool = $mine->fill($insert_data)->save();
+            if(!$bool) throw new Exception("insert--message--fail");
+
+
+            $email_data['host'] = config('common.host.'.env('APP_ENV').'.root');
+            $email_data['target'] = "longyun-cui@163.com";
+            $email_data['name'] = $insert_data['name'];
+            $email_data['phone'] = $insert_data['phone'];
+            $email_data['email'] = $insert_data['email'];
+            $email_data['type'] = $service_type;
+            $email_data['date'] = $custom['date'];
+            $email_data['from'] = $post_data['moving-from-country']." ".$post_data['moving-from-city'];
+            $email_data['to'] = $post_data['moving-to-country']." ".$post_data['moving-to-city'];
+            $email_data['time'] = $custom['date'];
+
+
+            $url = config('common.MailService').'/keron/email/quote';
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 7);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $email_data);
+            $response = curl_exec($ch);
+            curl_close($ch);
+            if(empty($response)) throw new Exception('curl get request failed');
+            else
+            {
+                $response = json_decode($response,true);
+                if(!$response['success']) throw new Exception("send-email-failed");
+            }
+
+            DB::commit();
+            $msg = '提交成功！';
+            return response_success([],$msg);
+        }
+        catch (Exception $e)
+        {
+            DB::rollback();
+            $msg = '提交失败，请重试！';
+            $msg = $e->getMessage();
+//            exit($e->getMessage());
+            return response_fail([],$msg);
+        }
     }
 
 

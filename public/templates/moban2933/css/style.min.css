@@ -54,9 +54,9 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 .probootstrap-mobile-menu-active .probootstrap-nav .extra-text .social-buttons li:first-child a{padding-left:0}
 .probootstrap-mobile-menu-active .probootstrap-nav .extra-text h5{text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5)}
 .probootstrap-mobile-menu-active.show .probootstrap-nav{-webkit-transform:translateX(0);transform:translateX(0)}
-.probootstrap-main-nav{float:right;margin:0;margin-left:16px;padding:0;height:100%;}
+.probootstrap-main-nav{float:right;margin:0;margin-left:16px;padding:0;}
 .probootstrap-mobile-menu-active .probootstrap-main-nav{float:left;margin-top:40px;width:100%}
-.probootstrap-main-nav li{margin:0;padding:0 8px;list-style:none;display:inline-block;font-size:16px;height:100%;}
+.probootstrap-main-nav li{margin:0;padding:0 8px;list-style:none;display:inline-block;font-size:16px;}
 
 @media screen and (min-width:768px){
     .probootstrap-main-nav li.header-quote{padding:0 12px;margin-left:32px;font-size:16px;background:#2d4d9b;}
@@ -198,7 +198,7 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 .section-heading .heading-with-icon,.section-heading h2{font-size:2.074em;font-weight:500;text-align:center;}
 .lead{font-size:1.125em;line-height:1.65;margin-top:32px;}
 .probootstrap-footer{padding:0;background:#fff;position:relative;color:#a8a8a8;/*background:#323232;*/}
-.probootstrap-footer .site-footer{padding:80px 0 40px;background:url(../img/footer-bg.png) bottom center no-repeat;}
+.probootstrap-footer .site-footer{padding:60px 0 80px;background:url(../img/footer-bg.png) bottom center no-repeat;}
 .probootstrap-footer .site-footer .text{color:#c9c9c9;font-size:18px;}
 .probootstrap-footer .site-footer .text a{color:#c9c9c9;font-size:18px;}
 .probootstrap-footer .site-footer-bottom{background:#272727;}
@@ -437,3 +437,9 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 @media screen and (max-width:480px){.probootstrap-gutter60>div[class*=col-]{padding-right:15px;padding-left:15px}
 .col-xxs-12{float:none;width:100%}
 }
+
+@media screen and (min-width:1200px) {
+    .probootstrap-section>.container { width:80%; }
+}
+
+

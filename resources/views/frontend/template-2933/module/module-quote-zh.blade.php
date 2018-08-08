@@ -289,7 +289,7 @@
                                     <label class="element-invisible" for="edit-submitted-first-name">
                                         姓名 <span class="form-required" title="This field is required.">*</span>
                                     </label>
-                                    <input type="text" required placeholder="姓名" class="form-control form-text" id="edit-submitted-first-name" name="submitted-first_name" size="60" maxlength="128" oninvalid="setCustomValidity('此项必填')" oninput="setCustomValidity('')">
+                                    <input type="text" required placeholder="姓名" class="form-control form-text" id="edit-submitted-first-name" name="submitted-name" size="60" maxlength="128" oninvalid="setCustomValidity('此项必填')" oninput="setCustomValidity('')">
                                 </div>
 
                                 {{--Phone Number--}}
@@ -297,7 +297,7 @@
                                     <label class="element-invisible" for="edit-submitted-phone-number">
                                         电话 <span class="form-required" title="This field is required.">*</span>
                                     </label>
-                                    <input type="text" required placeholder="电话" class="form-control form-text" id="edit-submitted-phone-number" name="submitted-phone_number" size="60" maxlength="128" oninvalid="setCustomValidity('此项必填.')" oninput="setCustomValidity('')">
+                                    <input type="text" required placeholder="电话" class="form-control form-text" id="edit-submitted-phone-number" name="submitted-phone" size="60" maxlength="128" oninvalid="setCustomValidity('此项必填.')" oninput="setCustomValidity('')">
                                 </div>
 
                                 {{--Email--}}

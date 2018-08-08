@@ -1,15 +1,14 @@
 {{--<!-- START: module-service -->--}}
 <section class="probootstrap-section probootstrap-section-colored" id="service-section">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate">
+        <div class="row mb40">
+            <div class="col-lg-12 col-md-12 section-heading probootstrap-animate">
                 <h2 class="module-title title-white">{{ trans('custom.text.service_title') }}</h2>
                 <p class="module-subtitle lead"><b>{{ trans('custom.text.service_subtitle') }}</b></p>
             </div>
         </div>
-        <div class="row mb70">
+        <div class="row mb40">
             @foreach($services as $v)
-
                 <div class="col-md-3 col-sm-6 probootstrap-animate service-item" style="padding:4px 8px;">
                     <div class="probootstrap-block-image">
                         <figure class="image-block">
@@ -43,10 +42,9 @@
                         </div>
                     </div>
                 </div>
-
             @endforeach
-
         </div>
+
         <div class="row">
             <div class="col-md-4 col-md-offset-4 probootstrap-animate">
                 <p class="text-center">

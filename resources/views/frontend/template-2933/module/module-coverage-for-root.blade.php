@@ -2,19 +2,18 @@
 <section class="probootstrap-section probootstrap-section-colored" id="coverage-section">
 
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate-">
+        <div class="row mb40">
+            <div class="col-lg-12 col-md-12 section-heading probootstrap-animate-">
                 <h2 class="module-title title-white">{{ trans('custom.text.coverage_title') }}</h2>
                 <p class="module-subtitle lead"><b>{{ trans('custom.text.coverage_subtitle') }}</b></p>
             </div>
         </div>
 
-        <div class="row probootstrap-gutter0 mb70 _none">
+        <div class="row probootstrap-gutter0 mb40 _none">
             <div class="col-md-12">
                 <div class="probootstrap-footer-widget">
                     {{--<h3>Popular Products</h3>--}}
                     <ul class="probootstrap-product-list">
-
                         @foreach($coverages as $v)
                             <div class="col-md-4 col-sm-6 coverage-item">
                                 <li class="mb20">
@@ -30,16 +29,14 @@
                                     </a>
                                 </li>
                             </div>
-
                         @endforeach
-
                     </ul>
                 </div>
             </div>
         </div>
 
 
-        <div class="row probootstrap-gutter0 mb70">
+        <div class="row probootstrap-gutter0 mb40">
             <div class="col-md-12">
                 <div class="probootstrap-footer-widget">
                     {{--<h3>Popular Products</h3>--}}

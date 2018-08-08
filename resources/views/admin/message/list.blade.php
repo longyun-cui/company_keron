@@ -131,13 +131,16 @@
                         'data': 'category',
                         'orderable': false,
                         render: function(data, type, row, meta) {
-                            if(data == 0) return '<small class="label bg-blue">自定义内容</small>';
-                            else if(data == 1) return '<small class="label btn-info">一般留言</small>';
-                            else if(data == 11) return '<small class="label bg-blue">预约看房</small>';
-                            else if(data == 12) return '<small class="label bg-green">抢专车券</small>';
-                            else if(data == 13) return '<small class="label bg-purple">价格动态</small>';
-                            else if(data == 14) return '<small class="label bg-teal">开盘提醒</small>';
-                            else return '未知模块';
+                            if(data == 0) return '<small class="label bg-teal">未定义</small>';
+                            else if(data == 2) return '<small class="label bg-olive">关于我们</small>';
+                            else if(data == 5) return '<small class="label bg-green">选择我们</small>';
+                            else if(data == 9) return '<small class="label bg-purple">合作加盟</small>';
+                            else if(data == 11) return '<small class="label bg-primary">资讯报价</small>';
+                            else if(data == 12) return '<small class="label bg-teal">未定义</small>';
+                            else if(data == 18) return '<small class="label bg-orange">常见问题</small>';
+                            else if(data == 21) return '<small class="label bg-maroon">资讯动态</small>';
+                            else if(data == 29) return '<small class="label bg-maroon">优惠活动</small>';
+                            else return '<small class="label bg-navy">未知模块</small>';
                         }
                     },
                     {

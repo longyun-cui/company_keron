@@ -2,12 +2,12 @@
 <section class="probootstrap-section probootstrap-section-dark">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate-">
+            <div class="col-lg-12 col-md-12 mb40 section-heading probootstrap-animate-">
                 <h2 class="module-title">{{ trans('custom.text.advantage_title') }}</h2>
                 <p class="module-subtitle lead"><b>{{ trans('custom.text.advantage_subtitle') }}</b></p>
             </div>
         </div>
-        <div class="row mb70">
+        <div class="row mb40">
 
             @foreach($advantages as $v)
                 <a href="{{ url('/advantages/'.$v->id) }}">

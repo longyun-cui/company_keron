@@ -287,7 +287,7 @@
                                     <label class="element-invisible" for="edit-submitted-first-name">
                                         First Name <span class="form-required" title="This field is required.">*</span>
                                     </label>
-                                    <input type="text" required placeholder="First Name" class="form-control form-text" id="edit-submitted-first-name" name="submitted-first_name" size="60" maxlength="128" oninvalid="setCustomValidity('Please input this item.')" oninput="setCustomValidity('')">
+                                    <input type="text" required placeholder="First Name" class="form-control form-text" id="edit-submitted-first-name" name="submitted-first-name" size="60" maxlength="128" oninvalid="setCustomValidity('Please input this item.')" oninput="setCustomValidity('')">
                                 </div>
 
                                 {{--Last-Name--}}
@@ -295,7 +295,7 @@
                                     <label class="element-invisible" for="edit-submitted-last-name">
                                         Last Name <span class="form-required" title="This field is required.">*</span>
                                     </label>
-                                    <input type="text" required placeholder="Last Name *" class="form-control form-text" id="edit-submitted-last-name" name="submitted-last_name" size="60" maxlength="128" oninvalid="setCustomValidity('Please input this item.')" oninput="setCustomValidity('')">
+                                    <input type="text" required placeholder="Last Name *" class="form-control form-text" id="edit-submitted-last-name" name="submitted-last-name" size="60" maxlength="128" oninvalid="setCustomValidity('Please input this item.')" oninput="setCustomValidity('')">
                                 </div>
 
                                 {{--Phone Number--}}
@@ -303,7 +303,7 @@
                                     <label class="element-invisible" for="edit-submitted-phone-number">
                                         Phone Number <span class="form-required" title="This field is required.">*</span>
                                     </label>
-                                    <input type="text" required placeholder="Phone Number *" class="form-control form-text" id="edit-submitted-phone-number" name="submitted-phone_number" size="60" maxlength="128" oninvalid="setCustomValidity('Please input this item.')" oninput="setCustomValidity('')">
+                                    <input type="text" required placeholder="Phone Number *" class="form-control form-text" id="edit-submitted-phone-number" name="submitted-phone" size="60" maxlength="128" oninvalid="setCustomValidity('Please input this item.')" oninput="setCustomValidity('')">
                                 </div>
 
                                 {{--Email--}}

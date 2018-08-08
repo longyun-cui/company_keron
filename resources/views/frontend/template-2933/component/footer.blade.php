@@ -3,7 +3,7 @@
     <div class="site-footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate-">
+                <div class="col-lg-12 col-md-12 mb60 section-heading probootstrap-animate-">
                     <h2 class="module-title title-white">{{ trans('custom.text.contact_title') }}</h2>
                     {{--<p class="module-subtitle lead"><b>{{ trans('custom.text.contact_subtitle') }}</b></p>--}}
                 </div>
@@ -70,6 +70,14 @@
                                     <span><img src="{{ url(config('company.info.wechat_qrcode')) }}" alt="Wechat_Qrcode" style="height:120px;"></span>
                                 </div>
                             </li>
+                        </ul>
+                    </div>
+                    <div class="probootstrap-footer-widget _non">
+                        <h3><b>关注我们</b></h3>
+                        <ul class="probootstrap-footer-social">
+                            <li><a href=""><i class="icon-twitter"></i></a></li>
+                            <li><a href=""><i class="icon-facebook"></i></a></li>
+                            <li><a href=""><i class="icon-instagram2"></i></a></li>
                         </ul>
                     </div>
                 </div>
