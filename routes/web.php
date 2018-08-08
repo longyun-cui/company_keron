@@ -34,26 +34,52 @@ Route::group(['prefix' => 'common'], function () {
 });
 
 
+/*
+ * Common 通用
+ */
+Route::group(['prefix' => 'test'], function () {
+
+    //
+    Route::get('cookie', function () {
+
+        $cookie = cookie('language', 'xxx');
+        $s = cookie()->get('language', 'default');
+        var_dump($s);
+        echo '<br><br>';
+
+        Cookie::make('language', 'enx');
+        $cookie = Cookie::get('language');
+        var_dump($cookie);
+        echo '<br><br>';
+
+        $cookies = request()->cookie();
+        var_dump($cookies);
+        echo '<br><br>';
+    });
+
+});
+
+
 
 
 
 /*
  * 前台
  */
-Route::group(['namespace' => 'Front'], function () {
+Route::group(['namespace' => 'Front', 'middleware' => ['language']], function () {
 
     $controller = "IndexController";
 
     Route::get('/', $controller.'@view_root');
-    Route::get('/contact', $controller.'@view_contact');
 
+    Route::get('about_us', $controller.'@view_about_us');
     Route::get('about/{id?}', $controller.'@view_about');
 
-    Route::get('advantages', $controller.'@view_advantages');
+    Route::get('advantages/{id?}', $controller.'@view_advantages');
     Route::get('advantage/{id?}', $controller.'@view_advantage');
 
     Route::get('services/{id?}', $controller.'@view_services');
-    Route::get('service/{id?}', $controller.'@view_services');
+    Route::get('service/{id?}', $controller.'@view_service');
 
     Route::get('faqs', $controller.'@view_faqs');
     Route::get('faq/{id?}', $controller.'@view_faq');
@@ -62,7 +88,11 @@ Route::group(['namespace' => 'Front'], function () {
     Route::get('coverage/{id?}', $controller.'@view_coverage');
 
 
+    Route::get('/contact', $controller.'@view_contact');
+    Route::get('/quote', $controller.'@view_quote');
+
     Route::post('message/contact', $controller.'@message_contact');
+    Route::post('message/quote', $controller.'@message_quote');
 
 
 });

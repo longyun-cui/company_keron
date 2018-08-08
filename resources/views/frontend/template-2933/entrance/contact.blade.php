@@ -2,11 +2,12 @@
 
 
 {{--html.head--}}
-@section('head_title')联系我们-{{ config('company.info.name') }}@endsection
+@section('head_title'){{ trans('custom.text.contact_title') }} | {{ trans('custom.info.short_name') }}@endsection
 @section('meta_author')@endsection
 @section('meta_title')@endsection
 @section('meta_description')@endsection
 @section('meta_keywords')@endsection
+
 
 
 
@@ -22,17 +23,17 @@
 @endsection
 
 
-
-
 {{--custom-content--}}
 @section('custom-content')
 
-    @include('frontend.template-2933.component.banner')
+    @include('frontend.template-2933.component.banner-for-page',[
+        'banner_page_title'=>trans('custom.text.contact_page_title'),
+        'banner_page_background'=>'/custom/images/banner.jpg'
+    ])
 
     @include('frontend.template-2933.module.module-contact')
 
 @endsection
-
 
 
 {{--custom-script--}}

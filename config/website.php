@@ -61,6 +61,13 @@
                 'title' => "资讯动态",
             ],
 
+            'activity' => [
+                'id' => 29,
+                'type' => 29,
+                'name' => "activity",
+                'title' => "活动",
+            ],
+
         ],
 
 

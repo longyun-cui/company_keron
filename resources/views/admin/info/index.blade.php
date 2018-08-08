@@ -28,30 +28,53 @@
             <div class="box-body">
                 {{--邮箱--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">邮箱：</label>
+                    <label class="control-label col-md-2">企业名称：</label>
                     <div class="col-md-8 ">
-                        <div><label class="control-label">{{$me->email or ''}}</label></div>
+                        <div><label class="control-label">{{$data->custom->name or ''}}</label></div>
                     </div>
                 </div>
                 {{--昵称--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">昵称：</label>
+                    <label class="control-label col-md-2">简称：</label>
                     <div class="col-md-8 ">
-                        <div><label class="control-label">{{$me->nickname or ''}}</label></div>
+                        <div><label class="control-label">{{$data->custom->name_short or ''}}</label></div>
                     </div>
                 </div>
                 {{--真实姓名--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">真实姓名：</label>
+                    <label class="control-label col-md-2">简介：</label>
                     <div class="col-md-8 ">
-                        <div><label class="control-label">{{$me->true_name or ''}}</label></div>
+                        <div><label class="control-label">{{$data->custom->description or ''}}</label></div>
                     </div>
                 </div>
                 {{--portrait--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">头像：</label>
-                    <div class="col-md-8 ">
-                        <div class="info-img-block"><img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$me->portrait_img)}}" alt=""></div>
+                    <label class="control-label col-md-2">LOGO：</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->cover_pic))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->cover_pic)}}" alt="" />
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{--portrait--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">首页 Banner：</label>
+                    <div class="col-md-8 fileinput-group">
+                        @if(!empty($data->custom3))
+                            @foreach($data->custom3 as $img)
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail">
+                                        <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$img->img)}}" alt="" />
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                        @endif
                     </div>
                 </div>
             </div>

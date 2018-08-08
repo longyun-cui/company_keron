@@ -41,22 +41,21 @@
 
 
                 {{--目录--}}
-                <div class="form-group _none">
+                <div class="form-group">
                     <label class="control-label col-md-2">目录</label>
                     <div class="col-md-8 ">
-                        <select class="form-control" onchange="select_menu()">
+                        <select class="form-control" name="menu_id">
                             <option data-id="0">未分类</option>
-                            {{--@if(!empty($data->menu_id))--}}
-                            {{--@foreach($menus as $v)--}}
-                            {{--<option data-id="{{$v->id}}" @if($data->menu_id == $v->id) selected="selected" @endif>{{$v->title}}</option>--}}
-                            {{--@endforeach--}}
-                            {{--@else--}}
-                            {{--@foreach($menus as $v)--}}
-                            {{--<option data-id="{{$v->id}}">{{$v->title}}</option>--}}
-                            {{--@endforeach--}}
-                            {{--@endif--}}
+                            @if(!empty($data->menu_id))
+                                @foreach($menus as $v)
+                                    <option value="{{$v->id}}" @if($data->menu_id == $v->id) selected="selected" @endif>{{$v->title}}</option>
+                                @endforeach
+                            @else
+                                @foreach($menus as $v)
+                                    <option value="{{$v->id}}">{{$v->title}}</option>
+                                @endforeach
+                            @endif
                         </select>
-                        <input type="hidden" value="{{$data->menu_id or 0}}" name="menu_id" id="menu-selected">
                     </div>
                 </div>
 

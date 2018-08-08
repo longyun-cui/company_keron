@@ -60,6 +60,34 @@
                     </div>
                 </div>
 
+                {{--语言分类--}}
+                <div class="form-group form-category">
+                    <label class="control-label col-md-2">语言分类</label>
+                    <div class="col-md-8">
+                        <div class="btn-group">
+
+                            <button type="button" class="btn">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="type" value="1"
+                                               @if($operate == 'create' || ($operate == 'edit' && $data->type == 1)) checked="checked" @endif> 中文
+                                    </label>
+                                </div>
+                            </button>
+
+                            <button type="button" class="btn">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="type" value="2"
+                                               @if($operate == 'edit' && $data->type == 2) checked="checked" @endif> 英文
+                                    </label>
+                                </div>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
                 {{--标题--}}
                 <div class="form-group">
                     <label class="control-label col-md-2">标题</label>
@@ -92,46 +120,6 @@
                             <!-- 实例化编辑器 -->
                             <script type="text/javascript">
                                 var ue = UE.getEditor('container');
-                                ue.ready(function() {
-                                    ue.execCommand('serverparam', '_token', '{{ csrf_token() }}');//此处为支持laravel5 csrf ,根据实际情况修改,目的就是设置 _token 值.
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-
-                {{--英文标题--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">（英文）标题</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="title_en" placeholder="请输入（英文）标题" value="{{$data->title_en or ''}}"></div>
-                    </div>
-                </div>
-                {{--英文副标题--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">（英文）副标题</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="subtitle_en" placeholder="请输入（英文）副标题" value="{{$data->subtitle_en or ''}}"></div>
-                    </div>
-                </div>
-                {{--英文描述--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">（英文）描述</label>
-                    <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="description_en" placeholder="请输入（英文）描述" value="{{$data->description_en or ''}}"></div>
-                    </div>
-                </div>
-                {{--英文内容详情--}}
-                <div class="form-group">
-                    <label class="control-label col-md-2">（英文）内容详情</label>
-                    <div class="col-md-8 ">
-                        <div>
-                        @include('UEditor::head')
-                        <!-- 加载编辑器的容器 -->
-                            <script id="container-en" name="content_en" type="text/plain">{!! $data->content or '' !!}</script>
-                            <!-- 实例化编辑器 -->
-                            <script type="text/javascript">
-                                var ue = UE.getEditor('container-en');
                                 ue.ready(function() {
                                     ue.execCommand('serverparam', '_token', '{{ csrf_token() }}');//此处为支持laravel5 csrf ,根据实际情况修改,目的就是设置 _token 值.
                                 });

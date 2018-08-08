@@ -4,8 +4,8 @@
 
         <div class="row">
             <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate">
-                <h2>联系我们</h2>
-                <p class="lead">我们会第一时间给您回复.</p>
+                <h2 class="module-title">{{ trans('custom.text.contact_title') }}</h2>
+                <p class="module-subtitle lead"><b>{{ trans('custom.text.contact_subtitle') }}</b></p>
             </div>
         </div>
 
@@ -17,27 +17,27 @@
                     {{csrf_field()}}
 
                     <div class="form-group">
-                        <label for="name">姓名 *</label>
+                        <label for="name">{{ trans('custom.text.contact_message_name') }} *</label>
                         <input type="text" class="form-control" name="name" id="contact-name">
                     </div>
                     <div class="form-group">
-                        <label for="phone">电话 *</label>
+                        <label for="phone">{{ trans('custom.text.contact_message_phone') }} *</label>
                         <input type="phone" class="form-control" name="mobile" id="contact-mobile">
                     </div>
                     <div class="form-group">
-                        <label for="email">邮箱</label>
+                        <label for="email">{{ trans('custom.text.contact_message_email') }}</label>
                         <input type="email" class="form-control" name="email" id="contact-email">
                     </div>
                     <div class="form-group _none">
-                        <label for="subject">主题</label>
+                        <label for="subject">{{ trans('custom.text.contact_message_subject') }}</label>
                         <input type="text" class="form-control" name="">
                     </div>
                     <div class="form-group">
-                        <label for="message">留言 *</label>
+                        <label for="message">{{ trans('custom.text.contact_message_message') }} *</label>
                         <textarea cols="30" rows="10" class="form-control" name="content" id="contact-content"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="button" class="btn btn-primary" id="contact-submit" name="submit" value="发送">
+                        <input type="button" class="btn btn-primary" id="contact-submit" name="submit" value="{{ trans('custom.text.contact_message_submit') }}">
                     </div>
 
                 </form>

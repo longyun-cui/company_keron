@@ -1,21 +1,41 @@
 {{--<!-- START: header -->--}}
 <header role="banner" class="probootstrap-header">
-    <div class="container-fluid">
+    <div class="full-screen">
+
         <a href="{{ url('/') }}" class="probootstrap-logo">
             <img src="{{ url('/custom/images/logo_img.png') }}" alt="Image" style="height:64px;">
         </a>
 
-        <a href="javascript:void(0);" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
+        <a href="javascript:void(0);" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
         <div class="mobile-menu-overlay"></div>
 
         <nav role="navigation" class="probootstrap-nav hidden-xs">
             <ul class="probootstrap-main-nav">
-                <li class="{{ $header_home_active or '' }}"><a href="{{ url('/') }}">首页</a></li>
-                <li class="{{ $header_about_active or '' }}"><a href="{{ url('/about') }}">关于我们</a></li>
-                <li class="{{ $header_service_active or '' }}"><a href="{{ url('/services') }}">服务产品</a></li>
-                {{--<li class="{{ $header_case_active or '' }}"><a href="{{ url('/cases') }}">案例分享</a></li>--}}
-                {{--<li class="{{ $header_coverage_active or '' }}"><a href="{{ url('/coverages') }}">新闻动态</a></li>--}}
-                <li class="{{ $header_contact_active or '' }}"><a href="{{ url('/contact') }}">联系我们</a></li>
+                <li class="{{ $header_home_active or '' }}"><a href="{{ url('/') }}">{{ trans('custom.text.header_home') }}</a></li>
+                <li class="{{ $header_about_active or '' }}"><a href="{{ url('/about_us') }}">{{ trans('custom.text.header_about') }}</a></li>
+                <li class="{{ $header_service_active or '' }}"><a href="{{ url('/services') }}">{{ trans('custom.text.header_service') }}</a></li>
+                <li class="{{ $header_contact_active or '' }}"><a href="{{ url('/contact') }}">{{ trans('custom.text.header_contact') }}</a></li>
+                <li class="header-phone">
+                    <a href="tel:{{ config('company.info.telephone') }}">
+                        <i class="fa fa-mobile-phone"></i>
+                        <strong>{{ config('company.info.telephone') }}</strong>
+                    </a>
+                </li>
+                @if(App::isLocale('en'))
+                    <li class="header-language" id="change-language" role="button">
+                        <a href="javascript:void(0);" title="切换到中文">
+                            <span class="{{ $english_active or '_none' }}"><b>EN</b>/中文</span>
+                        </a>
+                    </li>
+                @else
+                    <li class="header-language" id="change-language" role="button">
+                        <a href="javascript:void(0);" title="Switch languages to English">
+                            <span class="{{ $chinese_active or '_none' }}"><b>中文</b>/EN</span>
+                            {{--<span class="{{ $english_active or '_none' }}" title="切换到中文"><b>EN</b>/中文</span>--}}
+                        </a>
+                    </li>
+                @endif
+                <li class="header-quote"><a href="{{ url('/quote') }}" style="color:#fff">{{ trans('custom.text.get_quote') }}</a></li>
             </ul>
             <div class="extra-text visible-xs">
                 <a href="javascript:void(0);" class="probootstrap-burger-menu"><i>Menu</i></a>
@@ -25,9 +45,10 @@
                     <li><a href="javascript:void(0);"><i class="icon-facebook"></i></a></li>
                     <li><a href="javascript:void(0);"><i class="icon-instagram2"></i></a></li>
                 </ul>
-                <p><small>&copy; Copyright 2017 uiCookies:Format. All Rights Reserved.</small></p>
+                <p><small>&copy; Copyright©2018. KERON All Rights Reserved.</small></p>
             </div>
         </nav>
+
     </div>
 </header>
 {{--<!-- END: header -->--}}

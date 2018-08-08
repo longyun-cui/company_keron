@@ -93,7 +93,7 @@
 
             <li class="treeview">
                 <a href="{{ url('/admin/item/list?category=advantage') }}">
-                    <i class="fa fa-circle-o text-green"></i> <span>选择我们</span>
+                    <i class="fa fa-circle-o text-green"></i> <span>选择KERON</span>
                 </a>
             </li>
 
@@ -112,6 +112,18 @@
             <li class="treeview">
                 <a href="{{ url('/admin/item/list?category=coverage') }}">
                     <i class="fa fa-circle-o text-green"></i> <span>资讯动态</span>
+                </a>
+            </li>
+
+            <li class="treeview">
+                <a href="{{ url('/admin/item/list?category=activity') }}">
+                    <i class="fa fa-circle-o text-green"></i> <span>优惠活动</span>
+                </a>
+            </li>
+
+            <li class="treeview">
+                <a href="{{ url('/admin/item/list?category=cooperation') }}">
+                    <i class="fa fa-circle-o text-green"></i> <span>合作伙伴</span>
                 </a>
             </li>
 

@@ -146,6 +146,7 @@
                         render: function(data, type, row, meta) {
                             if(data == 0) return '<small class="label bg-teal">未定义</small>';
                             else if(data == 2) return '<small class="label bg-olive">关于我们</small>';
+                            else if(data == 5) return '<small class="label bg-green">选择KERON</small>';
                             else if(data == 9) return '<small class="label bg-purple">合作加盟</small>';
                             else if(data == 11) return '<small class="label bg-primary">服务项目</small>';
                             else if(data == 12) return '<small class="label bg-teal">未定义</small>';

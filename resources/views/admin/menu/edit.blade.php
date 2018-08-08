@@ -51,6 +51,7 @@
                                             <input type="radio" name="category" value="{{ $data->category or 0 }}" checked="checked">
                                             @if($data->category == 0) 未定义
                                             @elseif($data->category == 2) 关于我们
+                                            @elseif($data->category == 5) 选择KERON
                                             @elseif($data->category == 11) 服务项目
                                             @elseif($data->category == 18) 常见问题
                                             @elseif($data->category == 21) 资讯动态
@@ -58,6 +59,7 @@
                                         </label>
                                     </div>
                                 </button>
+
                             @elseif($operate == 'create')
 
                                 {{--<button type="button" class="btn">--}}
@@ -84,13 +86,13 @@
                                     </div>
                                 </button>
 
-                                {{--<button type="button" class="btn">--}}
-                                    {{--<div class="radio">--}}
-                                        {{--<label>--}}
-                                            {{--<input type="radio" name="category" value="11"> 常见问题--}}
-                                        {{--</label>--}}
-                                    {{--</div>--}}
-                                {{--</button>--}}
+                                <button type="button" class="btn">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="category" value="5"> 选择KERON
+                                        </label>
+                                    </div>
+                                </button>
 
                                 {{--<button type="button" class="btn">--}}
                                     {{--<div class="radio">--}}

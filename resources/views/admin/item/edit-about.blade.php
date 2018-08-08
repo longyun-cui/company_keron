@@ -14,7 +14,7 @@
 
 @section('breadcrumb')
     <li><a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="{{url('/admin/item/list')}}"><i class="fa "></i> 内容列表</a></li>
+    <li><a href="{{url('/admin/item/list?category=about')}}"><i class="fa "></i> 内容列表</a></li>
     <li><a href="#"><i class="fa "></i> Here</a></li>
 @endsection
 

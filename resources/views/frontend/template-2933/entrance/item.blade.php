@@ -2,7 +2,7 @@
 
 
 {{--html.head--}}
-@section('head_title'){{ $item->title or '' }}-{{ config('company.info.name') }}@endsection
+@section('head_title'){{ $item->$view_title or '' }} | {{ trans('custom.info.short_name') }}@endsection
 @section('meta_author')@endsection
 @section('meta_title')@endsection
 @section('meta_description')@endsection
@@ -27,10 +27,11 @@
 {{--custom-content--}}
 @section('custom-content')
 
-
-    @include('frontend.template-2933.component.banner')
+    @include('frontend.template-2933.component.banner-for-page',[
+        'banner_page_title'=>$item->title,
+        'banner_page_background'=>'/custom/images/banner.jpg'
+    ])
 
     @include('frontend.template-2933.module.module-item', ['item'=>$item])
-
 
 @endsection

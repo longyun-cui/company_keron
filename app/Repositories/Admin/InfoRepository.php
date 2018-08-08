@@ -2,6 +2,9 @@
 namespace App\Repositories\Admin;
 
 use App\Administrator;
+use App\Models\RootModule;
+use App\Models\RootMenu;
+use App\Models\RootItem;
 
 use App\Repositories\Common\CommonRepository;
 use App\Repositories\RootCommonRepository;
@@ -21,42 +24,110 @@ class InfoRepository {
     // 返回（后台）主页视图
     public function view_index()
     {
-        $admin = Auth::guard('admin')->user();
-        $me = $admin;
+        $mine = RootItem::where('category',1)->first();
+        $mine->custom = json_decode($mine->custom);
+        $mine->custom2 = json_decode($mine->custom2);
+        $mine->custom3 = json_decode($mine->custom3);
 
-        return view('admin.info.index')->with(['me'=>$me]);
+        return view('admin.info.index')->with(['data'=>$mine]);
     }
 
     // 返回（后台）企业信息编辑视图
     public function view_edit()
     {
-        $me = Auth::guard('admin')->user();
-        return view('admin.info.edit')->with(['me'=>$me]);
+        $mine = RootItem::where('category',1)->first();
+        $mine->custom = json_decode($mine->custom);
+        $mine->custom2 = json_decode($mine->custom2);
+        $mine->custom3 = json_decode($mine->custom3);
+        return view('admin.info.edit')->with(['data'=>$mine]);
     }
     // 保存企业信息
     public function save($post_data)
     {
-        $admin = Auth::guard('admin')->user();
+        $mine = RootItem::where('category',1)->first();
 
-        if(!empty($post_data["portrait_img"]))
+        // 启动数据库事务
+        DB::beginTransaction();
+        try
         {
-            // 删除原封面图片
-            $mine_cover_pic = $admin->portrait_img;
-            if(!empty($mine_cover_pic) && file_exists(storage_path("resource/" . $mine_cover_pic)))
+
+            if(!empty($post_data['custom']))
             {
-                unlink(storage_path("resource/" . $mine_cover_pic));
+                $post_data['custom'] = json_encode($post_data['custom']);
             }
 
-            $upload = new CommonRepository();
-            $result = $upload->create($post_data["portrait_img"], 'root-unique-portrait-admin_'. $admin->id);
-            if($result["status"]) $post_data["portrait_img"] = $result["data"];
-            else return response_fail();
-        }
-        else unset($post_data["portrait_img"]);
 
-        $bool = $admin->fill($post_data)->save();
-        if($bool) return response_success();
-        else return response_fail();
+            $bool = $mine->fill($post_data)->save();
+            if($bool)
+            {
+                // banner images
+                $banner_images = [];
+                if(!empty($post_data["banner_images"][0]))
+                {
+                    // 删除原有图片
+                    $custom3_decode = json_decode($mine->custom3,true);
+                    if(count($custom3_decode) > 0)
+                    {
+                        foreach ($custom3_decode as $img)
+                        {
+                            if(!empty($img["img"]) && file_exists(storage_path("resource/" . $img["img"])))
+                            {
+                                unlink(storage_path("resource/" . $img["img"]));
+                            }
+                        }
+                    }
+
+                    // 添加图片
+                    foreach ($post_data["banner_images"] as $n => $f)
+                    {
+                        if(!empty($f))
+                        {
+                            $result = upload_storage($f);
+                            if($result["result"]) $banner_images[$n]["img"] = $result["local"];
+                            else throw new Exception("upload-image-fail");
+                        }
+                    }
+
+                    if(count($banner_images) > 0)
+                    {
+                        $custom3_encode = json_encode($banner_images);
+                        $mine->custom3 = $custom3_encode;
+                        $mine->save();
+                    }
+                }
+
+                // 封面图片
+                if(!empty($post_data["cover"]))
+                {
+                    // 删除原封面图片
+                    $mine_cover_pic = $mine->cover_pic;
+                    if(!empty($mine_cover_pic) && file_exists(storage_path("resource/" . $mine_cover_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_cover_pic));
+                    }
+
+                    $result = upload_storage($post_data["cover"]);
+                    if($result["result"])
+                    {
+                        $mine->cover_pic = $result["local"];
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-cover-fail");
+                }
+            }
+
+            DB::commit();
+            return response_success([]);
+        }
+        catch (Exception $e)
+        {
+            DB::rollback();
+            $msg = '操作失败，请重试！';
+            $msg = $e->getMessage();
+//            exit($e->getMessage());
+            return response_fail([],$msg);
+        }
+
     }
 
 

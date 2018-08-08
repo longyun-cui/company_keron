@@ -45,7 +45,7 @@
                             </li>
                             <li class="header">
                                 <a href="{{url('/admin/item/create?category=advantage')}}">
-                                    <i class="fa fa-plus text-green"></i> 选择优势
+                                    <i class="fa fa-plus text-green"></i> 选择KERON
                                 </a>
                             </li>
                             <li class="header">
@@ -61,6 +61,16 @@
                             <li class="header">
                                 <a href="{{url('/admin/item/create?category=coverage')}}">
                                     <i class="fa fa-plus text-green"></i> 资讯动态
+                                </a>
+                            </li>
+                            <li class="header">
+                                <a href="{{url('/admin/item/create?category=activity')}}">
+                                    <i class="fa fa-plus text-green"></i> 优惠活动
+                                </a>
+                            </li>
+                            <li class="header">
+                                <a href="{{url('/admin/item/create?category=cooperation')}}">
+                                    <i class="fa fa-plus text-green"></i> 合作伙伴
                                 </a>
                             </li>
 

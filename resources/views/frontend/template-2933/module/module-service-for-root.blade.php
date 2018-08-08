@@ -1,16 +1,16 @@
 {{--<!-- START: module-service -->--}}
-<section class="probootstrap-section probootstrap-section-colored-" id="service-section">
+<section class="probootstrap-section probootstrap-section-colored" id="service-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate-">
-                <h2>我们的服务</h2>
-                <p class="lead">力求打造中国活动策划一站式服务的第一品牌.</p>
+            <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate">
+                <h2 class="module-title title-white">{{ trans('custom.text.service_title') }}</h2>
+                <p class="module-subtitle lead"><b>{{ trans('custom.text.service_subtitle') }}</b></p>
             </div>
         </div>
         <div class="row mb70">
             @foreach($services as $v)
 
-                <div class="col-md-3 col-sm-6 probootstrap-animate- service-item">
+                <div class="col-md-3 col-sm-6 probootstrap-animate service-item" style="padding:4px 8px;">
                     <div class="probootstrap-block-image">
                         <figure class="image-block">
                             <a href="{{ url('/services/'.$v->id) }}">
@@ -20,19 +20,14 @@
                             </a>
                         </figure>
                         <div class="text">
-                            <h3 class="mb10 title-row"><a href="{{ url('/services/'.$v->id) }}" style="">{{ $v->title or '' }}</a></h3>
-                            <p class="dark">{{ $v->subtitle or '' }}</p>
-                            {{--<p class="secondary-color rate">--}}
-                            {{--<i class="icon-star-full"></i>--}}
-                            {{--<i class="icon-star-full"></i>--}}
-                            {{--<i class="icon-star-full"></i>--}}
-                            {{--<i class="icon-star-full"></i>--}}
-                            {{--<i class="icon-star-half"></i>--}}
-                            {{--</p>--}}
+                            <h3 class="mb10 title-row"><a href="{{ url('/services/'.$v->id) }}" style="">{{ $v->$view_title or '' }}</a></h3>
+                            {{--<p class="dark">{{ $v->$view_subtitle or '' }}</p>--}}
                             <hr>
-                            <p class="clearfix like" style="text-align: center">
-                                <a class="" href="{{ url('/services/'.$v->id) }}"><span class="btn service-btn">了解更多</span></a>
-                            </p>
+                            <div class="clearfix like" style="text-align: center">
+                                <a class="" href="{{ url('/services/'.$v->id) }}">
+                                    <span class="btn service-btn">{{ trans('custom.text.view_more') }}</span>
+                                </a>
+                            </div>
 
                             <p class="clearfix like _none">
                                 <span class="secondary-color rate">
@@ -56,7 +51,10 @@
             <div class="col-md-4 col-md-offset-4 probootstrap-animate">
                 <p class="text-center">
                     @if($services_type == 'root')
-                        {{--<a href="{{ url('/services') }}" class="btn btn-lg btn-block btn-primary" role="button">更多服务</a>--}}
+                        <a href="{{ url('/quote') }}" class="btn btn-lg btn-block btn-ghost btn-ghost-white" role="button">
+                            {{ trans('custom.text.get_quote') }}
+                        </a>
+                        {{--<a href="{{ url('/quote') }}" class="btn btn-lg btn-block btn-primary" role="button">资讯报价</a>--}}
                     @elseif($services_type == 'list')
                         {{ $services->links() }}
                     @endif

@@ -2,11 +2,12 @@
 
 
 {{--html.head--}}
-@section('head_title'){{ config('company.info.name') }}@endsection
+@section('head_title'){{ trans('custom.info.name') }}@endsection
 @section('meta_author')@endsection
 @section('meta_title')@endsection
 @section('meta_description')@endsection
 @section('meta_keywords')@endsection
+
 
 
 
@@ -22,27 +23,30 @@
 @endsection
 
 
-
-
 {{--custom-content--}}
 @section('custom-content')
 
-    @include('frontend.template-2933.component.banner')
+    @include('frontend.template-2933.component.banner-for-root')
+
+    {{--@include('frontend.template-2933.module.module-more')--}}
+
+    @include('frontend.template-2933.module.module-activity-for-root')
 
     @include('frontend.template-2933.module.module-service-for-root', ['services_type'=>'root','services'=>$services])
 
-    @include('frontend.template-2933.module.module-vedio')
+    @include('frontend.template-2933.module.module-video-for-root')
 
-    @include('frontend.template-2933.module.module-advantage')
+    @include('frontend.template-2933.module.module-advantage-for-root')
 
-    @include('frontend.template-2933.module.module-link-faq')
+    @include('frontend.template-2933.module.module-faq-for-root')
 
-{{--    @include('frontend.template-2933.module.module-case', ['cases、_type'=>'root','cases'=>$cases])--}}
+    {{--@include('frontend.template-2933.module.module-case', ['cases_type'=>'root','cases'=>$cases])--}}
 
-    @include('frontend.template-2933.module.module-coverage', ['coverages_type'=>'root','coverages'=>$coverages])
+    @include('frontend.template-2933.module.module-coverage-for-root', ['coverages_type'=>'root','coverages'=>$coverages])
 
-    @include('frontend.template-2933.module.module-link-contact')
+    @include('frontend.template-2933.module.module-cooperation-for-root')
 
+    {{--@include('frontend.template-2933.module.module-contact-for-root')--}}
 
 @endsection
 

@@ -48,7 +48,7 @@ class AdministratorRepository {
             }
 
             $upload = new CommonRepository();
-            $result = $upload->create($post_data["portrait_img"], 'root-unique-portrait-admin_'. $admin->id);
+            $result = $upload->create($post_data["portrait_img"], 'unique-portrait-admin_'. $admin->id);
             if($result["status"]) $post_data["portrait_img"] = $result["data"];
             else return response_fail();
         }

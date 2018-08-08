@@ -26,12 +26,12 @@ class IndexController extends Controller
         return $this->repo->view_root();
     }
 
-    // 返回【主页】视图
-    public function view_contact()
-    {
-        return $this->repo->view_contact();
-    }
 
+    // 返回【关于我们】【列表】视图
+    public function view_about_us()
+    {
+        return $this->repo->view_about_us();
+    }
 
     // 返回【关于我们】【详情】视图
     public function view_about($id=0)
@@ -41,9 +41,9 @@ class IndexController extends Controller
 
 
     // 返回【优势】【列表】视图
-    public function view_advantages()
+    public function view_advantages($id=0)
     {
-        return $this->repo->view_advantages();
+        return $this->repo->view_advantages($id);
     }
     // 返回【优势】【详情】视图
     public function view_advantage($id=0)
@@ -89,10 +89,31 @@ class IndexController extends Controller
 
 
 
-    //
+
+    // 返回【联系我们】视图
+    public function view_contact()
+    {
+        return $this->repo->view_contact();
+    }
+
+    // 返回【询价】视图
+    public function view_quote()
+    {
+        return $this->repo->view_quote();
+    }
+
+
+
+
+    // 保存【联系我们】表单
     public function message_contact()
     {
         return $this->repo->message_contact(request()->all());
+    }
+    // 保存【询价】表单
+    public function message_quote()
+    {
+        return $this->repo->message_quote(request()->all());
     }
 
 

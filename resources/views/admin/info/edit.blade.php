@@ -26,31 +26,48 @@
             <div class="box-body">
                 {{csrf_field()}}
 
-                {{--昵称--}}
+                {{--企业全称--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">昵称</label>
+                    <label class="control-label col-md-2">企业全称</label>
                     <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="nickname" placeholder="请输入昵称" value="{{$me->nickname}}"></div>
+                        <input type="text" class="form-control" name="custom[name]" placeholder="企业全称" value="{{$data->custom->name or ''}}">
                     </div>
                 </div>
 
-                {{--真实姓名--}}
+                {{--企业简称--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">真实姓名</label>
+                    <label class="control-label col-md-2">企业简称</label>
                     <div class="col-md-8 ">
-                        <div><input type="text" class="form-control" name="true_name" placeholder="请输入真实姓名" value="{{$me->true_name}}"></div>
+                        <input type="text" class="form-control" name="custom[name_short]" placeholder="企业简称" value="{{$data->custom->name_short or ''}}">
                     </div>
                 </div>
 
-                {{--portrait--}}
+                {{--企业简称--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">头像</label>
+                    <label class="control-label col-md-2">Slogan</label>
+                    <div class="col-md-8 ">
+                        <input type="text" class="form-control" name="custom[slogan]" placeholder="Slogan" value="{{$data->custom->slogan or ''}}">
+                    </div>
+                </div>
+
+                {{--最新动态--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">企业简介</label>
+                    <div class="col-md-8 ">
+                        {{--<input type="text" class="form-control" name="custom[description]" placeholder="" value="{{$data->custom->manager_cost or ''}}">--}}
+                        <textarea class="form-control" name="custom[recent_news]" rows="3" cols="100%">{{$data->custom->description or ''}}</textarea>
+                    </div>
+                </div>
+
+                {{--LOGO--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">LOGO</label>
                     <div class="col-md-8 fileinput-group">
 
                         <div class="fileinput fileinput-new" data-provides="fileinput">
                             <div class="fileinput-new thumbnail">
-                                @if(!empty($me->portrait_img))
-                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$me->portrait_img.'?'.rand(0,99))}}" alt="" />
+                                @if(!empty($data->cover_pic))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->cover_pic)}}" alt="" />
                                 @endif
                             </div>
                             <div class="fileinput-preview fileinput-exists thumbnail">
@@ -59,7 +76,7 @@
                                 <span class="btn-file">
                                     <button class="btn btn-sm btn-primary fileinput-new">选择图片</button>
                                     <button class="btn btn-sm btn-warning fileinput-exists">更改</button>
-                                    <input type="file" name="portrait_img" />
+                                    <input type="file" name="cover" />
                                 </span>
                                 <span class="">
                                     <button class="btn btn-sm btn-danger fileinput-exists" data-dismiss="fileinput">移除</button>
@@ -73,10 +90,10 @@
 
                 {{--Banner 图--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">Banner 图</label>
+                    <label class="control-label col-md-2">首页 Banner</label>
                     <div class="col-md-8 fileinput-group">
-                        @if(!empty($data->custom2))
-                            @foreach($data->custom2 as $img)
+                        @if(!empty($data->custom3))
+                            @foreach($data->custom3 as $img)
                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                     <div class="fileinput-new thumbnail">
                                         <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$img->img)}}" alt="" />
@@ -89,7 +106,7 @@
                     </div>
 
                     <div class="col-md-8 col-md-offset-2 ">
-                        <input id="banner-images" type="file" class="file-" name="banner_images[]" multiple >
+                        <input id="banner-images" type="file" class="file-" name="banner_images[]" multiple>
                     </div>
                 </div>
 

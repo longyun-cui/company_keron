@@ -38,6 +38,7 @@ class ItemRepository {
         else if($category == "service") $query->where('category', 11);
         else if($category == "faq") $query->where('category', 18);
         else if($category == "coverage") $query->where('category', 21);
+        else if($category == "activity") $query->where('category', 29);
 
         $total = $query->count();
 
@@ -83,12 +84,16 @@ class ItemRepository {
         if($category == 'item') $view_blade = 'admin.item.edit';
         elseif($category == 'about') $view_blade = 'admin.item.edit-about';
         elseif($category == 'advantage') $view_blade = 'admin.item.edit-advantage';
+        elseif($category == 'cooperation') $view_blade = 'admin.item.edit-cooperation';
         elseif($category == 'service') $view_blade = 'admin.item.edit-service';
         elseif($category == 'faq') $view_blade = 'admin.item.edit-faq';
         elseif($category == 'coverage') $view_blade = 'admin.item.edit-coverage';
+        elseif($category == 'activity') $view_blade = 'admin.item.edit-activity';
         else $view_blade = 'admin.item.edit';
 
-        if($category == 'service') $menus = RootMenu::where(['category'=>11])->get();
+        if($category == 'item') $menus = RootMenu::get();
+        elseif($category == 'advantage') $menus = RootMenu::where(['category'=>5])->get();
+        elseif($category == 'service') $menus = RootMenu::where(['category'=>11])->get();
         else $menus = [];
 
         return view($view_blade)->with(['operate'=>'create', 'encode_id'=>encode(0), 'menus'=>$menus]);
@@ -123,12 +128,16 @@ class ItemRepository {
                 if($category == '0') $view_blade = 'admin.item.edit';
                 elseif($category == '2') $view_blade = 'admin.item.edit-about';
                 elseif($category == '5') $view_blade = 'admin.item.edit-advantage';
+                elseif($category == '9') $view_blade = 'admin.item.edit-cooperation';
                 elseif($category == '11') $view_blade = 'admin.item.edit-service';
                 elseif($category == '18') $view_blade = 'admin.item.edit-faq';
                 elseif($category == '21') $view_blade = 'admin.item.edit-coverage';
+                elseif($category == '29') $view_blade = 'admin.item.edit-activity';
                 else $view_blade = 'admin.item.edit';
 
-                if($category == '11') $menus = RootMenu::where(['category'=>11])->get();
+                if($category == '0') $menus = RootMenu::get();
+                elseif($category == '5') $menus = RootMenu::where(['category'=>5])->get();
+                elseif($category == '11') $menus = RootMenu::where(['category'=>11])->get();
                 else $menus = [];
 
                 return view($view_blade)->with(['operate'=>'edit', 'encode_id'=>$id, 'menus'=>$menus, 'data'=>$mine]);
@@ -287,7 +296,7 @@ class ItemRepository {
                     else throw new Exception("upload-cover-fail");
 
 //                    $upload = new CommonRepository();
-//                    $result = $upload->upload($post_data["cover"], 'outside-unique-items' , 'cover_item_'.$encode_id);
+//                    $result = $upload->upload($post_data["cover"], 'unique-items' , 'cover_item_'.$encode_id);
 //                    if($result["status"])
 //                    {
 //                        $mine->cover_pic = $result["data"];
@@ -305,7 +314,6 @@ class ItemRepository {
 //                // qrcode图片文件
 //                $qrcode = $qrcode_path.'/qrcode_item_'.$encode_id.'.png';
 //                QrCode::errorCorrection('H')->format('png')->size(160)->margin(0)->encoding('UTF-8')->generate($url,storage_path($qrcode));
-
 
             }
             else throw new Exception("insert--item--fail");

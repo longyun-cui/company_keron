@@ -24,6 +24,8 @@
                     @elseif($category == 'service') 服务项目
                     @elseif($category == 'faq') 常见问题
                     @elseif($category == 'coverage') 资讯动态
+                    @elseif($category == 'cooperation') 合作伙伴
+                    @elseif($category == 'activity') 优惠活动
                     @else 全部内容
                     @endif
                 </h3>
@@ -51,6 +53,14 @@
                     @elseif($category == 'coverage')
                         <a href="{{url('/admin/item/create?category=coverage')}}">
                             <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 资讯动态</button>
+                        </a>
+                    @elseif($category == 'cooperation')
+                        <a href="{{url('/admin/item/create?category=cooperation')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 合作伙伴</button>
+                        </a>
+                    @elseif($category == 'activity')
+                        <a href="{{url('/admin/item/create?category=activity')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 优惠活动</button>
                         </a>
                     @else
                         {{--<a href="{{url('/admin/item/create')}}">--}}
@@ -163,10 +173,12 @@
                             var category;
                             if(row.category == 0) category = 'custom';
                             else if(row.category == 2) category = 'about';
+                            else if(row.category == 2) category = 'advantage';
                             else if(row.category == 9) category = 'cooperation';
                             else if(row.category == 11) category = 'service';
                             else if(row.category == 18) category = 'FAQ';
                             else if(row.category == 21) category = 'coverage';
+                            else if(row.category == 29) category = 'activity';
                             return '<a target="_blank" href="/'+category+'/'+row.id+'">'+row.title+'</a>';
                         }
                     },
@@ -182,6 +194,7 @@
                             else if(data == 12) return '<small class="label bg-teal">未定义</small>';
                             else if(data == 18) return '<small class="label bg-orange">常见问题</small>';
                             else if(data == 21) return '<small class="label bg-maroon">资讯动态</small>';
+                            else if(data == 29) return '<small class="label bg-maroon">优惠活动</small>';
                             else return '<small class="label bg-navy">未知模块</small>';
                         }
                     },
@@ -254,8 +267,8 @@
                                     '<li><a class="item-delete-submit" data-id="'+value+'" >删除</a></li>'+
                                     '<li><a class="item-enable-submit" data-id="'+value+'">启用</a></li>'+
                                     '<li><a class="item-disable-submit" data-id="'+value+'">禁用</a></li>'+
-                                    '<li><a href="/admin/statistics/item?id='+value+'">流量统计</a></li>'+
-                                    '<li><a class="download-qrcode" data-id="'+value+'">下载二维码</a></li>'+
+//                                    '<li><a href="/admin/statistics/item?id='+value+'">流量统计</a></li>'+
+//                                    '<li><a class="download-qrcode" data-id="'+value+'">下载二维码</a></li>'+
                                     '<li class="divider"></li>'+
                                     '<li><a href="#">Separated link</a></li>'+
                                     '</ul>'+

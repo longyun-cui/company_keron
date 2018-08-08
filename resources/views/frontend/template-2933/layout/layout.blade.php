@@ -17,9 +17,14 @@
         <link rel="stylesheet" href="{{ asset('/templates/moban2933/css/style.min.css') }}">
         <link rel="stylesheet" href="{{ asset('/templates/moban2933/css/custom.css') }}">
 
+        <link href="{{ asset('/templates/moban2933/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/templates/moban2933/plugins/slick/slick.css') }}" rel="stylesheet">
+        <link href="{{ asset('/templates/moban2933/plugins/slick-nav/slicknav.css') }}" rel="stylesheet">
+
         <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://cdn.bootcss.com/layer/3.0.3/skin/moon/style.min.css" rel="stylesheet">
         <link href="https://cdn.bootcss.com/lightcase/2.5.0/css/lightcase.min.css" rel="stylesheet">
+        <link href="https://cdn.bootcss.com/Swiper/4.2.2/css/swiper.min.css" rel="stylesheet">
 
         <link type="text/css" rel="stylesheet" href="{{ asset('common/css/common.css') }}" media="all" />
         <link type="text/css" rel="stylesheet" href="{{ asset('common/css/frontend/index.css') }}" media="all" />
@@ -38,7 +43,7 @@
         @yield('custom-style')
 
         <style>
-            .probootstrap-section .image-block { position:relative; padding-top:75%; overflow:hidden; }
+            .probootstrap-section .image-block { position:relative; padding-top:60%; overflow:hidden; }
             .probootstrap-section .image-block .image-container { position:absolute; top:0; bottom:0; left:0; right:0; overflow:hidden; }
             .probootstrap-section .image-block .image-container img { width:100%; height:100%; object-fit:cover;object-position: 50% 50%; }
         </style>
@@ -62,15 +67,156 @@
         <script src="{{ asset('/templates/moban2933/js/main.min.js') }}"></script>
         <script src="{{ asset('/templates/moban2933/js/custom.js') }}"></script>
 
+        <script src="{{ asset('/templates/moban2933/plugins/slick-nav/jquery.slicknav.min.js') }}"></script>
+        <script src="{{ asset('/templates/moban2933/plugins/slick/slick.min.js') }}"></script>
 
         {{--<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>--}}
+        <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
         <script src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.min.js"></script>
         <script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
         <script src="https://cdn.bootcss.com/lightcase/2.5.0/js/lightcase.min.js"></script>
+        <script src="https://cdn.bootcss.com/Swiper/4.2.2/js/swiper.min.js"></script>
+
+
+        <script src="{{ asset('/common/js/cookie.js') }}"></script>
+
+        <script>
+
+
+            $(function() {
+
+                if($.cookie('language') == undefined)
+                {
+                    console.log("undefined");
+                    $.removeCookie('language');
+                    $.removeCookie('language', { path: '/' });
+                    $.cookie('language', 'zh_cn', { expires: 30, path: '/' });
+                }
+
+                $("#change-language").off("click").on('click', function() {
+
+                    var $language = $.cookie('language');
+                    if($language == "zh_cn")
+                    {
+                        $.removeCookie('language');
+                        $.removeCookie('language', { path: '/' });
+                        $.cookie('language', 'en', { expires: 30, path: '/' });
+                    }
+                    else if($language == "en")
+                    {
+                        $.removeCookie('language');
+                        $.removeCookie('language', { path: '/' });
+                        $.cookie('language', 'zh_cn', { expires: 30, path: '/' });
+                    }
+                    else
+                    {
+                        $.removeCookie('language');
+                        $.removeCookie('language', { path: '/' });
+                        $.cookie('language', 'zh_cn', { expires: 30, path: '/' });
+                    }
+
+                    window.location.reload();
+
+                });
+
+                $('#main-slider').slick({
+                    dots: false,
+                    infinite: true,
+                    fade: true,
+                    speed: 1000,
+                    autoplaySpeed: 3000,
+                    "picWidth": 840, // 设置图片的宽度
+                    "picHeihgt": 360, // 设置图片的高度
+                    lazyLoad: 'progressive',
+                    cssEase: 'linear',
+                    adaptiveHeight:true,
+                    autoplay: true,
+                    prevArrow: '<i class="fa fa-angle-right"></i>',
+                    nextArrow: '<i class="fa fa-angle-left"></i>',
+                    responsive: [
+                        {
+                            breakpoint: 991,
+                            settings: {
+                                arrows: false
+                            }
+                        }
+                    ]
+                });
+
+                $('#property-for-rent-slider').slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    dots: false,
+                    infinite: true,
+                    autoplay: true,
+                    speed: 1000,
+                    autoplaySpeed: 2000,
+                    prevArrow: '<i class="fa fa-angle-left"></i>',
+                    nextArrow: '<i class="fa fa-angle-right"></i>',
+                    responsive: [
+                        {
+                            breakpoint: 992,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 2
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 1
+                            }
+                        }
+                    ]
+                });
+
+            });
+        </script>
+
+        <script>
+            var swiper_banner = new Swiper('.swiper-container', {
+                speed: 1000,
+                spaceBetween: 20,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+            var swiper_coverage = new Swiper('.swiper-coverage-', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                freeMode: true,
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        </script>
 
 
         @yield('custom-js')
         @yield('custom-script')
+
 
     </body>
 

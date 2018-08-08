@@ -22,13 +22,13 @@
         <div class="col-md-12 col-md-pull-0">
             <div class="row" style="text-align:center;">
                 <div class="col-lg-12 col-md-12 mb20">
-                    <h1><b>{{ $item->title or '' }}</b></h1>
-                    <p class="">{{ $item->subtitle or '' }}</p>
+                    <h1 class="module-title"><b>{{ $item->$view_title or '' }}</b></h1>
+                    <p class="module-subtitle"><b>{{ $item->$view_subtitle or '' }}</b></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 mb20">
-                    {!! $item->content or '' !!}
+                    {!! $item->$view_content or '' !!}
                 </div>
             </div>
         </div>

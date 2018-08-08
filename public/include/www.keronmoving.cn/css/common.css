@@ -1,0 +1,46 @@
+/*CSS reset*/
+@font-face {
+    font-family: 'MicrosoftYaHei';
+    src: url('../font/MicrosoftYaHei.eot-.html#font-spider') format('embedded-opentype'),
+         url('../font/MicrosoftYaHei.woff.html') format('woff'),
+         url('../font/MicrosoftYaHei.ttf.html')  format('truetype'), /* Safari, Android, iOS */
+         url('../font/MicrosoftYaHei.svg.html') format('svg'); /* iOS 4.1- */
+   }
+@font-face {
+    font-family: 'fangzheng';
+    src: url('../font/fangzheng.eot-.html#font-spider') format('embedded-opentype'),
+         url('../font/fangzheng.woff.html') format('woff'),
+         url('../font/fangzheng.ttf.html')  format('truetype'), /* Safari, Android, iOS */
+         url('../font/fangzheng.svg.html') format('svg'); /* iOS 4.1- */
+   }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,option{margin:0px; padding:0px;}
+body{-webkit-tap-highlight-color:rgba(0,0,0,0);}	
+table{border-collapse:collapse; border-spacing:0px;}
+fieldset,img{border:0px;}
+adress,caption,cite,code,dfn,em,strong,th,var,{font-style:normal; font-weight:normal;}
+ol,ul,li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0px;}
+a{ text-decoration: none;}
+:focus { outline: none }
+textarea {resize: none;}
+label { cursor: text;}
+.clearfix:before,.clearfix:after{ 
+    content:""; 
+    display:table; 
+} 
+.clearfix:after{clear:both;} 
+.clearfix{ 
+    *zoom:1;/*IE/7/6*/ 
+} 
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot.html'); /* IE9*/
+
+  src: url('iconfont.eot-.html#iefix') format('../font/embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.ttf.html') format('truetype'),/* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('iconfont.woff.html') format('woff'), /* chrome、firefox */
+  url('iconfont.svg.html#iconfont') format('svg'); /* iOS 4.1- */
+}
