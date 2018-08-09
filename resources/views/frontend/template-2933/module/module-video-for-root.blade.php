@@ -10,12 +10,9 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4 probootstrap-animate-">
                 <p class="text-center">
-                    <a class="btn btn-ghost btn-ghost-white btn-lg btn-block lightcase-vedio" data-rel="lightcase" role="button" href="http://player.youku.com/embed/XMjQ4NTk0NDYyMA==" styles="width:120px;height:96px;margin:auto;line-height:96px;padding:0;">
+                    <a class="btn btn-ghost btn-ghost-white btn-lg btn-block lightcase-vedio" data-rel="lightcase" role="button" href="{{ trans('custom.text.video_url') }}">
                         <i class="fa fa-play-circle-o" style="font-size:64px;margin-:16px auto;"></i>
                     </a>
-                </p>
-                <p class="text-center _none">
-                    <a class="btn btn-ghost btn-ghost-white btn-lg btn-block lightcase-vedio" data-rel="lightcase" role="button" href="" >播放视频xs</a>
                 </p>
             </div>
         </div>
