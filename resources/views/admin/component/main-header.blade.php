@@ -49,6 +49,11 @@
                                 </a>
                             </li>
                             <li class="header">
+                                <a href="{{url('/admin/item/create?category=cooperation')}}">
+                                    <i class="fa fa-plus text-green"></i> 合作伙伴
+                                </a>
+                            </li>
+                            <li class="header">
                                 <a href="{{url('/admin/item/create?category=service')}}">
                                     <i class="fa fa-plus text-green"></i> 服务项目
                                 </a>
@@ -69,8 +74,8 @@
                                 </a>
                             </li>
                             <li class="header">
-                                <a href="{{url('/admin/item/create?category=cooperation')}}">
-                                    <i class="fa fa-plus text-green"></i> 合作伙伴
+                                <a href="{{url('/admin/item/create?category=customer')}}">
+                                    <i class="fa fa-plus text-green"></i> 客户案例
                                 </a>
                             </li>
 

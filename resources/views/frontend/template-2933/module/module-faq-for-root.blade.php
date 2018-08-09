@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-12 mb30 section-heading probootstrap-animate-">
-                <h2 class="module-title title-white"> Frequently Asked Questions </h2>
-                <p class="module-subtitle lead"><b>The answer to your question is probably right here.</b></p>
+                <h2 class="module-title title-white">{{ trans('custom.text.faq_title') }}</h2>
+                <p class="module-subtitle lead"><b>{{ trans('custom.text.faq_subtitle') }}</b></p>
 
             </div>
         </div>

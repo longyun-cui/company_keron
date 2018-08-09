@@ -98,6 +98,12 @@
             </li>
 
             <li class="treeview">
+                <a href="{{ url('/admin/item/list?category=cooperation') }}">
+                    <i class="fa fa-circle-o text-green"></i> <span>合作伙伴</span>
+                </a>
+            </li>
+
+            <li class="treeview">
                 <a href="{{ url('/admin/item/list?category=service') }}">
                     <i class="fa fa-circle-o text-green"></i> <span>服务项目</span>
                 </a>
@@ -122,8 +128,8 @@
             </li>
 
             <li class="treeview">
-                <a href="{{ url('/admin/item/list?category=cooperation') }}">
-                    <i class="fa fa-circle-o text-green"></i> <span>合作伙伴</span>
+                <a href="{{ url('/admin/item/list?category=customer') }}">
+                    <i class="fa fa-circle-o text-green"></i> <span>客户案例</span>
                 </a>
             </li>
 

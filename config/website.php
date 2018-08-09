@@ -40,13 +40,6 @@
                 'title' => "服务产品",
             ],
 
-            'case' => [
-                'id' => 12,
-                'type' => 12,
-                'name' => "case",
-                'title' => "案例",
-            ],
-
             'FAQ' => [
                 'id' => 18,
                 'type' => 18,
@@ -66,6 +59,20 @@
                 'type' => 29,
                 'name' => "activity",
                 'title' => "活动",
+            ],
+
+            'customer' => [
+                'id' => 31,
+                'type' => 31,
+                'name' => "customer",
+                'title' => "客户",
+            ],
+
+            'case' => [
+                'id' => 32,
+                'type' => 32,
+                'name' => "case",
+                'title' => "案例",
             ],
 
         ],

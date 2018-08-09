@@ -42,33 +42,28 @@ class IndexRepository {
         $info->custom2 = json_decode($info->custom2);
         $info->custom3 = json_decode($info->custom3);
 
-        $services = RootMenu::where(['category'=>11, 'active'=>1])->orderby('updated_at', 'desc')->get();
-//        foreach($services as $item)
-//        {
-//            $item->custom = json_decode($item->custom);
-//            $item->custom2 = json_decode($item->custom2);
-//            $item->custom3 = json_decode($item->custom3);
-//        }
         $advantages = RootMenu::where(['category'=>5, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
-        $cases = RootItem::where(['category'=>12, 'active'=>1])->orderby('updated_at', 'desc')->limit(6)->get();
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->limit(6)->get();
+
+        $services = RootMenu::where(['category'=>11, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         if(App::isLocale('en')) $language = 2;
         else $language = 1;
         $coverages = RootItem::where(['category'=>21, 'active'=>1, 'type'=>$language])->orderby('updated_at', 'desc')->limit(6)->get();
 
-        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->limit(15)->get();
-
         $activity = RootItem::where(['category'=>29, 'active'=>1])->orderby('updated_at', 'desc')->first();
+
+        $customers = RootItem::where(['category'=>31, 'active'=>1])->orderby('updated_at', 'desc')->limit(15)->get();
 
         $html = view('frontend.template-2933.entrance.root')->with([
             'info'=>$info,
-            'activity'=>$activity,
-            'services'=>$services,
             'advantages'=>$advantages,
-            'cases'=>$cases,
+            'partners'=>$partners,
+            'services'=>$services,
             'coverages'=>$coverages,
-            'partners'=>$partners
+            'activity'=>$activity,
+            'customers'=>$customers
         ])->__toString();
         return $html;
     }

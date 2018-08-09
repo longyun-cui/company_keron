@@ -40,11 +40,11 @@
 
     @include('frontend.template-2933.module.module-faq-for-root')
 
-    {{--@include('frontend.template-2933.module.module-case', ['cases_type'=>'root','cases'=>$cases])--}}
-
     @include('frontend.template-2933.module.module-coverage-for-root', ['coverages_type'=>'root','coverages'=>$coverages])
 
-    @include('frontend.template-2933.module.module-cooperation-for-root')
+    @include('frontend.template-2933.module.module-customer-for-root')
+
+    {{--@include('frontend.template-2933.module.module-case', ['cases_type'=>'root','cases'=>$cases])--}}
 
     {{--@include('frontend.template-2933.module.module-contact-for-root')--}}
 

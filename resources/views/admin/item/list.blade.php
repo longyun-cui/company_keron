@@ -26,6 +26,7 @@
                     @elseif($category == 'coverage') 资讯动态
                     @elseif($category == 'cooperation') 合作伙伴
                     @elseif($category == 'activity') 优惠活动
+                    @elseif($category == 'customer') 客户案例
                     @else 全部内容
                     @endif
                 </h3>
@@ -42,6 +43,10 @@
                         <a href="{{url('/admin/item/create?category=why')}}">
                             <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加选择我们</button>
                         </a>
+                    @elseif($category == 'cooperation')
+                        <a href="{{url('/admin/item/create?category=cooperation')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 合作伙伴</button>
+                        </a>
                     @elseif($category == 'service')
                         <a href="{{url('/admin/item/create?category=service')}}">
                             <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加服务项目</button>
@@ -54,13 +59,13 @@
                         <a href="{{url('/admin/item/create?category=coverage')}}">
                             <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 资讯动态</button>
                         </a>
-                    @elseif($category == 'cooperation')
-                        <a href="{{url('/admin/item/create?category=cooperation')}}">
-                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 合作伙伴</button>
-                        </a>
                     @elseif($category == 'activity')
                         <a href="{{url('/admin/item/create?category=activity')}}">
                             <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 优惠活动</button>
+                        </a>
+                    @elseif($category == 'customer')
+                        <a href="{{url('/admin/item/create?category=customer')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 客户案例</button>
                         </a>
                     @else
                         {{--<a href="{{url('/admin/item/create')}}">--}}
@@ -179,6 +184,7 @@
                             else if(row.category == 18) category = 'FAQ';
                             else if(row.category == 21) category = 'coverage';
                             else if(row.category == 29) category = 'activity';
+                            else if(row.category == 31) category = 'customer';
                             return '<a target="_blank" href="/'+category+'/'+row.id+'">'+row.title+'</a>';
                         }
                     },
@@ -195,6 +201,7 @@
                             else if(data == 18) return '<small class="label bg-orange">常见问题</small>';
                             else if(data == 21) return '<small class="label bg-maroon">资讯动态</small>';
                             else if(data == 29) return '<small class="label bg-maroon">优惠活动</small>';
+                            else if(data == 31) return '<small class="label bg-maroon">客户案例</small>';
                             else return '<small class="label bg-navy">未知模块</small>';
                         }
                     },

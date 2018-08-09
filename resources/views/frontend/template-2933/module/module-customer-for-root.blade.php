@@ -3,13 +3,13 @@
     <div class="container">
         <div class="row mb40">
             <div class="col-lg-12 col-md-12 section-heading probootstrap-animate-">
-                <h2 class="module-title">{{ trans('custom.text.cooperation_title') }}</h2>
-                <p class="lead"><b>{{ trans('custom.text.cooperation_subtitle') }}</b></p>
+                <h2 class="module-title">{{ trans('custom.text.customer_title') }}</h2>
+                <p class="lead"><b>{{ trans('custom.text.customer_subtitle') }}</b></p>
             </div>
         </div>
         <div class="row mb40">
             <div class="cooperation-container probootstrap-animate-">
-                @foreach($partners as $v)
+                @foreach($customers as $v)
                 <div class="cooperation-item col-md-3 probootstrap-box-" role="button">
                     <div class="cooperation-item-box pulse">
                         <a href="{{ $v->link_url or 'javascript:void(0);' }}" target="_blank">
