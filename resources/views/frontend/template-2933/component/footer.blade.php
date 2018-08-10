@@ -34,7 +34,7 @@
 
                         @foreach($partners as $v)
                         <div class="col-xs-3 col-sm-2 col-md-3 partner-option">
-                            <a target="_blank" href="https://moveaide.com/movers/keron-international-relocation-shanghai-china-mover-reviews">
+                            <a target="_blank" href="{{ $v->link_url or 'javascript:void(0);' }}">
                                 <figure>
                                     <div class="image-box"><img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="Image"></div>
                                 </figure>

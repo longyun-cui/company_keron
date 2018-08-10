@@ -12,7 +12,7 @@
                 @foreach($customers as $v)
                 <div class="cooperation-item col-md-3 probootstrap-box-" role="button">
                     <div class="cooperation-item-box pulse">
-                        <a href="{{ $v->link_url or 'javascript:void(0);' }}" target="_blank">
+                        <a target="_blank" href="{{ $v->link_url or 'javascript:void(0);' }}">
                             <img class="" src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="Images">
                         </a>
                         {{--<div class="icon text-center"><i class="icon-desktop"></i></div>--}}
