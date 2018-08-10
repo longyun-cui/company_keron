@@ -96,6 +96,47 @@ class InfoRepository {
                     }
                 }
 
+                // 视频背景图片
+                if(!empty($post_data["video_background"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_video_background_pic = isset($custom2["video_background"]) ? $custom2["video_background"] : '';
+                    if(!empty($mine_video_background_pic) && file_exists(storage_path("resource/" . $mine_video_background_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_video_background_pic));
+                    }
+
+                    $result = upload_storage($post_data["video_background"]);
+                    if($result["result"])
+                    {
+                        $custom2["video_background"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+                // FAQ背景图片
+                if(!empty($post_data["faq_background"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_faq_background_pic = isset($custom2["faq_background"]) ? $custom2["faq_background"] : '';
+                    if(!empty($mine_faq_background_pic) && file_exists(storage_path("resource/" . $mine_faq_background_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_faq_background_pic));
+                    }
+
+                    $result = upload_storage($post_data["faq_background"]);
+                    if($result["result"])
+                    {
+                        $custom2["faq_background"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+
                 // 封面图片
                 if(!empty($post_data["cover"]))
                 {

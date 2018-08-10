@@ -1,5 +1,6 @@
 {{--<!-- START: module-link-contact -->--}}
-<section class="probootstrap-section probootstrap-section-colored" style="background:url('/custom/images/banner.jpg')">
+<section class="probootstrap-section probootstrap-section-colored"
+         style="background:url({{ url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$info->custom2->faq_background) }})">
     <div class="container">
         <div class="row text-center">
             <div class="col-md-12 mb30 section-heading probootstrap-animate-">

@@ -49,19 +49,6 @@
                 </div>
                 {{--portrait--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">LOGO：</label>
-                    <div class="col-md-8 fileinput-group">
-                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-new thumbnail">
-                                @if(!empty($data->cover_pic))
-                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->cover_pic)}}" alt="" />
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{--portrait--}}
-                <div class="form-group">
                     <label class="control-label col-md-2">首页 Banner：</label>
                     <div class="col-md-8 fileinput-group">
                         @if(!empty($data->custom3))
@@ -75,6 +62,45 @@
                         @else
                             <div class="fileinput-preview fileinput-exists thumbnail"></div>
                         @endif
+                    </div>
+                </div>
+                {{--视频背景--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">视频背景图：</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->video_background))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->video_background)}}" alt="" />
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{--FAQ背景图--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">FAQ背景图：</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->faq_background))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->faq_background)}}" alt="" />
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{--LOGO--}}
+                <div class="form-group _none">
+                    <label class="control-label col-md-2">LOGO：</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->cover_pic))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->cover_pic)}}" alt="" />
+                                @endif
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
