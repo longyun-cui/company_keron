@@ -23,6 +23,11 @@
                 </li>
                 <li class="header-quote"><a href="{{ url('/quote') }}" style="color:#fff">{{ trans('custom.text.get_quote') }}</a></li>
                 @if(App::isLocale('en'))
+                    <li class="header-quote"><a href="{{ url('/custom/files/KERON2018_en.pdf') }}" target="_blank" style="color:#fff">PDF</a></li>
+                @else
+                    <li class="header-quote"><a href="{{ url('/custom/files/KERON2018_zh.pdf') }}" target="_blank" style="color:#fff">PDF</a></li>
+                @endif
+                @if(App::isLocale('en'))
                     <li class="header-language" id="change-language" role="button">
                         <a href="javascript:void(0);" title="切换到中文">
                             <span class="{{ $english_active or '_none' }}"><b>EN</b>/中文</span>

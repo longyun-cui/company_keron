@@ -187,9 +187,13 @@
 
 
 
+.partner-option { position: relative; margin: 0 8px 8px 0; border-radius: 4px; text-align: center; background: #fff; }
+.partner-option figure { padding: 0; padding-top: 100%; border-radius: 4px; text-align: center; }
+.partner-option figure .image-box { position: absolute; top: 8px; bottom: 8px; left: 8px; right: 8px; border-radius: 4px; text-align: center; }
+.partner-option figure .image-box img { object-position: center center; object-fit: contain; height: 100%; border-radius: 4px; }
 
-
-
+.footer-social a { display: inline-block; width: 32px; height: 32px; margin-right: 2px; margin-bottom: 10px; overflow: hidden; }
+.footer-social a:hover img { position: relative; top: -32px; }
 
 
 

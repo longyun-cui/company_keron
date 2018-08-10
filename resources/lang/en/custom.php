@@ -45,8 +45,9 @@ return [
         'header_service' => 'SERVICE',
         'header_contact' => 'CONTACT',
 
-        'footer_link_title' => 'Link Address',
+        'footer_partner_title' => 'Partners',
         'footer_wechat_title' => 'Wechat',
+        'footer_focus_title' => 'Focus Us',
         'footer_contact_title' => 'Contact',
 
         'view_more' => 'View More',

@@ -45,8 +45,9 @@ return [
         'header_service' => '服务产品',
         'header_contact' => '联系我们',
 
-        'footer_link_title' => '合作链接',
+        'footer_partner_title' => '合作伙伴',
         'footer_wechat_title' => '微信公众号',
+        'footer_focus_title' => '关注我们',
         'footer_contact_title' => '联系方式',
 
         'view_more' => '了解更多',

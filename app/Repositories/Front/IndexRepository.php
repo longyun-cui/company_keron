@@ -44,7 +44,7 @@ class IndexRepository {
 
         $advantages = RootMenu::where(['category'=>5, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
-        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->limit(6)->get();
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         $services = RootMenu::where(['category'=>11, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
@@ -77,6 +77,8 @@ class IndexRepository {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
+
         $items = RootItem::where(['category'=>2, 'active'=>1])->orderby('updated_at', 'desc')->get();
         foreach($items as $item)
         {
@@ -84,7 +86,7 @@ class IndexRepository {
             $item->custom2 = json_decode($item->custom2);
             $item->custom3 = json_decode($item->custom3);
         }
-        $html = view('frontend.template-2933.entrance.about-list')->with(['abouts'=>$items])->__toString();
+        $html = view('frontend.template-2933.entrance.about-list')->with(['abouts'=>$items,'partners'=>$partners])->__toString();
 
         return $html;
     }
@@ -94,13 +96,15 @@ class IndexRepository {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
+
         if($id == 0) $mine = RootItem::orderby('updated_at', 'desc')->first();
         else $mine = RootItem::where(['id'=>$id])->first();
         $mine->custom = json_decode($mine->custom);
         $mine->custom2 = json_decode($mine->custom2);
         $mine->custom3 = json_decode($mine->custom3);
 
-        $html = view('frontend.template-2933.entrance.about-detail')->with(['about'=>$mine])->__toString();
+        $html = view('frontend.template-2933.entrance.about-detail')->with(['about'=>$mine,'partners'=>$partners])->__toString();
         return $html;
     }
 
@@ -112,6 +116,8 @@ class IndexRepository {
     {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         if($id == 0)
         {
@@ -130,7 +136,7 @@ class IndexRepository {
             $item->custom3 = json_decode($item->custom3);
         }
 
-        $html = view('frontend.template-2933.entrance.advantage-list')->with(['advantages'=>$items])->__toString();
+        $html = view('frontend.template-2933.entrance.advantage-list')->with(['advantages'=>$items,'partners'=>$partners])->__toString();
         return $html;
     }
     // 【服务项目】【详情】
@@ -138,6 +144,8 @@ class IndexRepository {
     {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
         else $mine = RootItem::where(['category'=>5])->orderby('updated_at', 'desc')->first();
@@ -149,7 +157,7 @@ class IndexRepository {
         }
         else $mine = [];
 
-        $html = view('frontend.template-2933.entrance.advantage-detail')->with(['advantage'=>$mine])->__toString();
+        $html = view('frontend.template-2933.entrance.advantage-detail')->with(['advantage'=>$mine,'partners'=>$partners])->__toString();
         return $html;
     }
 
@@ -161,6 +169,8 @@ class IndexRepository {
     {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         if($id == 0)
         {
@@ -179,7 +189,7 @@ class IndexRepository {
             $item->custom3 = json_decode($item->custom3);
         }
 
-        $html = view('frontend.template-2933.entrance.service-list')->with(['services'=>$items])->__toString();
+        $html = view('frontend.template-2933.entrance.service-list')->with(['services'=>$items,'partners'=>$partners])->__toString();
         return $html;
     }
     // 【服务项目】【详情】
@@ -187,6 +197,8 @@ class IndexRepository {
     {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
         else $mine = RootItem::where(['category'=>11])->orderby('updated_at', 'desc')->first();
@@ -198,7 +210,7 @@ class IndexRepository {
         }
         else $mine = [];
 
-        $html = view('frontend.template-2933.entrance.service-detail')->with(['service'=>$mine])->__toString();
+        $html = view('frontend.template-2933.entrance.service-detail')->with(['service'=>$mine,'partners'=>$partners])->__toString();
         return $html;
     }
 
@@ -211,6 +223,8 @@ class IndexRepository {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
+
         $items = RootItem::where(['category'=>18, 'active'=>1])->orderby('updated_at', 'desc')->paginate(16);
         foreach($items as $item)
         {
@@ -219,7 +233,7 @@ class IndexRepository {
             $item->custom3 = json_decode($item->custom3);
         }
 
-        $html = view('frontend.template-2933.entrance.faq-list')->with(['faqs'=>$items])->__toString();
+        $html = view('frontend.template-2933.entrance.faq-list')->with(['faqs'=>$items,'partners'=>$partners])->__toString();
         return $html;
     }
     // 【常见问题】【详情】
@@ -227,6 +241,8 @@ class IndexRepository {
     {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
         else $mine = RootItem::where(['category'=>18])->orderby('updated_at', 'desc')->first();
@@ -238,7 +254,7 @@ class IndexRepository {
         }
         else $mine = [];
 
-        $html = view('frontend.template-2933.entrance.faq-detail')->with(['faq'=>$mine])->__toString();
+        $html = view('frontend.template-2933.entrance.faq-detail')->with(['faq'=>$mine,'partners'=>$partners])->__toString();
         return $html;
     }
 
@@ -251,6 +267,8 @@ class IndexRepository {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
+
         if(isset($_COOKIE['language']) &&  $_COOKIE['language']=="en") $type = 2;
         else $type = 1;
         $coverages = RootItem::where(['category'=>21, 'type'=>$type, 'active'=>1])->orderby('updated_at', 'desc')->paginate(12);
@@ -261,7 +279,7 @@ class IndexRepository {
             $item->custom3 = json_decode($item->custom3);
         }
 
-        $html = view('frontend.template-2933.entrance.coverage-list')->with(['coverages'=>$coverages])->__toString();
+        $html = view('frontend.template-2933.entrance.coverage-list')->with(['coverages'=>$coverages,'partners'=>$partners])->__toString();
         return $html;
     }
     // 【新闻动态】【详情】
@@ -269,6 +287,8 @@ class IndexRepository {
     {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
         else $mine = RootItem::where(['category'=>21])->orderby('updated_at', 'desc')->first();
@@ -292,7 +312,7 @@ class IndexRepository {
         }
         else $mine = [];
 
-        $html = view('frontend.template-2933.entrance.coverage-detail')->with(['coverage'=>$mine])->__toString();
+        $html = view('frontend.template-2933.entrance.coverage-detail')->with(['coverage'=>$mine,'partners'=>$partners])->__toString();
         return $html;
     }
 
@@ -305,6 +325,8 @@ class IndexRepository {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
+
         $items = RootItem::where(['category'=>31, 'active'=>1])->orderby('updated_at', 'desc')->paginate(16);
         foreach($items as $item)
         {
@@ -313,7 +335,7 @@ class IndexRepository {
             $item->custom3 = json_decode($item->custom3);
         }
 
-        $html = view('frontend.template-2933.entrance.customer-list')->with(['customers'=>$items])->__toString();
+        $html = view('frontend.template-2933.entrance.customer-list')->with(['customers'=>$items,'partners'=>$partners])->__toString();
         return $html;
     }
 
@@ -326,6 +348,8 @@ class IndexRepository {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
+
         if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
         else $mine = RootItem::where(['category'=>29])->orderby('updated_at', 'desc')->first();
         if(isset($mine))
@@ -336,7 +360,7 @@ class IndexRepository {
         }
         else $mine = [];
 
-        $html = view('frontend.template-2933.entrance.activity-detail')->with(['activity'=>$mine])->__toString();
+        $html = view('frontend.template-2933.entrance.activity-detail')->with(['activity'=>$mine,'partners'=>$partners])->__toString();
         return $html;
     }
 
