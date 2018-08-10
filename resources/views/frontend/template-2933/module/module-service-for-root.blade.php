@@ -48,12 +48,12 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4 probootstrap-animate">
                 <p class="text-center">
-                    @if($services_type == 'root')
+                    @if($page_type == 'root')
                         <a href="{{ url('/quote') }}" class="btn btn-lg btn-block btn-ghost btn-ghost-white" role="button">
                             {{ trans('custom.text.get_quote') }}
                         </a>
                         {{--<a href="{{ url('/quote') }}" class="btn btn-lg btn-block btn-primary" role="button">资讯报价</a>--}}
-                    @elseif($services_type == 'list')
+                    @elseif($page_type == 'list')
                         {{ $services->links() }}
                     @endif
                 </p>

@@ -31,6 +31,6 @@
         'banner_page_background'=>'/custom/images/banner.jpg'
     ])
 
-    @include('frontend.template-2933.module.module-coverage-for-list', ['coverages_type'=>'list','coverages'=>$coverages])
+    @include('frontend.template-2933.module.module-coverage-for-list', ['page_type'=>'list','coverages'=>$coverages])
 
 @endsection

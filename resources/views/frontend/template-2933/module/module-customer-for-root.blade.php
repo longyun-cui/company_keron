@@ -22,10 +22,12 @@
                 @endforeach
             </div>
         </div>
-        <div class="row _none">
+        <div class="row">
             <div class="col-md-4 col-md-offset-4 probootstrap-animate-">
                 <p class="text-center">
-                    <a href="javascript:void(0);" class="btn btn-primary btn-lg btn-block" role="button">View All Services</a>
+                    <a href="{{ url('/customers') }}" class="btn btn-primary btn-lg btn-block" role="button">
+                        {{ trans('custom.text.customer_more') }}
+                    </a>
                 </p>
             </div>
         </div>

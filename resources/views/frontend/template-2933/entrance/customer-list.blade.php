@@ -2,7 +2,7 @@
 
 
 {{--html.head--}}
-@section('head_title'){{ trans('custom.text.service_title') }} | {{ trans('custom.info.name') }}@endsection
+@section('head_title'){{ trans('custom.text.faq_title') }} | {{ trans('custom.info.short_name') }}@endsection
 @section('meta_author')@endsection
 @section('meta_title')@endsection
 @section('meta_description')@endsection
@@ -27,10 +27,10 @@
 @section('custom-content')
 
     @include('frontend.template-2933.component.banner-for-page',[
-        'banner_page_title'=>trans('custom.text.service_page_title'),
+        'banner_page_title'=>trans('custom.text.customer_title'),
         'banner_page_background'=>'/custom/images/banner.jpg'
     ])
 
-    @include('frontend.template-2933.module.module-service-for-list', ['page_type'=>'list','services'=>$services])
+    @include('frontend.template-2933.module.module-customer-for-list', ['page_type'=>'list','customers'=>$customers])
 
 @endsection

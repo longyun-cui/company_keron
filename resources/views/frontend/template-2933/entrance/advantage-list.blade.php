@@ -31,6 +31,6 @@
         'banner_page_background'=>'/custom/images/banner.jpg'
     ])
 
-    @include('frontend.template-2933.module.module-advantage-for-list', ['advantages_type'=>'list','advantages'=>$advantages])
+    @include('frontend.template-2933.module.module-advantage-for-list', ['page_type'=>'list','advantages'=>$advantages])
 
 @endsection

@@ -95,6 +95,13 @@ class IndexController extends Controller
     }
 
 
+    // 返回【客户】【列表】视图
+    public function view_customers()
+    {
+        return $this->repo->view_customers();
+    }
+
+
 
 
     // 返回【联系我们】视图

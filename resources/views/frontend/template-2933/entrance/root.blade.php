@@ -32,7 +32,7 @@
 
     @include('frontend.template-2933.module.module-activity-for-root')
 
-    @include('frontend.template-2933.module.module-service-for-root', ['services_type'=>'root','services'=>$services])
+    @include('frontend.template-2933.module.module-service-for-root', ['page_type'=>'root','services'=>$services])
 
     @include('frontend.template-2933.module.module-video-for-root')
 
@@ -40,7 +40,7 @@
 
     @include('frontend.template-2933.module.module-faq-for-root')
 
-    @include('frontend.template-2933.module.module-coverage-for-root', ['coverages_type'=>'root','coverages'=>$coverages])
+    @include('frontend.template-2933.module.module-coverage-for-root', ['page_type'=>'root','coverages'=>$coverages])
 
     @include('frontend.template-2933.module.module-customer-for-root')
 

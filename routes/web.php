@@ -89,6 +89,8 @@ Route::group(['namespace' => 'Front', 'middleware' => ['language']], function ()
 
     Route::get('activity/{id?}', $controller.'@view_activity');
 
+    Route::get('customers', $controller.'@view_customers');
+
 
     Route::get('/contact', $controller.'@view_contact');
     Route::get('/quote', $controller.'@view_quote');

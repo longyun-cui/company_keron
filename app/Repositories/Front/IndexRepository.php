@@ -297,6 +297,29 @@ class IndexRepository {
     }
 
 
+
+
+    // 【客户】【列表】
+    public function view_customers()
+    {
+//        $info = json_decode(json_encode(config('mitong.company.info')));
+//        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
+
+        $items = RootItem::where(['category'=>31, 'active'=>1])->orderby('updated_at', 'desc')->paginate(16);
+        foreach($items as $item)
+        {
+            $item->custom = json_decode($item->custom);
+            $item->custom2 = json_decode($item->custom2);
+            $item->custom3 = json_decode($item->custom3);
+        }
+
+        $html = view('frontend.template-2933.entrance.customer-list')->with(['customers'=>$items])->__toString();
+        return $html;
+    }
+
+
+
+
     // 【优惠活动】【详情】
     public function view_activity($id = 0)
     {

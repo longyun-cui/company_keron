@@ -9,10 +9,10 @@
         </div>
         <div class="row- mb70">
             @foreach($advantages as $v)
-                <div class="row- mb70">
+                <div class="row- mb80">
 
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate-">
+                        <div class="col-lg-12 col-md-12 mb30 section-heading probootstrap-animate-">
                             <h2 class="module-title">{{ $v->$view_title or '' }}</h2>
                             <p class="module-subtitle lead"><b>{{ $v->$view_subtitle or '' }}</b></p>
                         </div>
@@ -41,9 +41,10 @@
                 </div>
             @endforeach
         </div>
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4 probootstrap-animate">
+        <div class="row _none">
+            <div class="col-md-4 col-md-offset-4 probootstrap-animate-">
                 <p class="text-center">
+                    <a href="javascript:void(0);" class="btn btn-primary btn-lg btn-block" role="button">View All Services</a>
                 </p>
             </div>
         </div>

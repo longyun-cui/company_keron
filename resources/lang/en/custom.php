@@ -99,11 +99,11 @@ return [
 
         'coverage_title' => 'Coverages',
         'coverage_subtitle' => 'Keep abreast of business developments.',
-        'coverage_more' => 'View More',
         'coverage_root_title' => 'Coverages',
         'coverage_root_subtitle' => 'Keep abreast of business developments.',
         'coverage_page_title' => 'COVERAGES',
         'coverage_page_subtitle' => '',
+        'coverage_more' => 'View More',
 
         'customer_title' => 'Out Customers',
         'customer_subtitle' => '',
@@ -111,6 +111,7 @@ return [
         'customer_root_subtitle' => '',
         'customer_page_title' => 'CUSTOMERS',
         'customer_page_subtitle' => '',
+        'customer_more' => 'View More',
 
         'contact_title' => 'Contact Us',
         'contact_subtitle' => 'We will get back to you as soon as possible',

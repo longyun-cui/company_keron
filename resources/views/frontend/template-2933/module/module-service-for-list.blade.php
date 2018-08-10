@@ -3,16 +3,16 @@
     <div class="container full-screen">
         <div class="row _none">
             <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate-">
-                <h2 class="module-title">@if(App::isLocale('en')) SERVICES @else 我们的服务 @endif</h2>
-                <p class="module-subtitle lead">力求打造中国活动策划一站式服务的第一品牌.</p>
+                <h2 class="module-title"></h2>
+                <p class="module-subtitle lead"></p>
             </div>
         </div>
         <div class="row- mb70">
             @foreach($services as $v)
-                <div class="row- mb70">
+                <div class="row- mb80">
 
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate-">
+                        <div class="col-lg-12 col-md-12 mb30 section-heading probootstrap-animate-">
                             <h2 class="module-title">{{ $v->$view_title or '' }}</h2>
                             <p class="lead">{{ $v->$view_subtitle or '' }}</p>
                         </div>
@@ -42,14 +42,14 @@
             @endforeach
 
         </div>
-        <div class="row">
+        <div class="row _none">
             <div class="col-md-4 col-md-offset-4 probootstrap-animate">
                 <p class="text-center">
-                    @if($services_type == 'root')
+                    {{--@if($page_type == 'root')--}}
                         {{--<a href="{{ url('/services') }}" class="btn btn-lg btn-block btn-primary" role="button">更多服务</a>--}}
-                    @elseif($services_type == 'list')
+                    {{--@elseif($page_type == 'list')--}}
                         {{--{{ $services->links() }}--}}
-                    @endif
+                    {{--@endif--}}
                 </p>
             </div>
         </div>

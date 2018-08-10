@@ -99,11 +99,11 @@ return [
 
         'coverage_title' => '资讯动态',
         'coverage_subtitle' => '随时了解企业动态',
-        'coverage_more' => '更多资讯',
         'coverage_root_title' => '资讯动态',
         'coverage_root_subtitle' => '随时了解企业动态',
         'coverage_page_title' => '资讯动态',
         'coverage_page_subtitle' => '',
+        'coverage_more' => '更多资讯',
 
         'customer_title' => '我们的客户',
         'customer_subtitle' => '',
@@ -111,6 +111,7 @@ return [
         'customer_root_subtitle' => '',
         'customer_page_title' => '我们的客户',
         'customer_page_subtitle' => '',
+        'customer_more' => '查看全部',
 
         'contact_title' => '联系我们',
         'contact_subtitle' => '我们会第一时间给您回复',

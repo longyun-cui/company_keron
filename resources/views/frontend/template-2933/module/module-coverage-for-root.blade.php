@@ -74,12 +74,12 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4 probootstrap-animate-">
                 <p class="text-center">
-                    @if($coverages_type == 'root')
+                    @if($page_type == 'root')
                         {{--<a href="{{ url('/coverages') }}" class="btn btn-lg btn-block btn-primary" role="button">--}}
                         <a href="{{ url('/coverages') }}" class="btn btn-lg btn-block btn-ghost btn-ghost-white" role="button">
                             {{ trans('custom.text.coverage_more') }}
                         </a>
-                    @elseif($coverages_type == 'list')
+                    @elseif($page_type == 'list')
                         {{ $coverages->links() }}
                     @endif
                 </p>

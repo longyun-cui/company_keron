@@ -31,7 +31,7 @@
         'banner_page_background'=>'/custom/images/banner.jpg'
     ])
 
-    @include('frontend.template-2933.module.module-faq-for-list', ['faqs_type'=>'list','faqs'=>$faqs])
+    @include('frontend.template-2933.module.module-faq-for-list', ['page_type'=>'list','faqs'=>$faqs])
 
 @endsection
 

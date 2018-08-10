@@ -31,6 +31,6 @@
         'banner_page_background'=>'/custom/images/banner.jpg'
     ])
 
-    @include('frontend.template-2933.module.module-about-for-list', ['abouts_type'=>'list','abouts'=>$abouts])
+    @include('frontend.template-2933.module.module-about-for-list', ['page_type'=>'list','abouts'=>$abouts])
 
 @endsection
