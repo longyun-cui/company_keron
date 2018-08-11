@@ -373,7 +373,9 @@ class IndexRepository {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
-        $html = view('frontend.template-2933.entrance.contact')->__toString();
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
+
+        $html = view('frontend.template-2933.entrance.contact')->with(['partners'=>$partners])->__toString();
         return $html;
     }
 
@@ -384,7 +386,9 @@ class IndexRepository {
 //        $info = json_decode(json_encode(config('mitong.company.info')));
 //        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
 
-        $html = view('frontend.template-2933.entrance.quote')->__toString();
+        $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
+
+        $html = view('frontend.template-2933.entrance.quote')->with(['partners'=>$partners])->__toString();
         return $html;
     }
 
@@ -451,21 +455,21 @@ class IndexRepository {
 
             $service_type = $post_data['submitted-service'];
             $custom['service_type'] = $service_type;
-            $custom['destination_type'] = $post_data['moving_destination_type'];
             $custom['from_country'] = $post_data['moving-from-country'];
             $custom['from_city'] = $post_data['moving-from-city'];
             $custom['to_country'] = $post_data['moving-to-country'];
             $custom['to_city'] = $post_data['moving-to-city'];
+            $custom['find_way'] = $post_data['submitted-find-way'];
             if($service_type == 'storage') {
                 $custom['date'] = $post_data['storage_date_year'].'/'.$post_data['storage_date_month'].'/'.$post_data['storage_date_day'];
             } else {
                 $custom['date'] = $post_data['moving-date-year'].'/'.$post_data['moving-date-month'].'/'.$post_data['moving-date-day'];
             }
             if($service_type == 'moving') {
-                $custom['moving_type'] =$post_data['moving_type'];
-                $custom['pet_type'] =$post_data['pet_relocation_type'];
-                $custom['pet_type'] =$post_data['pet_relocation_type'];
-                $custom['employees_involved'] =$post_data['moving_employees_involved'];
+                $custom['destination_type'] = $post_data['moving_destination_type'];
+                $custom['moving_type'] = $post_data['moving_type'];
+                $custom['pet_type'] = $post_data['pet_relocation_type'];
+                $custom['employees_involved'] = $post_data['moving_employees_involved'];
             }
             $insert_data['custom'] = json_encode($custom);
 
@@ -474,20 +478,34 @@ class IndexRepository {
             $bool = $mine->fill($insert_data)->save();
             if(!$bool) throw new Exception("insert--message--fail");
 
-
             $email_data['host'] = config('common.host.'.env('APP_ENV').'.root');
-            $email_data['target'] = "longyun-cui@163.com";
+            $email_data['target'] = config('company.email_receiver.'.env('APP_ENV'));
+
+            $email_data['language'] = config('company.trans.'.$post_data['language']);
             $email_data['name'] = $insert_data['name'];
             $email_data['phone'] = $insert_data['phone'];
             $email_data['email'] = $insert_data['email'];
-            $email_data['type'] = $service_type;
+            $email_data['type'] = config('company.trans.'.$service_type);
+            if($service_type == 'moving') {
+                $email_data['destination_type'] = config('company.trans.'.$post_data['moving_destination_type']);
+                $email_data['moving_type'] = config('company.trans.'.$post_data['moving_type']);
+                if($post_data['moving_type'] == 'pet_move')
+                {
+                    $email_data['pet_type'] = config('company.trans.'.$post_data['pet_relocation_type']);
+                }
+                else if($post_data['moving_type'] == 'office_move')
+                {
+                    $email_data['employees_involved'] = $post_data['moving_employees_involved'];
+                }
+            }
             $email_data['date'] = $custom['date'];
             $email_data['from'] = $post_data['moving-from-country']." ".$post_data['moving-from-city'];
             $email_data['to'] = $post_data['moving-to-country']." ".$post_data['moving-to-city'];
             $email_data['time'] = $custom['date'];
+            $email_data['way'] = config('company.trans.'.$custom['find_way']);
 
 
-            $url = config('common.MailService').'/keron/email/quote';
+            $url = config('common.MailService.'.env('APP_ENV')).'/keron/email/quote';
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -504,14 +522,17 @@ class IndexRepository {
             }
 
             DB::commit();
-            $msg = '提交成功！';
+            if($post_data['language'] == 'en') $msg = 'Submitted successfully!';
+            else $msg = '提交成功！';
             return response_success([],$msg);
         }
         catch (Exception $e)
         {
             DB::rollback();
             $msg = '提交失败，请重试！';
-            $msg = $e->getMessage();
+            if($post_data['language'] == 'en') $msg = 'Submission failed, please try again!';
+            else $msg = '提交失败，请重试！';
+//            $msg = $e->getMessage();
 //            exit($e->getMessage());
             return response_fail([],$msg);
         }

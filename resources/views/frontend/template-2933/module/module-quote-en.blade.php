@@ -323,15 +323,15 @@
 
                             {{--Find Us--}}
                             <div class="form-item webform-component">
-                                <label class="element-invisible" for="edit-submitted-how-did-you-find-us">How'd You Find Us? </label>
-                                <select class="form-control form-select" id="submitted-qudao" name="submitted-qudao">
+                                <label class="element-invisible" for="submitted-find-way">How'd You Find Us? </label>
+                                <select class="form-control form-select" id="submitted-find-way" name="submitted-find-way">
                                     <option value="" selected="selected">How'd You Find Us?</option>
-                                    <option label="Client">Cooperate client</option>
+                                    <option value="Client">Cooperate client</option>
                                     <option value="Friend">Friend referral</option>
-                                    <option value="Employer">Real estate agent referral</option>
-                                    <option value="Relative">Internet search</option>
-                                    <option value="Relative">Wechat</option>
-                                    <option value="Relative">Online/Offline advertising</option>
+                                    <option value="Intermediary">Intermediary agency referral</option>
+                                    <option value="Internet">Internet search</option>
+                                    <option value="Wechat">Wechat</option>
+                                    <option value="Advertising">Online/Offline advertising</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
@@ -358,7 +358,7 @@
                                     <label for="edit-captcha-response">What code is in the image?
                                         <span class="form-required" title="This field is required.">*</span>
                                     </label>
-                                    <input type="text" id="J_codetext edit-captcha-response" placeholder="Verification Code" name="J_codetext" maxlength="15" maxlength="128" class="login_txtbx form-control form-text required" autocomplete="off">
+                                    <input type="text" id="J_codetext edit-captcha-response" placeholder="Verification Code" name="J_codetext" maxlength="15" maxlength="128" class="captcha-txt form-control form-text required" autocomplete="off">
                                     <div class="tips5"></div>
                                     <p class="help-block">Enter the characters shown in the image</p>
                                 </div>

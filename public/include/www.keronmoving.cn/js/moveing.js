@@ -160,51 +160,41 @@
 	
 	$("#priceForm").submit(function(e){
 
-		var login_txtbx=$(".login_txtbx").val();
-		if(login_txtbx == ""||login_txtbx.toUpperCase()!=$("#code").text().toUpperCase()){
+        var $language = $('#form-language').val();
+
+		var $captcha = $(".captcha-txt");
+		var captcha_txt = $(".captcha-txt").val();
+		if(captcha_txt == "" || captcha_txt.toUpperCase() != $("#code").text().toUpperCase())
+		{
             if($language == 'en')
 			{
 				layer.msg('Please select service type.');
                 $(".tips5").text("Verification Code is incorrect").css({"color":'red',"margin-top":"5px"});
-                $(".login_txtbx").css({"border-color":'red'});
+                $(".captcha-txt").css({"border-color":'red'});
             }
             else
 			{
                 $(".tips5").text("验证码不正确").css({"color":'red',"margin-top":"5px"});
-                $(".login_txtbx").css({"border-color":'red'});
+                $(".captcha-txt").css({"border-color":'red'});
             }
 			return;
 		}
 
-
-
-        var $language = $('#form-language').val();
+        var $name = $('input[name=submitted-name]');
+        var $first_name = $('input[name=submitted-first-name]');
+        var $last_name = $('input[name=submitted-last-name]');
+        var $phone = $('input[name=submitted-phone]');
+        var $email = $('input[name=submitted-email]');
 
 		var $service = $('input[name=submitted-service]:checked');
 		if ($service.length == 0) {
 			if($language == 'en') layer.msg('Please select service type.');
 			else layer.msg('请选择服务类型');
-			// alert('请选择服务类型');
 			return;
 		}
 
 		//
-		var service = $service.val();
-		var firstname = $('#edit-submitted-first-name').val();
-		var lastname = $('#edit-submitted-last-name').val();
-		var email = $('#edit-submitted-email').val();
-		var phone = $('#edit-submitted-phone-number').val();
-		var findWay = $('#submitted-qudao option:selected').text();
-		var mailContent = [];
-		mailContent.push('名：' + firstname + '<br/>');
-		mailContent.push('姓：' + lastname + '<br/>');
-		mailContent.push('email：' + email + '<br/>');
-		mailContent.push('电话：' + phone + '<br/>');
-		mailContent.push('渠道：' + findWay + '<br/>');
-		mailContent.push('服务类型：' + $service.next('label').text() + '<br/>');
-
-		//
-		switch(service) {
+		switch($service) {
 			case 'moving':
                 var submitted_destination_type = $('input[name=moving_destination_type]:checked').next('label').text();
                 if (!!submitted_destination_type == false) {
@@ -278,10 +268,21 @@
 			"message/quote",
 			// {subject:'搬家'+email,mailContent:mailContent.join(''),mailTo:'chan.rui@keronmoving.com'},
             $("#priceForm").serialize(),
-			function(result){
-				console.log(result);
+			function(data){
+                if(!data.success) layer.msg(data.msg);
+                else
+                {
+                    layer.msg(data.msg);
+                    $("#code").click();
+                    $captcha.val('');
+                    $name.val('');
+                    $first_name.val('');
+                    $last_name.val('');
+                    $phone.val('');
+                    $email.val('');
+                    return true;
+                }
 		},'json');
-		layer.msg('发送成功');
 	});
 
 	$("#contactUsForm").submit(function(e){

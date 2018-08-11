@@ -21,7 +21,7 @@
                     <form class="webform-client-form" enctype="multipart/form-data" action="javascript:void(0);" method="post" id="priceForm" accept-charset="UTF-8">
 
                         {{ csrf_field() }}
-                        <input type="hidden" name="language" value="zh_cn" id="form-language" readonly>
+                        <input type="hidden" name="language" value="zh" id="form-language" readonly>
 
                         <div>
 
@@ -108,12 +108,12 @@
                             <fieldset class="panel panel-default form-wrapper moving-type-box pet-box _none">
                                 <div class="panel-body">
                                     <div class="form-item webform-component webform-component-markup">
-                                        <p><strong>Pet Infomation</strong></p>
+                                        <p><strong>宠物信息</strong></p>
                                     </div>
                                     <div class="form-item webform-component">
                                         <label class="element-invisible" for="pet-relocation-type">宠物品种 </label>
                                         <select name="pet_relocation_type" class="form-control form-select" id="pet-relocation-type">
-                                            <option value="" selected="selected">Pet Type</option>
+                                            <option value="" selected="selected">宠物品种</option>
                                             <option value="dog">狗</option>
                                             <option value="cat">猫</option>
                                             <option value="others">其他</option>
@@ -317,15 +317,15 @@
 
                             {{--Find Us--}}
                             <div class="form-item webform-component">
-                                <label class="element-invisible" for="edit-submitted-how-did-you-find-us">How'd You Find Us? </label>
-                                <select class="form-control form-select" id="submitted-qudao" name="submitted-qudao">
+                                <label class="element-invisible" for="submitted-find-way">How'd You Find Us? </label>
+                                <select class="form-control form-select" id="submitted-find-way" name="submitted-find-way">
                                     <option value="" selected="selected">从何处得知我们？</option>
                                     <option value="Client">公司客户</option>
                                     <option value="Friend">朋友推荐</option>
-                                    <option value="Employer">房产中介推荐</option>
-                                    <option value="Relative">网上搜索</option>
-                                    <option value="Relative">微信</option>
-                                    <option value="Relative">线上/线下广告</option>
+                                    <option value="Intermediary">中介推荐</option>
+                                    <option value="Internet">网上搜索</option>
+                                    <option value="Wechat">微信</option>
+                                    <option value="Advertising">线上/线下广告</option>
                                     <option value="Other">其他</option>
                                 </select>
                             </div>
@@ -352,7 +352,7 @@
                                     <label for="edit-captcha-response">图片显示的内容是？
                                         <span class="form-required" title="This field is required.">*</span>
                                     </label>
-                                    <input type="text" id="J_codetext edit-captcha-response" placeholder="验证码" name="J_codetext" maxlength="15" maxlength="128" class="login_txtbx form-control form-text required" autocomplete="off">
+                                    <input type="text" id="J_codetext edit-captcha-response" placeholder="验证码" name="J_codetext" maxlength="15" maxlength="128" class="captcha-txt form-control form-text required" autocomplete="off">
                                     <div class="tips5"></div>
                                     <p class="help-block">输入图片全部内容，包括数字及字母。</p>
                                 </div>

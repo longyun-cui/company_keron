@@ -72,25 +72,25 @@
                         <div class="footer-social">
 
                             <a target="_blank" href="http://www.wechat.com">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-wechat.png') }}" alt="KERON WeChat Logo">
+                                <img src="{{ asset('/common/images/logo-icon/icon-logo-wechat.png') }}" alt="WeChat Logo">
                             </a>
-                            <a target="_blank" href="https://www.facebook.com/pages/SAE-Asia-Moving-Shipping-Storage-Services/402031239844074">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-facebook.png') }}" alt="KERON Facebook Logo">
+                            <a target="_blank" href="https://www.facebook.com/">
+                                <img src="{{ asset('/common/images/logo-icon/icon-logo-facebook.png') }}" alt="Facebook Logo">
                             </a>
-                            <a target="_blank" href="https://www.linkedin.com/company/sae-asia">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-linkedin.png') }}" alt="KERON Linkedin Logo">
+                            <a target="_blank" href="http://www.linkedin.com/company/keron-international-relocation-movers/">
+                                <img src="{{ asset('/common/images/logo-icon/icon-logo-linkedin.png') }}" alt="Linkedin Logo">
                             </a>
                             <a target="_blank" href="https://moveaide.com/movers/keron-international-relocation-shanghai-china-mover-reviews">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-moveaide.png') }}" alt="KERON MoveAide Logo">
+                                <img src="{{ asset('/common/images/logo-icon/icon-logo-moveaide.png') }}" alt="MoveAide Logo">
                             </a>
-                            <a target="_blank" href="https://plus.google.com/+Sae-asia/">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-google.png') }}" alt="KERON Google Plus Logo">
+                            <a target="_blank" href="https://plus.google.com/">
+                                <img src="{{ asset('/common/images/logo-icon/icon-logo-google.png') }}" alt="Google Plus Logo">
                             </a>
-                            <a target="_blank" href="https://twitter.com/saeasia">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-twitter.png') }}" alt="KERON Twitter Logo">
+                            <a target="_blank" href="https://twitter.com/">
+                                <img src="{{ asset('/common/images/logo-icon/icon-logo-twitter.png') }}" alt="Twitter Logo">
                             </a>
-                            <a target="_blank" href="https://instagram.com/sae_asia">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-instagram.png') }}" alt="KERON Instagram Logo">
+                            <a target="_blank" href="https://instagram.com/">
+                                <img src="{{ asset('/common/images/logo-icon/icon-logo-instagram.png') }}" alt="Instagram Logo">
                             </a>
 
                         </div>
