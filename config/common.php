@@ -14,9 +14,9 @@
             ],
 
             'online' => [
-                'root' => 'http://tinymin.cn',
-                'www' => 'http://www.tinymin.cn',
-                'cdn' => 'http://cdn.tinymin.cn',
+                'root' => 'http://keronmoving.cn:8990',
+                'www' => 'http://www.keronmoving.cn:8990',
+                'cdn' => 'http://cdn.keronmoving.cn:8990',
 
                 'MailService' => 'http://live2.pub:8088',
             ],
