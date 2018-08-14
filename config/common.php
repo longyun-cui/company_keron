@@ -16,7 +16,7 @@
             'online' => [
                 'root' => 'http://keronmoving.cn:8990',
                 'www' => 'http://www.keronmoving.cn:8990',
-                'cdn' => 'http://cdn.keronmoving.cn:8990',
+                'cdn' => 'http://cdn.keronmoving.cn:8991',
 
                 'MailService' => 'http://live2.pub:8088',
             ],
