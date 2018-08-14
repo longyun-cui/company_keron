@@ -96,7 +96,8 @@ return [
         'video_root_subtitle' => '观看视频，了解我们',
         'video_page_title' => '视频展示',
         'video_page_subtitle' => '观看视频，了解我们',
-        'video_url' => 'https://player.youku.com/embed/XMjQ4NTk0NDYyMA==',
+        'video_url' => 'https://v.youku.com/v_show/id_XMjQ4NTk0NDYyMA==.html',
+        'video_player' => 'https://player.youku.com/embed/XMjQ4NTk0NDYyMA==',
 
         'coverage_title' => '资讯动态',
         'coverage_subtitle' => '随时了解企业动态',

@@ -59,7 +59,7 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 .probootstrap-main-nav li{margin:0;padding:0 8px;list-style:none;display:inline-block;font-size:16px;}
 
 @media screen and (min-width:768px){
-    .probootstrap-main-nav li.header-quote{padding:0 12px;margin-left:32px;font-size:16px;background:#2d4d9b;}
+    .probootstrap-main-nav li.header-quote{padding:0 12px;margin-left:32px;font-size:16px;background:#207eb8;}
     .probootstrap-main-nav li.header-quote a{font-size:14px;}
 
     .probootstrap-main-nav li.header-phone{padding:0 0;margin-left:32px;}
@@ -69,8 +69,8 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 
     .probootstrap-main-nav li.header-language{padding:0 12px;margin-left:32px;background:rgba(255,255,255,1);}
     .probootstrap-main-nav li.header-language a{color:#bbb;font-size:12px;}
-    .probootstrap-main-nav li.header-language a b{color:#2d4d9b;font-size:16px;}
-    .probootstrap-main-nav li.header-language:hover a {color:#2d4d9b;font-size:16px;}
+    .probootstrap-main-nav li.header-language a b{color:#207eb8;font-size:16px;}
+    .probootstrap-main-nav li.header-language:hover a {color:#207eb8;font-size:16px;}
     .probootstrap-main-nav li.header-language:hover b {color:#bbb;font-size:16px;}
 }
 
@@ -144,7 +144,7 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 .btn{border:none;border-radius:4px;font-size:18px;padding:10px 30px}
 .btn:active{-webkit-transition:.2s all;transition:.2s all;-webkit-transform:scale(.95);transform:scale(.95);-webkit-box-shadow:none;box-shadow:none}
 .btn.btn-lg{line-height:1.5;padding-top:20px;padding-bottom:20px}
-.btn.btn-primary{border:1px solid #337ab7;background:#337ab7;color:#fff}
+.btn.btn-primary{border:1px solid #207eb8;background:#207eb8;color:#fff}
 .btn.btn-primary:active,.btn.btn-primary:focus,.btn.btn-primary:hover{background:#000;color:#fff;border:1px solid #000}
 .btn.btn-primary:active,.btn.btn-primary:focus{outline:0;border:1px solid #000}
 .btn.btn-ghost{background:0 0;border:1px solid #ff7676;color:#ff7676}
@@ -162,8 +162,8 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 .probootstrap-section>.container.probootstrap-border-top{padding-top:50px;border-top:1px solid rgba(0,0,0,.1)}
 .probootstrap-section.probootstrap-section-colored,.probootstrap-section.probootstrap-section-dark{
     background:#2d4d9b;
-    background:-webkit-gradient(linear,left top,right top,from(#2d4d9b),to(#337ab7));
-    background:linear-gradient(to right,#2d4d9b 0,#337ab7 100%);
+    background:-webkit-gradient(linear,left top,right top,from(#207eb8),to(#337ab7));
+    background:linear-gradient(to right,#207eb8 0,#337ab7 100%);
     /*background:#f54ea2;*/
     /*background:-webkit-gradient(linear,left top,right top,from(#f54ea2),to(#ff7676));*/
     /*background:linear-gradient(to right,#f54ea2 0,#ff7676 100%);*/
