@@ -1,6 +1,6 @@
 {{--<!-- START: module-service -->--}}
 <section class="probootstrap-section probootstrap-section-colored-" id="service-section">
-    <div class="container full-screen">
+    <div class="container full-screen-">
         <div class="row _none">
             <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate-">
                 <h2 class="module-title"></h2>
