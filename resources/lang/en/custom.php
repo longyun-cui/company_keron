@@ -96,6 +96,7 @@ return [
         'video_root_subtitle' => 'Watch video and get to know us.',
         'video_page_title' => 'VIDEO SHOW',
         'video_page_subtitle' => 'Watch video and get to know us.',
+        'video' => '/videos/KERON_EN.mp4',
         'video_url' => 'https://v.youku.com/v_show/id_XMjQ4NTk1MDg1Ng==.html',
         'video_player' => 'https://player.youku.com/embed/XMjQ4NTk1MDg1Ng==',
 

@@ -59,12 +59,17 @@
 
     $(function() {
 
-        $('.lightcase-vedio').lightcase({
-            width:866,
-            height:488,
-            maxWidth: 9999,
-            maxHeight: 9999
+//        $('a[data-rel^=lightcase]').lightcase();
+
+        $('.lightcase-video').lightcase({
+            width : 640,
+            height : 336,
+            maxWidth : 800,
+            maxHeight : 420,
+            autoplay : false,
         });
+
+
 
     });
 

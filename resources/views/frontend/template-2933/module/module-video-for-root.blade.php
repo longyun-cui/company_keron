@@ -11,8 +11,11 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4 probootstrap-animate-">
                 <p class="text-center">
-                    <a class="btn btn-ghost btn-ghost-white btn-lg btn-block lightcase-vedio" data-rel="lightcase" role="button" href="{{ trans('custom.text.video_player') }}">
-                        <i class="fa fa-play-circle-o" style="font-size:64px;margin-:16px auto;"></i>
+                    <a class="btn btn-ghost btn-ghost-white btn-lg btn-block lightcase-video- _none" data-rel="lightcase" role="button" href="{{ trans('custom.text.video_player') }}">
+                        <i class="fa fa-play-circle-o" style="font-size:64px;"></i>
+                    </a>
+                    <a class="btn btn-ghost btn-ghost-white btn-lg btn-block lightcase-video" data-rel="lightcase" role="button" href="" data-lc-options='{width:640, height:336, autoplay:false}' data-lc-href="{{ config('common.host.'.env('APP_ENV').'.cdn').trans('custom.text.video') }}">
+                        <i class="fa fa-play-circle-o" style="font-size:64px;"></i>
                     </a>
                 </p>
             </div>
