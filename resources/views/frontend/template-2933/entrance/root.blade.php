@@ -59,6 +59,8 @@
 
     $(function() {
 
+//        $('[data-fancybox]').fancybox();
+
 //        $('a[data-rel^=lightcase]').lightcase();
 
         $('.lightcase-video').lightcase({
@@ -68,7 +70,6 @@
             maxHeight : 420,
             autoplay : false,
         });
-
 
 
     });

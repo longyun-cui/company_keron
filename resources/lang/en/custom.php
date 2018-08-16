@@ -108,11 +108,11 @@ return [
         'coverage_page_subtitle' => '',
         'coverage_more' => 'View More',
 
-        'customer_title' => 'Out Customers',
+        'customer_title' => 'Our Client',
         'customer_subtitle' => '',
-        'customer_root_title' => 'Out Customers',
+        'customer_root_title' => 'Our Client',
         'customer_root_subtitle' => '',
-        'customer_page_title' => 'CUSTOMERS',
+        'customer_page_title' => 'CLIENT',
         'customer_page_subtitle' => '',
         'customer_more' => 'View More',
 
