@@ -29,9 +29,9 @@
                                 <div class="text-box">
                                     <h1 class=" color-blue"><b>{{ $i->$view_title or '' }}</b></h1>
 
-                                    <ul class="withArrow">
-                                        <li> {{ $i->$view_subtitle or '' }} </li>
-                                    </ul>
+                                    <div class="withArrow mb20">
+                                        {{ $i->$view_subtitle or '' }}
+                                    </div>
                                     <a href="{{ '/service/'.$i->id }}" class="btn btn-flat btn-primary">了解更多</a>
                                 </div>
                             </div>

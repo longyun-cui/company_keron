@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="form-type-radio form-item radio">
                                         <input type="radio" name="submitted-service" class="form-radio" id="service-2" value="fine-art">
-                                        <label class="art-option" for="service-2">Fine Art</label>
+                                        <label class="art-option" for="service-2">Special Goods</label>
                                     </div>
                                     <div class="form-type-radio form-item radio">
                                         <input type="radio" name="submitted-service" class="form-radio" id="service-3" value="shipping">
