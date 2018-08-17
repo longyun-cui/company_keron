@@ -38,8 +38,8 @@
                                         <label class="moving-option" for="service-1">Moving</label>
                                     </div>
                                     <div class="form-type-radio form-item radio">
-                                        <input type="radio" name="submitted-service" class="form-radio" id="service-2" value="fine-art">
-                                        <label class="art-option" for="service-2">Special Goods</label>
+                                        <input type="radio" name="submitted-service" class="form-radio" id="service-2" value="special-goods">
+                                        <label class="special-option" for="service-2">Special Goods</label>
                                     </div>
                                     <div class="form-type-radio form-item radio">
                                         <input type="radio" name="submitted-service" class="form-radio" id="service-3" value="shipping">
@@ -219,7 +219,7 @@
                             <fieldset class="panel panel-default form-wrapper storage-box _none">
                                 <div class="panel-body">
                                     <div class="form-item webform-component">
-                                        <label class="element-invisible-" for="storage-type">仓储类型</label>
+                                        <label class="element-invisible-" for="storage-type">Storage Type</label>
                                         <div id="storage-type" class="form-radios">
                                             <div class="form-type-radio form-item radio">
                                                 <input type="radio" name="storage_type" class="form-radio" id="storage-type-1" value="personal" checked="checked">

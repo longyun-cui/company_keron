@@ -14,9 +14,9 @@
             ],
 
             'online' => [
-                'root' => 'http://keronmoving.cn:8990',
-                'www' => 'http://www.keronmoving.cn:8990',
-                'cdn' => 'http://cdn.keronmoving.cn:8991',
+                'root' => 'http://keron-relo.com',
+                'www' => 'http://www.keron-relo.com',
+                'cdn' => 'http://cdn.keron-relo.com',
 
                 'MailService' => 'http://live2.pub:8088',
             ],

@@ -40,7 +40,7 @@
 		}
 		
 	});
-	$('.art-option').click(function(){
+	$('.special-option').click(function(){
         $(".moving-box").hide();
         $(".moving-type-box").hide();
         $(".from-to-time-box").show();
@@ -230,7 +230,7 @@
 				}
 				
 			break;
-			case 'fine-art':
+			case 'special-goods':
 			case 'shipping':
 
                 var moving_from_country = $('select[name=moving-from-country]').val();

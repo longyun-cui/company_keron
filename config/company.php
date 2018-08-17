@@ -28,7 +28,7 @@
 
         'email_receiver' => [
             'local' => 'longyun-cui@163.com',
-            'online' => 'longyun-cui@163.com',
+            'online' => 'chan.rui@keronmoving.com',
         ],
 
         'trans' => [
@@ -38,8 +38,8 @@
             'en' => '英文',
 
             'submitted-service' => '服务类型',
-            'moving' => '搬运',
-            'fine-art' => '艺术品',
+            'moving' => '搬家',
+            'special-goods' => '特殊货物',
             'shipping' => '货运',
             'storage' => '仓储',
 
