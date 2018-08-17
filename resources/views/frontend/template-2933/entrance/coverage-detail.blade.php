@@ -28,7 +28,7 @@
 
     @include('frontend.template-2933.component.banner-for-page',[
         'banner_page_title'=>trans('custom.text.coverage_page_title'),
-        'banner_page_background'=>'/custom/images/banner-coverage.jpg'
+        'banner_page_background'=>'/custom/images/banner-coverage.jpeg'
     ])
 
     @include('frontend.template-2933.module.module-coverage-for-detail', ['item'=>$coverage])
