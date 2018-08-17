@@ -116,7 +116,7 @@
         width: 100%;
         height: 100%;
         float: left;
-        animation: marquee 5s linear infinite;
+        animation: marquee 10s linear infinite;
     }
     .marquee:hover { animation-play-state: paused }
 
