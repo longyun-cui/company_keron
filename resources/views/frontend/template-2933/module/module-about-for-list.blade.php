@@ -23,7 +23,9 @@
                             <div class="withArrow mb20">
                                 {{ $v->$view_subtitle or '' }}
                             </div>
-                            <a href="{{ '/about/'.$v->id }}" class="btn btn-flat btn-primary">{{ trans('custom.text.view_more') }}</a>
+                            <a href="{{ '/about/'.$v->id }}" class="btn btn-flat btn-primary _none">
+                                {{ trans('custom.text.view_more') }}
+                            </a>
                         </div>
                     </div>
                 </div>

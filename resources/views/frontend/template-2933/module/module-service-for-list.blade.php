@@ -32,7 +32,11 @@
                                     <div class="withArrow mb20">
                                         {{ $i->$view_subtitle or '' }}
                                     </div>
-                                    <a href="{{ '/service/'.$i->id }}" class="btn btn-flat btn-primary">{{ trans('custom.text.view_more') }}</a>
+                                    @if($v->type == 1)
+                                        <a href="{{ '/service/'.$i->id }}" class="btn btn-flat btn-primary">{{ trans('custom.text.view_more') }}</a>
+                                    @else
+                                        <a href="{{ '/quote' }}" class="btn btn-flat btn-primary">{{ trans('custom.text.get_quote') }}</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>

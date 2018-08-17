@@ -197,6 +197,8 @@
 .partner-option figure .image-box { position: absolute; top: 8px; bottom: 8px; left: 8px; right: 8px; border-radius: 4px; text-align: center; }
 .partner-option figure .image-box img { object-position: center center; object-fit: contain; height: 100%; border-radius: 4px; }
 
+.header-social li { display: inline-block; width: 32px; height: 32px; margin-right: 4px !important; margin-bottom: 10px !important; overflow: hidden; }
+.header-social li a { width: 32px; height: 32px; padding: 0 !important; }
 .footer-social a { display: inline-block; width: 32px; height: 32px; margin-right: 2px; margin-bottom: 10px; overflow: hidden; }
 .footer-social a:hover img { position: relative; top: -32px; }
 

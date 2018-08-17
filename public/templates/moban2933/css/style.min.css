@@ -125,12 +125,12 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 .probootstrap-burger-menu{display:inline-block;width:18px;height:18px;cursor:pointer;text-decoration:none}
 .probootstrap-burger-menu i{
     position:relative;display:inline-block;width:18px;height:2px;
-    color:#2d4d9b;font:700 14px/.4 Helvetica,arial;text-transform:uppercase;text-indent:-55px;
-    background:#2d4d9b;-webkit-transition:all .2s ease-out;transition:all .2s ease-out
+    color:#fff;font:700 14px/.4 Helvetica,arial;text-transform:uppercase;text-indent:-55px;
+    background:#fff;-webkit-transition:all .2s ease-out;transition:all .2s ease-out
 }
 .probootstrap-burger-menu.active i{color:#fff;background:#fff;}
 .probootstrap-burger-menu i::after,.probootstrap-burger-menu i::before{
-    content:'';width:18px;height:2px;background:#2d4d9b;position:absolute;left:0;-webkit-transition:all .2s ease-out;transition:all .2s ease-out}
+    content:'';width:18px;height:2px;background:#fff;position:absolute;left:0;-webkit-transition:all .2s ease-out;transition:all .2s ease-out}
 .probootstrap-burger-menu.active i::after,.probootstrap-burger-menu.active i::before{
     background:#fff;}
 .probootstrap-burger-menu i::before{top:-7px}

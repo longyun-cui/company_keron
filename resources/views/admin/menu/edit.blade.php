@@ -59,7 +59,6 @@
                                         </label>
                                     </div>
                                 </button>
-
                             @elseif($operate == 'create')
 
                                 {{--<button type="button" class="btn">--}}
@@ -150,6 +149,33 @@
                                     </div>
                                 </button>
                             @endif
+
+                        </div>
+                    </div>
+                </div>
+                {{--存在详情--}}
+                <div class="form-group form-type">
+                    <label class="control-label col-md-2">存在详情</label>
+                    <div class="col-md-8">
+                        <div class="btn-group">
+
+                            <button type="button" class="btn">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="type" value="0"
+                                               @if($operate == 'create' || ($operate == 'edit' && $data->type == 0)) checked="checked" @endif> 否
+                                    </label>
+                                </div>
+                            </button>
+
+                            <button type="button" class="btn">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="type" value="1"
+                                               @if($operate == 'edit' && $data->type == 1) checked="checked" @endif> 是
+                                    </label>
+                                </div>
+                            </button>
 
                         </div>
                     </div>
