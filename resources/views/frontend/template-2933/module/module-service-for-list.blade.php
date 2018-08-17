@@ -32,7 +32,7 @@
                                     <div class="withArrow mb20">
                                         {{ $i->$view_subtitle or '' }}
                                     </div>
-                                    <a href="{{ '/service/'.$i->id }}" class="btn btn-flat btn-primary">了解更多</a>
+                                    <a href="{{ '/service/'.$i->id }}" class="btn btn-flat btn-primary">{{ trans('custom.text.view_more') }}</a>
                                 </div>
                             </div>
                         </div>
