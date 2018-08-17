@@ -28,7 +28,7 @@
 
     @include('frontend.template-2933.component.banner-for-page',[
         'banner_page_title'=>trans('custom.text.advantage_page_title'),
-        'banner_page_background'=>'/custom/images/banner.jpg'
+        'banner_page_background'=>'/custom/images/banner-advantage.jpg'
     ])
 
     @include('frontend.template-2933.module.module-advantage-for-list', ['page_type'=>'list','advantages'=>$advantages])

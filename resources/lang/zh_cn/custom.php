@@ -22,7 +22,7 @@ return [
         'short_name' => 'KERON',
         'brand' => 'KERON',
         'description' => '',
-        'slogan' => '让搬家更轻松',
+        'slogan' => 'Ensuring Your Move’s Success !',
         'favicon' => '/favicon-240.png',
         'logo' => '/custom/images/logo.png',
         'logo1' => '/custom/images/logo1.png',
@@ -42,7 +42,7 @@ return [
 
         'header_home' => '首页',
         'header_about' => '关于我们',
-        'header_service' => '服务产品',
+        'header_service' => '服务项目',
         'header_contact' => '联系我们',
 
         'footer_partner_title' => '合作伙伴',
@@ -53,7 +53,7 @@ return [
         'view_more' => '了解更多',
         'view_detail' => '查看详情',
 
-        'get_quote' => '资讯报价',
+        'get_quote' => '咨询报价',
 
         'about_title' => '关于我们',
         'about_subtitle' => '',
@@ -77,7 +77,7 @@ return [
         'cooperation_page_subtitle' => '',
 
         'service_title' => '我们的服务',
-        'service_subtitle' => '力求打造中国搬家的第一品牌',
+        'service_subtitle' => '打造私人定制化的一站式搬家理念',
         'service_root_title' => '我们的服务',
         'service_root_subtitle' => '',
         'service_page_title' => '我们的服务',
@@ -91,11 +91,11 @@ return [
         'faq_page_subtitle' => '',
 
         'video_title' => '视频展示',
-        'video_subtitle' => '观看视频，了解我们',
+        'video_subtitle' => '观看视频，了解我们的搬家服务流程',
         'video_root_title' => '视频展示',
-        'video_root_subtitle' => '观看视频，了解我们',
+        'video_root_subtitle' => '观看视频，了解我们的搬家服务流程',
         'video_page_title' => '视频展示',
-        'video_page_subtitle' => '观看视频，了解我们',
+        'video_page_subtitle' => '观看视频，了解我们的搬家服务流程',
         'video' => '/videos/KERON_ZH.mp4',
         'video_url' => 'https://v.youku.com/v_show/id_XMjQ4NTk0NDYyMA==.html',
         'video_player' => 'https://player.youku.com/embed/XMjQ4NTk0NDYyMA==',

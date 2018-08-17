@@ -35,11 +35,11 @@
                                 <div id="edit-submitted-service" class="form-radios">
                                     <div class="form-type-radio form-item radio">
                                         <input type="radio" name="submitted-service" class="form-radio" id="service-1" value="moving">
-                                        <label class="moving-option" for="service-1">搬运</label>
+                                        <label class="moving-option" for="service-1">搬家</label>
                                     </div>
                                     <div class="form-type-radio form-item radio">
                                         <input type="radio" name="submitted-service" class="form-radio" id="service-2" value="fine-art">
-                                        <label class="art-option" for="service-2">艺术品</label>
+                                        <label class="art-option" for="service-2">特殊货物</label>
                                     </div>
                                     <div class="form-type-radio form-item radio">
                                         <input type="radio" name="submitted-service" class="form-radio" id="service-3" value="shipping">

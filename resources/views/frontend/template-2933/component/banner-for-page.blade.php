@@ -1,5 +1,5 @@
 {{--<!-- START: banner -->--}}
-<section class="probootstrap-intro banner-for-page" style="background-image: url({{ $banner_page_background or '' }}); height:360px;" data-stellar-background-ratio="0.5">
+<section class="probootstrap-intro banner-for-page" style="background-image: url({{ $banner_page_background or '' }}); background-position: center center;" data-stellar-background-ratio="0.5">
     <div class="block-fill">
         <div class="block-fill">
 

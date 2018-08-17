@@ -28,7 +28,7 @@
 
     @include('frontend.template-2933.component.banner-for-page',[
         'banner_page_title'=>trans('custom.text.quote_page_title'),
-        'banner_page_background'=>'/custom/images/banner.jpg'
+        'banner_page_background'=>'/custom/images/banner-quote.jpg'
     ])
 
     @if(App::isLocale('en')) @include('frontend.template-2933.module.module-quote-en')
