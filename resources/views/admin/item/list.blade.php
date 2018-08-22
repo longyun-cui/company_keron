@@ -20,7 +20,7 @@
                 <h3 class="box-title">
                     @if($category == 'info') 基本信息
                     @elseif($category == 'about') 关于我们
-                    @elseif($category == 'why') 选择我们
+                    @elseif($category == 'advantage') 选择KERON
                     @elseif($category == 'service') 服务项目
                     @elseif($category == 'faq') 常见问题
                     @elseif($category == 'coverage') 资讯动态
@@ -39,9 +39,9 @@
                         <a href="{{url('/admin/item/create?category=about')}}">
                             <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加关于我们</button>
                         </a>
-                    @elseif($category == 'why')
-                        <a href="{{url('/admin/item/create?category=why')}}">
-                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加选择我们</button>
+                    @elseif($category == 'advantage')
+                        <a href="{{url('/admin/item/create?category=advantage')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加选择KERON</button>
                         </a>
                     @elseif($category == 'cooperation')
                         <a href="{{url('/admin/item/create?category=cooperation')}}">

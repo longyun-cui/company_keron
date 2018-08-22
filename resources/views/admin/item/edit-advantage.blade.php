@@ -1,20 +1,20 @@
 @extends('admin.layout.layout')
 
 @section('title')
-    @if($operate == 'create') 添加选择我们 @else 编辑选择我们 @endif
+    @if($operate == 'create') 添加选择KERON @else 编辑选择KERON @endif
 @endsection
 
 @section('header')
-    @if($operate == 'create') 添加选择我们 @else 编辑选择我们 @endif
+    @if($operate == 'create') 添加选择KERON @else 编辑选择KERON @endif
 @endsection
 
 @section('description')
-    @if($operate == 'create') 添加选择我们 @else 编辑选择我们 @endif
+    @if($operate == 'create') 添加选择KERON @else 编辑选择KERON @endif
 @endsection
 
 @section('breadcrumb')
     <li><a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="{{url('/admin/item/list?category=advantage')}}"><i class="fa "></i> 选择我们列表</a></li>
+    <li><a href="{{url('/admin/item/list?category=advantage')}}"><i class="fa "></i> 选择选择KERON</a></li>
     <li><a href="#"><i class="fa "></i> Here</a></li>
 @endsection
 
@@ -26,7 +26,7 @@
         <div class="box box-info form-container">
 
             <div class="box-header with-border" style="margin:16px 0;">
-                <h3 class="box-title">@if($operate == 'create') 添加选择我们 @else 编辑选择我们 @endif</h3>
+                <h3 class="box-title">@if($operate == 'create') 添加选择KERON @else 编辑选择KERON @endif</h3>
                 <div class="box-tools pull-right">
                 </div>
             </div>
