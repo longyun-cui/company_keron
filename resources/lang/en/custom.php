@@ -46,7 +46,7 @@ return [
         'header_contact' => 'CONTACT',
 
         'footer_partner_title' => 'Partners',
-        'footer_wechat_title' => 'Wechat',
+        'footer_wechat_title' => 'WeChat Official Account',
         'footer_focus_title' => 'Follow Us',
         'footer_contact_title' => 'Contact',
 

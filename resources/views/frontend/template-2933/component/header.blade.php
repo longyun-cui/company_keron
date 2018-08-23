@@ -23,6 +23,13 @@
                 </li>
                 <li class="header-quote"><a href="{{ url('/quote') }}" style="color:#fff">{{ trans('custom.text.get_quote') }}</a></li>
 
+                <li class="header-wechat" role="button">
+                    <a href="javascript:void(0);" style="color:#fff"><i class="fa fa-weixin"></i> <b>微信在线客服</b></a>
+                    <span class="image-box">
+                        <img src="{{ url('/custom/images/wechat_online.jpeg') }}" alt="">
+                    </span>
+                </li>
+
                 <li class="header-quote" style="display:none">
                     @if(App::isLocale('en'))
                         <a href="{{ url('/custom/files/KERON2018_en.pdf') }}" target="_blank" style="color:#fff">PDF</a>
