@@ -299,7 +299,6 @@ class IndexRepository {
             $mine->custom3 = json_decode($mine->custom3);
 
             $cookie_language = request()->get('cookie_language');
-            var_dump($cookie_language.'--'.$mine->type);
 
             if($cookie_language == "zh_cn")
             {

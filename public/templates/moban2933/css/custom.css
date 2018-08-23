@@ -205,4 +205,6 @@
 
 
 
-
+@media (max-width: 768px) {
+    .fancybox-slide { padding: 4px !important; }
+}
