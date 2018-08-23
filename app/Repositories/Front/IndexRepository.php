@@ -450,6 +450,7 @@ class IndexRepository {
                 $insert_data['name'] =$post_data['submitted-name'];
             }
             $insert_data['phone'] =$post_data['submitted-phone'];
+            $insert_data['mobile'] =$post_data['submitted-phone'];
             $insert_data['email'] =$post_data['submitted-email'];
 
             $service_type = $post_data['submitted-service'];
@@ -483,6 +484,7 @@ class IndexRepository {
             $email_data['language'] = config('company.trans.'.$post_data['language']);
             $email_data['name'] = $insert_data['name'];
             $email_data['phone'] = $insert_data['phone'];
+            $email_data['mobile'] = $insert_data['mobile'];
             $email_data['email'] = $insert_data['email'];
             $email_data['type'] = config('company.trans.'.$service_type);
             if($service_type == 'moving') {
