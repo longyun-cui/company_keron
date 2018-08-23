@@ -34,7 +34,7 @@
                         <th>所属内容</th>
                         <th>姓名</th>
                         <th>手机</th>
-                        {{--<th>邮箱</th>--}}
+                        <th>邮箱</th>
                         <th>留言</th>
                         <th>创建时间</th>
                         <th>操作</th>
@@ -45,7 +45,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        {{--<td></td>--}}
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td>
@@ -159,6 +159,13 @@
                     },
                     {
                         "data": "mobile",
+                        'orderable': false,
+                        render: function(data, type, row, meta) {
+                            return data;
+                        }
+                    },
+                    {
+                        "data": "email",
                         'orderable': false,
                         render: function(data, type, row, meta) {
                             return data;
