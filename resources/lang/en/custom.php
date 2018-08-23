@@ -44,6 +44,7 @@ return [
         'header_about' => 'ABOUT',
         'header_service' => 'SERVICE',
         'header_contact' => 'CONTACT',
+        'header_wechat' => 'WeChat Online',
 
         'footer_partner_title' => 'Partners',
         'footer_wechat_title' => 'WeChat Official Account',

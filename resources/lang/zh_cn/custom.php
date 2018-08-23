@@ -44,6 +44,7 @@ return [
         'header_about' => '关于我们',
         'header_service' => '服务项目',
         'header_contact' => '联系我们',
+        'header_wechat' => '微信在线客服',
 
         'footer_partner_title' => '合作伙伴',
         'footer_wechat_title' => '微信公众号',

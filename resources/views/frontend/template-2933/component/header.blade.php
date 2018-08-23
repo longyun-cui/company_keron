@@ -24,7 +24,7 @@
                 <li class="header-quote"><a href="{{ url('/quote') }}" style="color:#fff">{{ trans('custom.text.get_quote') }}</a></li>
 
                 <li class="header-wechat" role="button">
-                    <a href="javascript:void(0);" style="color:#fff"><i class="fa fa-weixin"></i> <b>微信在线客服</b></a>
+                    <a href="javascript:void(0);" style="color:#fff"><i class="fa fa-weixin"></i> <b>{{ trans('custom.text.header_wechat') }}</b></a>
                     <span class="image-box">
                         <img src="{{ url('/custom/images/wechat_online.jpeg') }}" alt="">
                     </span>
