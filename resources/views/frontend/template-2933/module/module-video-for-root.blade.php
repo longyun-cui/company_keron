@@ -30,7 +30,7 @@
                     <a class="btn btn-ghost btn-ghost-white btn-lg btn-block" data-fancybox="" href="#myVideo">
                         <i class="fa fa-play-circle-o" style="font-size:64px;"></i>
                     </a>
-                    <video width="640" height="336" controls="" id="myVideo" style="display:none;">
+                    <video width="720" height="416" controls="" id="myVideo" style="display:none;">
                         <source src="{{ config('common.host.'.env('APP_ENV').'.cdn').trans('custom.text.video') }}" type="video/mp4">
                     </video>
 
