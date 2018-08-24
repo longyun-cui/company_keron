@@ -20,7 +20,7 @@ body{background:#fff;font-size:16px;font-weight:300;font-family:'Microsoft yahei
 ::selection{background:#000;color:#fff}
 ::-moz-selection{background:#000;color:#fff}
 .heading-with-icon,.probootstrap-product-tour h5,h1,h2,h3,h4{color:#374252;font-family:'Microsoft yahei',Rubik,sans-serif;margin:.5em 0 .5em;font-weight:inherit;line-height:1.2}
-h1{margin-top:0;font-size:1.602em}
+h1{margin-top:0;font-size:1.5em}
 .heading-with-icon,h2{font-size:1.424em}
 h3{font-size:1.266em}
 .probootstrap-product-tour h5,h4{font-size:1.125em}
@@ -61,28 +61,40 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 .probootstrap-main-nav li.header-wechat{clear:both;}
 .probootstrap-main-nav li.header-wechat .image-box{position:relative;width:120px;height:120px;}
 
-@media screen and (min-width:768px){
-    .probootstrap-main-nav li.header-quote{padding:0 12px;margin-left:32px;font-size:16px;background:#207eb8;}
+
+.probootstrap-main-nav li.header-quote{padding:0 12px;font-size:16px;background:#207eb8;}
+.probootstrap-main-nav li.header-quote a{font-size:14px;}
+
+.probootstrap-main-nav li.header-phone{}
+.probootstrap-main-nav li.header-phone a{height:100%;line-height:32px;}
+.probootstrap-main-nav li.header-phone i{font-size:24px;height:100%;line-height:24px;}
+.probootstrap-main-nav li.header-phone strong{color:#ea5d5f;font-size:20px;height:32px;line-height:32px;}
+
+.probootstrap-main-nav li.header-wechat{position:relative;padding:0 12px;background:#fff;clear:both;}
+.probootstrap-main-nav li.header-wechat i{color:#3eb94e;}
+.probootstrap-main-nav li.header-wechat b{color:#888;font-size:14px;}
+.probootstrap-main-nav li.header-wechat .image-box{margin-bottom:8px;float:left;clear:both;}
+.probootstrap-main-nav li.header-wechat .image-box img {width:100%;height:100%;}
+
+.probootstrap-main-nav li.header-language{padding:0 12px;background:rgba(255,255,255,1);clear:both;}
+.probootstrap-main-nav li.header-language a{color:#bbb;font-size:12px;}
+.probootstrap-main-nav li.header-language a b{color:#207eb8;font-size:16px;}
+.probootstrap-main-nav li.header-language:hover a {color:#207eb8;font-size:16px;}
+.probootstrap-main-nav li.header-language:hover b {color:#bbb;font-size:16px;}
+
+@media screen and (min-width:992px){
+    .probootstrap-main-nav li.header-quote{padding:0 12px;margin-left:16px;font-size:16px;background:#207eb8;}
     .probootstrap-main-nav li.header-quote a{font-size:14px;}
 
-    .probootstrap-main-nav li.header-phone{padding:0 0;margin-left:32px;}
-    .probootstrap-main-nav li.header-phone a{height:100%;line-height:32px;}
-    .probootstrap-main-nav li.header-phone i{font-size:24px;height:100%;line-height:32px;vertical-align:middle-;}
-    .probootstrap-main-nav li.header-phone strong{color:#ea5d5f;font-size:20px;height:32px;line-height:32px;}
+    .probootstrap-main-nav li.header-phone{padding:0 0;margin-left:16px;}
 
-    .probootstrap-main-nav li.header-wechat{position:relative;padding:0 12px;margin-left:32px;background:#fff;}
-    .probootstrap-main-nav li.header-wechat i{color:#3eb94e;}
-    .probootstrap-main-nav li.header-wechat b{color:#888;font-size:14px;}
+    .probootstrap-main-nav li.header-wechat{margin-left:16px;}
     .probootstrap-main-nav li.header-wechat .image-box{display:none;position:absolute;top:32px;left:0px; width:100%;height:auto;}
     .probootstrap-main-nav li.header-wechat .image-box img {width:100%;height:100%;}
 
     .probootstrap-main-nav li.header-wechat:hover .image-box {display:block;}
 
-    .probootstrap-main-nav li.header-language{padding:0 12px;margin-left:32px;background:rgba(255,255,255,1);}
-    .probootstrap-main-nav li.header-language a{color:#bbb;font-size:12px;}
-    .probootstrap-main-nav li.header-language a b{color:#207eb8;font-size:16px;}
-    .probootstrap-main-nav li.header-language:hover a {color:#207eb8;font-size:16px;}
-    .probootstrap-main-nav li.header-language:hover b {color:#bbb;font-size:16px;}
+    .probootstrap-main-nav li.header-language{margin-left:16px;}
 }
 
 
@@ -206,7 +218,7 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 }
 .probootstrap-half .text p{font-size:18px;color:rgba(255,255,255,.5);line-height:1.5}
 .section-heading .heading-with-icon,.section-heading{text-align:center;}
-.section-heading .heading-with-icon,.section-heading h2{font-size:2.074em;font-weight:500;text-align:center;}
+.section-heading .heading-with-icon,.section-heading h2{font-size:2em;font-weight:500;text-align:center;}
 .lead{font-size:1.125em;line-height:1.65;margin-top:32px;}
 .probootstrap-footer{padding:0;background:#fff;position:relative;color:#a8a8a8;/*background:#323232;*/}
 .probootstrap-footer .site-footer{padding:60px 0 80px;background:url(../img/footer-bg.png) bottom center no-repeat;}

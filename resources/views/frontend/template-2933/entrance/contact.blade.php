@@ -23,6 +23,15 @@
 @endsection
 
 
+
+
+{{--banner-image--}}
+@section('banner-image')
+    @if(!empty($info->custom2->contact_banner)) {{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$info->custom2->contact_banner }}
+    @else {{ '/custom/images/banner-contact.jpg' }}
+    @endif
+@endsection
+
 {{--custom-content--}}
 @section('custom-content')
 

@@ -6,10 +6,10 @@
             <img src="{{ url('/custom/images/logo-white.png') }}" alt="Image" style="height:40px;margin-top:-4px;">
         </a>
 
-        <a href="javascript:void(0);" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
+        <a href="javascript:void(0);" class="probootstrap-burger-menu visible-xs visible-sm"><i>Menu</i></a>
         <div class="mobile-menu-overlay"></div>
 
-        <nav role="navigation" class="probootstrap-nav hidden-xs">
+        <nav role="navigation" class="probootstrap-nav hidden-xs hidden-sm">
             <ul class="probootstrap-main-nav">
                 <li class="{{ $header_home_active or '' }}"><a href="{{ url('/') }}">{{ trans('custom.text.header_home') }}</a></li>
                 <li class="{{ $header_about_active or '' }}"><a href="{{ url('/about_us') }}">{{ trans('custom.text.header_about') }}</a></li>
@@ -50,7 +50,7 @@
                     @endif
                 </li>
             </ul>
-            <div class="extra-text visible-xs">
+            <div class="extra-text visible-xs visible-sm">
                 <a href="javascript:void(0);" class="probootstrap-burger-menu"><i>Menu</i></a>
                 <h5 class="mb20">{{ trans('custom.text.footer_focus_title') }}</h5>
                 <ul class="social-buttons header-social">

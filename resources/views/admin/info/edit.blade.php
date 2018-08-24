@@ -81,11 +81,10 @@
                     </div>
                 </div>
 
-                {{--视频背景--}}
+                {{--首页Video背景--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">视频背景</label>
+                    <label class="control-label col-md-2">首页Video背景</label>
                     <div class="col-md-8 fileinput-group">
-
                         <div class="fileinput fileinput-new" data-provides="fileinput">
                             <div class="fileinput-new thumbnail">
                                 @if(!empty($data->custom2->video_background))
@@ -106,15 +105,13 @@
                             </div>
                         </div>
                         <div id="titleImageError" style="color: #a94442"></div>
-
                     </div>
                 </div>
 
-                {{--FAQ背景--}}
+                {{--首页FAQ背景--}}
                 <div class="form-group">
-                    <label class="control-label col-md-2">FAQ背景</label>
+                    <label class="control-label col-md-2">首页FAQ背景</label>
                     <div class="col-md-8 fileinput-group">
-
                         <div class="fileinput fileinput-new" data-provides="fileinput">
                             <div class="fileinput-new thumbnail">
                                 @if(!empty($data->custom2->faq_background))
@@ -135,7 +132,249 @@
                             </div>
                         </div>
                         <div id="titleImageError" style="color: #a94442"></div>
+                    </div>
+                </div>
 
+                {{--关于我们 Banner--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">关于我们 Banner</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->about_banner))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->about_banner)}}" alt="" />
+                                @endif
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail">
+                            </div>
+                            <div class="btn-tool-group">
+                                <span class="btn-file">
+                                    <button class="btn btn-sm btn-primary fileinput-new">选择图片</button>
+                                    <button class="btn btn-sm btn-warning fileinput-exists">更改</button>
+                                    <input type="file" name="about_banner" />
+                                </span>
+                                <span class="">
+                                    <button class="btn btn-sm btn-danger fileinput-exists" data-dismiss="fileinput">移除</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="titleImageError" style="color: #a94442"></div>
+                    </div>
+                </div>
+
+                {{--选择KERON Banner--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">选择KERON Banner</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->advantage_banner))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->advantage_banner)}}" alt="" />
+                                @endif
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail">
+                            </div>
+                            <div class="btn-tool-group">
+                                <span class="btn-file">
+                                    <button class="btn btn-sm btn-primary fileinput-new">选择图片</button>
+                                    <button class="btn btn-sm btn-warning fileinput-exists">更改</button>
+                                    <input type="file" name="advantage_banner" />
+                                </span>
+                                <span class="">
+                                    <button class="btn btn-sm btn-danger fileinput-exists" data-dismiss="fileinput">移除</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="titleImageError" style="color: #a94442"></div>
+                    </div>
+                </div>
+
+                {{--合作伙伴 Banner--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">合作伙伴 Banner</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->cooperation_banner))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->cooperation_banner)}}" alt="" />
+                                @endif
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail">
+                            </div>
+                            <div class="btn-tool-group">
+                                <span class="btn-file">
+                                    <button class="btn btn-sm btn-primary fileinput-new">选择图片</button>
+                                    <button class="btn btn-sm btn-warning fileinput-exists">更改</button>
+                                    <input type="file" name="cooperation_banner" />
+                                </span>
+                                <span class="">
+                                    <button class="btn btn-sm btn-danger fileinput-exists" data-dismiss="fileinput">移除</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="titleImageError" style="color: #a94442"></div>
+                    </div>
+                </div>
+
+                {{--服务项目 Banner--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">服务项目 Banner</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->service_banner))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->service_banner)}}" alt="" />
+                                @endif
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail">
+                            </div>
+                            <div class="btn-tool-group">
+                                <span class="btn-file">
+                                    <button class="btn btn-sm btn-primary fileinput-new">选择图片</button>
+                                    <button class="btn btn-sm btn-warning fileinput-exists">更改</button>
+                                    <input type="file" name="service_banner" />
+                                </span>
+                                <span class="">
+                                    <button class="btn btn-sm btn-danger fileinput-exists" data-dismiss="fileinput">移除</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="titleImageError" style="color: #a94442"></div>
+                    </div>
+                </div>
+
+                {{--常见问题 Banner--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">常见问题 Banner</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->faq_banner))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->faq_banner)}}" alt="" />
+                                @endif
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail">
+                            </div>
+                            <div class="btn-tool-group">
+                                <span class="btn-file">
+                                    <button class="btn btn-sm btn-primary fileinput-new">选择图片</button>
+                                    <button class="btn btn-sm btn-warning fileinput-exists">更改</button>
+                                    <input type="file" name="faq_banner" />
+                                </span>
+                                <span class="">
+                                    <button class="btn btn-sm btn-danger fileinput-exists" data-dismiss="fileinput">移除</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="titleImageError" style="color: #a94442"></div>
+                    </div>
+                </div>
+
+                {{--资讯动态 Banner--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">资讯动态 Banner</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->coverage_banner))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->coverage_banner)}}" alt="" />
+                                @endif
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail">
+                            </div>
+                            <div class="btn-tool-group">
+                                <span class="btn-file">
+                                    <button class="btn btn-sm btn-primary fileinput-new">选择图片</button>
+                                    <button class="btn btn-sm btn-warning fileinput-exists">更改</button>
+                                    <input type="file" name="coverage_banner" />
+                                </span>
+                                <span class="">
+                                    <button class="btn btn-sm btn-danger fileinput-exists" data-dismiss="fileinput">移除</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="titleImageError" style="color: #a94442"></div>
+                    </div>
+                </div>
+
+                {{--优惠活动 Banner--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">优惠活动 Banner</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->activity_banner))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->activity_banner)}}" alt="" />
+                                @endif
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail">
+                            </div>
+                            <div class="btn-tool-group">
+                                <span class="btn-file">
+                                    <button class="btn btn-sm btn-primary fileinput-new">选择图片</button>
+                                    <button class="btn btn-sm btn-warning fileinput-exists">更改</button>
+                                    <input type="file" name="activity_banner" />
+                                </span>
+                                <span class="">
+                                    <button class="btn btn-sm btn-danger fileinput-exists" data-dismiss="fileinput">移除</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="titleImageError" style="color: #a94442"></div>
+                    </div>
+                </div>
+
+                {{--客户 Banner--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">客户 Banner</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->customer_banner))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->customer_banner)}}" alt="" />
+                                @endif
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail">
+                            </div>
+                            <div class="btn-tool-group">
+                                <span class="btn-file">
+                                    <button class="btn btn-sm btn-primary fileinput-new">选择图片</button>
+                                    <button class="btn btn-sm btn-warning fileinput-exists">更改</button>
+                                    <input type="file" name="customer_banner" />
+                                </span>
+                                <span class="">
+                                    <button class="btn btn-sm btn-danger fileinput-exists" data-dismiss="fileinput">移除</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="titleImageError" style="color: #a94442"></div>
+                    </div>
+                </div>
+
+                {{--询价 Banner--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">询价 Banner</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->quote_banner))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->quote_banner)}}" alt="" />
+                                @endif
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail">
+                            </div>
+                            <div class="btn-tool-group">
+                                <span class="btn-file">
+                                    <button class="btn btn-sm btn-primary fileinput-new">选择图片</button>
+                                    <button class="btn btn-sm btn-warning fileinput-exists">更改</button>
+                                    <input type="file" name="quote_banner" />
+                                </span>
+                                <span class="">
+                                    <button class="btn btn-sm btn-danger fileinput-exists" data-dismiss="fileinput">移除</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="titleImageError" style="color: #a94442"></div>
                     </div>
                 </div>
 

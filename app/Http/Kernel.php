@@ -59,6 +59,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 
         'admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'info' => \App\Http\Middleware\InfoMiddleware::class,
         'language' => \App\Http\Middleware\LanguageMiddleware::class,
         'language.get' => \App\Http\Middleware\LanguageGetMiddleware::class,
         'language.set' => \App\Http\Middleware\LanguageSetMiddleware::class,

@@ -66,7 +66,7 @@ Route::group(['prefix' => 'test'], function () {
 /*
  * 前台
  */
-Route::group(['namespace' => 'Front', 'middleware' => ['language']], function () {
+Route::group(['namespace' => 'Front', 'middleware' => ['info','language']], function () {
 
     $controller = "IndexController";
 

@@ -71,12 +71,9 @@ class IndexRepository {
 
 
 
-    // 【服务项目】【列表】
+    // 【关于我们】【列表】
     public function view_about_us()
     {
-//        $info = json_decode(json_encode(config('mitong.company.info')));
-//        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
-
         $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         $items = RootItem::where(['category'=>2, 'active'=>1])->orderby('updated_at', 'desc')->get();
@@ -86,16 +83,14 @@ class IndexRepository {
             $item->custom2 = json_decode($item->custom2);
             $item->custom3 = json_decode($item->custom3);
         }
+
         $html = view('frontend.template-2933.entrance.about-list')->with(['abouts'=>$items,'partners'=>$partners])->__toString();
 
         return $html;
     }
-    // 【服务项目】【列表】
+    // 【关于我们】【列表】
     public function view_about($id = 0)
     {
-//        $info = json_decode(json_encode(config('mitong.company.info')));
-//        $menus = RootMenu::where(['active'=>1])->orderby('order', 'asc')->get();
-
         $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         if($id == 0) $mine = RootItem::orderby('updated_at', 'desc')->first();

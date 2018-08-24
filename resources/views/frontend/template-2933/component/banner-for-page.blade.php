@@ -1,7 +1,9 @@
 {{--<!-- START: banner -->--}}
-<section class="probootstrap-intro banner-for-page" style="background-image: url({{ $banner_page_background or '' }}); background-position: center center;" data-stellar-background-ratio="0.5">
+<section class="probootstrap-intro banner-for-page" style-="background-image: url({{ $banner_page_background or '' }}); background-position: center center;" data-stellar-background-ratio="0.5">
     <div class="block-fill">
         <div class="block-fill">
+
+            <img src="@yield('banner-image')" alt="">
 
             <div class="probootstrap-intro-text">
                 <div class="banner-title-box">
@@ -9,7 +11,7 @@
                         <h1 class="probootstrap-animate">{{ $banner_page_title or '' }}</h1>
                     </div>
                 </div>
-                {{--<p class="watch-intro probootstrap-animate"><a href="" class="popup-vimeo">Watch the video <i class="icon-play2"></i></a></p>--}}
+                <p class="watch-intro probootstrap-animate"><a href="" class="popup-vimeo">Watch the video <i class="icon-play2"></i></a></p>
             </div>
 
         </div>

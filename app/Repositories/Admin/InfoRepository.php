@@ -96,7 +96,7 @@ class InfoRepository {
                     }
                 }
 
-                // 视频背景图片
+                // 首页Video背景图片
                 if(!empty($post_data["video_background"]))
                 {
                     $custom2 = json_decode($mine->custom2,true);
@@ -116,7 +116,7 @@ class InfoRepository {
                     }
                     else throw new Exception("upload-image-fail");
                 }
-                // FAQ背景图片
+                // 首页FAQ背景图片
                 if(!empty($post_data["faq_background"]))
                 {
                     $custom2 = json_decode($mine->custom2,true);
@@ -131,6 +131,186 @@ class InfoRepository {
                     if($result["result"])
                     {
                         $custom2["faq_background"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+                // 关于我们 Banner
+                if(!empty($post_data["about_banner"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_pic = isset($custom2["about_banner"]) ? $custom2["about_banner"] : '';
+                    if(!empty($mine_pic) && file_exists(storage_path("resource/" . $mine_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_pic));
+                    }
+
+                    $result = upload_storage($post_data["about_banner"]);
+                    if($result["result"])
+                    {
+                        $custom2["about_banner"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+                // 选择KERON Banner
+                if(!empty($post_data["advantage_banner"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_pic = isset($custom2["advantage_banner"]) ? $custom2["advantage_banner"] : '';
+                    if(!empty($mine_pic) && file_exists(storage_path("resource/" . $mine_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_pic));
+                    }
+
+                    $result = upload_storage($post_data["advantage_banner"]);
+                    if($result["result"])
+                    {
+                        $custom2["advantage_banner"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+                // 合作伙伴 Banner
+                if(!empty($post_data["cooperation_banner"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_pic = isset($custom2["cooperation_banner"]) ? $custom2["cooperation_banner"] : '';
+                    if(!empty($mine_pic) && file_exists(storage_path("resource/" . $mine_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_pic));
+                    }
+
+                    $result = upload_storage($post_data["cooperation_banner"]);
+                    if($result["result"])
+                    {
+                        $custom2["cooperation_banner"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+                // 服务项目 Banner
+                if(!empty($post_data["service_banner"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_pic = isset($custom2["service_banner"]) ? $custom2["service_banner"] : '';
+                    if(!empty($mine_pic) && file_exists(storage_path("resource/" . $mine_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_pic));
+                    }
+
+                    $result = upload_storage($post_data["service_banner"]);
+                    if($result["result"])
+                    {
+                        $custom2["service_banner"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+                // 常见问题 Banner
+                if(!empty($post_data["faq_banner"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_pic = isset($custom2["faq_banner"]) ? $custom2["faq_banner"] : '';
+                    if(!empty($mine_pic) && file_exists(storage_path("resource/" . $mine_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_pic));
+                    }
+
+                    $result = upload_storage($post_data["faq_banner"]);
+                    if($result["result"])
+                    {
+                        $custom2["faq_banner"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+                // 资讯动态 Banner
+                if(!empty($post_data["coverage_banner"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_pic = isset($custom2["coverage_banner"]) ? $custom2["coverage_banner"] : '';
+                    if(!empty($mine_pic) && file_exists(storage_path("resource/" . $mine_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_pic));
+                    }
+
+                    $result = upload_storage($post_data["coverage_banner"]);
+                    if($result["result"])
+                    {
+                        $custom2["coverage_banner"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+                // 优惠活动 Banner
+                if(!empty($post_data["activity_banner"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_pic = isset($custom2["activity_banner"]) ? $custom2["activity_banner"] : '';
+                    if(!empty($mine_pic) && file_exists(storage_path("resource/" . $mine_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_pic));
+                    }
+
+                    $result = upload_storage($post_data["activity_banner"]);
+                    if($result["result"])
+                    {
+                        $custom2["activity_banner"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+                // 客户 Banner
+                if(!empty($post_data["customer_banner"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_pic = isset($custom2["customer_banner"]) ? $custom2["customer_banner"] : '';
+                    if(!empty($mine_pic) && file_exists(storage_path("resource/" . $mine_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_pic));
+                    }
+
+                    $result = upload_storage($post_data["customer_banner"]);
+                    if($result["result"])
+                    {
+                        $custom2["customer_banner"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
+                // 询价 Banner
+                if(!empty($post_data["quote_banner"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_pic = isset($custom2["quote_banner"]) ? $custom2["quote_banner"] : '';
+                    if(!empty($mine_pic) && file_exists(storage_path("resource/" . $mine_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_pic));
+                    }
+
+                    $result = upload_storage($post_data["quote_banner"]);
+                    if($result["result"])
+                    {
+                        $custom2["quote_banner"] = $result["local"];
                         $mine->custom2 = json_encode($custom2);
                         $mine->save();
                     }
