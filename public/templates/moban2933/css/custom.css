@@ -35,7 +35,7 @@
 @media screen and (max-width:767px) {
     .item-left-right-style { margin-bottom: 8px; }
     .item-left-right-style .image-container { padding-top: 50%; }
-    .item-left-right-style:nth-of-type(even) .image-container { float: none-; }
+    .item-left-right-style:nth-of-type(even) .image-container { float: none; }
 }
 
 .color-blue { color:#2d4d9b; }
@@ -206,6 +206,23 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .fancybox-slide { padding: 4px !important; }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: calc(100% - 32px);
+        width: -moz-calc(100% - 32px);
+        width: -webkit-calc(100% - 32px);
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .probootstrap-logo { padding-left: 4px; }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .probootstrap-logo { padding-left: 4px; }
+    .probootstrap-nav { padding-right: 4px; }
 }
