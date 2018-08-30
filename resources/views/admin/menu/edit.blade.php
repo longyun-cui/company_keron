@@ -238,6 +238,13 @@
                     {{--</div>--}}
                 {{--</div>--}}
 
+                {{--优化alt--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">封面图片alt</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="custom[cover_pic_alt]" placeholder="封面图片alt，用于优化" value="{{$data->custom->cover_pic_alt or ''}}"></div>
+                    </div>
+                </div>
                 {{--cover 封面图片--}}
                 <div class="form-group">
                     <label class="control-label col-md-2">封面图片</label>
@@ -246,7 +253,7 @@
                         <div class="fileinput fileinput-new" data-provides="fileinput">
                             <div class="fileinput-new thumbnail">
                                 @if(!empty($data->cover_pic))
-                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->cover_pic.'?'.rand(0,99))}}" alt="" />
+                                    <img src="{{ url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->cover_pic) }}" alt="" />
                                 @endif
                             </div>
                             <div class="fileinput-preview fileinput-exists thumbnail">

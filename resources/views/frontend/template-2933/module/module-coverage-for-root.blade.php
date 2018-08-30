@@ -19,11 +19,11 @@
                                 <li class="mb20">
                                     <a href="{{ url('/coverage/'.$v->id) }}">
                                         <figure class="image-block--">
-                                            <img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="Image" class="img-responsive">
+                                            <img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="{{ $v->title or '' }}" class="img-responsive">
                                         </figure>
                                         <div class="text">
                                             <h4><b>{{ $v->title or '' }}</b></h4>
-                                            <p>{{ $v->subtitle or '' }} 理（上海）有限公司是一家成立于2005年，主要提供本地搬家业务&nbsp;</p>
+                                            <p>{{ $v->subtitle or '' }}</p>
                                             <p class="secondary-color rate"><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-half"></i></p>
                                         </div>
                                     </a>
@@ -47,7 +47,7 @@
                                     {{--<div class="icon text-center"><i class="icon-desktop"></i></div>--}}
                                     <figure class="image-block mb20">
                                         <div class="image-container">
-                                            <img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="Image">
+                                            <img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="{{ $v->title or '' }}">
                                         </div>
                                     </figure>
 

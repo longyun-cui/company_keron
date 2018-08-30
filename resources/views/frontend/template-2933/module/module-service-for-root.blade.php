@@ -14,7 +14,7 @@
                         <figure class="image-block">
                             <a href="{{ url('/services/'.$v->id) }}">
                                 <div class="image-container">
-                                    <img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="Image">
+                                    <img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="{{ $v->custom->cover_pic_alt or '' }}">
                                 </div>
                             </a>
                         </figure>
@@ -36,8 +36,8 @@
                                     <i class="icon-star-full"></i>
                                     <i class="icon-star-half"></i>
                                 </span>
-                                <a class="pull-right" href="javascript:void(0);"><i class="icon-thumbs-up"></i> 5,216</a>
-                                {{--<a class="pull-right" href="javascript:void(0);"><i class="icon-thumbs-down"></i> 32</a>--}}
+                                <a class="pull-right" href="javascript:void(0);" rel="nofollow"><i class="icon-thumbs-up"></i> 5,216</a>
+                                {{--<a class="pull-right" href="javascript:void(0);" rel="nofollow"><i class="icon-thumbs-down"></i> 32</a>--}}
                             </p>
                         </div>
                     </div>

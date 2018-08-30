@@ -36,6 +36,7 @@ return [
         'wechat_qrcode' => '',
         'weibo_name' => '',
         'weibo_address' => '',
+        'head_title' => '上海一站式搬家_厂房搬迁|国际搬家公司_上海海运物流仓储-龙臻国际物流有限公司',
     ],
 
     'text' => [
@@ -63,11 +64,11 @@ return [
         'about_page_title' => '关于我们',
         'about_page_subtitle' => '',
 
-        'advantage_title' => '为什么选择KERON？',
+        'advantage_title' => '为什么选择KERON国际搬家公司？',
         'advantage_subtitle' => '',
-        'advantage_root_title' => '为什么选择KERON？',
+        'advantage_root_title' => '为什么选择KERON国际搬家公司？',
         'advantage_root_subtitle' => '',
-        'advantage_page_title' => '为什么选择KERON？',
+        'advantage_page_title' => '为什么选择KERON国际搬家公司？',
         'advantage_page_subtitle' => '',
 
         'cooperation_title' => '合作伙伴',
@@ -78,7 +79,7 @@ return [
         'cooperation_page_subtitle' => '',
 
         'service_title' => '我们的服务',
-        'service_subtitle' => '打造私人定制化的一站式搬家理念',
+        'service_subtitle' => '上海龙臻国际搬家公司，打造私人定制化的一站式搬家理念',
         'service_root_title' => '我们的服务',
         'service_root_subtitle' => '',
         'service_page_title' => '我们的服务',
@@ -92,20 +93,20 @@ return [
         'faq_page_subtitle' => '',
 
         'video_title' => '视频展示',
-        'video_subtitle' => '观看视频，了解我们的搬家服务流程',
+        'video_subtitle' => '观看搬家仓储视频，了解我们的一条龙搬家服务流程',
         'video_root_title' => '视频展示',
-        'video_root_subtitle' => '观看视频，了解我们的搬家服务流程',
+        'video_root_subtitle' => '观看搬家仓储视频，了解我们的一条龙搬家服务流程',
         'video_page_title' => '视频展示',
-        'video_page_subtitle' => '观看视频，了解我们的搬家服务流程',
+        'video_page_subtitle' => '观看搬家仓储视频，了解我们的一条龙搬家服务流程',
         'video' => '/videos/KERON_ZH.mp4',
         'video_url' => 'https://v.youku.com/v_show/id_XMjQ4NTk0NDYyMA==.html',
         'video_player' => 'https://player.youku.com/embed/XMjQ4NTk0NDYyMA==',
 
-        'coverage_title' => '资讯动态',
+        'coverage_title' => '搬家仓储资讯动态',
         'coverage_subtitle' => '随时了解我们的动态',
-        'coverage_root_title' => '资讯动态',
+        'coverage_root_title' => '搬家仓储资讯动态',
         'coverage_root_subtitle' => '随时了解我们的动态',
-        'coverage_page_title' => '资讯动态',
+        'coverage_page_title' => '搬家仓储资讯动态',
         'coverage_page_subtitle' => '',
         'coverage_more' => '更多资讯',
 

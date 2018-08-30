@@ -134,6 +134,7 @@ class MenuRepository {
             if($mine)
             {
                 unset($mine->id);
+                $mine->custom = json_decode($mine->custom);
                 return view('admin.menu.edit')->with(['operate'=>'edit', 'encode_id'=>$id, 'data'=>$mine]);
             }
             else return response("该目录不存在！", 404);
@@ -183,6 +184,11 @@ class MenuRepository {
         DB::beginTransaction();
         try
         {
+            if(!empty($post_data['custom']))
+            {
+                $post_data['custom'] = json_encode($post_data['custom']);
+            }
+
             $bool = $mine->fill($post_data)->save();
             if($bool) {
 
@@ -198,11 +204,10 @@ class MenuRepository {
                         unlink(storage_path("resource/" . $mine_cover_pic));
                     }
 
-                    $upload = new CommonRepository();
-                    $result = $upload->upload($post_data["cover"], 'root-unique-menus' , 'cover_menu_'.$encode_id);
-                    if($result["status"])
+                    $result = upload_storage($post_data["cover"]);
+                    if($result["result"])
                     {
-                        $mine->cover_pic = $result["data"];
+                        $mine->cover_pic = $result["local"];
                         $mine->save();
                     }
                     else throw new Exception("upload-cover-fail");

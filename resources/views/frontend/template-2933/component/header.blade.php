@@ -3,10 +3,10 @@
     <div class="full-screen">
 
         <a href="{{ url('/') }}" class="probootstrap-logo">
-            <img src="{{ url('/custom/images/logo-white.png') }}" alt="Image" style="height:40px;margin-top:-4px;">
+            <img src="{{ url('/custom/images/logo-white.png') }}" alt="上海国际搬家公司" style="height:40px;margin-top:-4px;">
         </a>
 
-        <a href="javascript:void(0);" class="probootstrap-burger-menu visible-xs visible-sm"><i>Menu</i></a>
+        <a href="javascript:void(0);" rel="nofollow" class="probootstrap-burger-menu visible-xs visible-sm"><i>Menu</i></a>
         <div class="mobile-menu-overlay"></div>
 
         <nav role="navigation" class="probootstrap-nav hidden-xs hidden-sm">
@@ -24,7 +24,7 @@
                 <li class="header-quote"><a href="{{ url('/quote') }}" style="color:#fff">{{ trans('custom.text.get_quote') }}</a></li>
 
                 <li class="header-wechat" role="button">
-                    <a href="javascript:void(0);" style="color:#fff"><i class="fa fa-weixin"></i> <b>{{ trans('custom.text.header_wechat') }}</b></a>
+                    <a href="javascript:void(0);" rel="nofollow" style="color:#fff"><i class="fa fa-weixin"></i> <b>{{ trans('custom.text.header_wechat') }}</b></a>
                     <span class="image-box">
                         <img src="{{ url('/custom/images/wechat_online.jpeg') }}" alt="">
                     </span>
@@ -39,11 +39,11 @@
                 </li>
                 <li class="header-language" id="change-language" role="button">
                     @if(App::isLocale('en'))
-                        <a href="javascript:void(0);" title="切换到中文">
+                        <a href="javascript:void(0);" rel="nofollow" title="切换到中文">
                             <span class="{{ $english_active or '_none' }}"><b>EN</b>/中文</span>
                         </a>
                     @else
-                        <a href="javascript:void(0);" title="Switch languages to English">
+                        <a href="javascript:void(0);" rel="nofollow" title="Switch languages to English">
                             <span class="{{ $chinese_active or '_none' }}"><b>中文</b>/EN</span>
                             {{--<span class="{{ $english_active or '_none' }}" title="切换到中文"><b>EN</b>/中文</span>--}}
                         </a>
@@ -51,7 +51,7 @@
                 </li>
             </ul>
             <div class="extra-text visible-xs visible-sm">
-                <a href="javascript:void(0);" class="probootstrap-burger-menu"><i>Menu</i></a>
+                <a href="javascript:void(0);" rel="nofollow" class="probootstrap-burger-menu"><i>Menu</i></a>
                 <h5 class="mb20">{{ trans('custom.text.footer_focus_title') }}</h5>
                 <ul class="social-buttons header-social">
                     <li><a target="_blank" href="http://www.wechat.com">

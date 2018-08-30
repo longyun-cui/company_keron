@@ -39,7 +39,7 @@
         <div class="row _none">
             <div class="col-md-4 col-md-offset-4 probootstrap-animate-">
                 <p class="text-center">
-                    <a href="javascript:void(0);" class="btn btn-primary btn-lg btn-block" role="button">View All Services</a>
+                    <a href="javascript:void(0);" rel="nofollow" class="btn btn-primary btn-lg btn-block" role="button">View All Services</a>
                 </p>
             </div>
         </div>

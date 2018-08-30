@@ -4,9 +4,9 @@
 {{--html.head--}}
 @section('head_title'){{ $coverage->$view_title or '' }} | {{ trans('custom.info.name') }}@endsection
 @section('meta_author')@endsection
-@section('meta_title')@endsection
-@section('meta_description')@endsection
-@section('meta_keywords')@endsection
+@section('meta_title'){{ $coverage->$view_title or '' }} | {{ trans('custom.info.name') }}@endsection
+@section('meta_description'){{ config('common.meta_description') }}@endsection
+@section('meta_keywords'){{ config('common.meta_keywords') }}@endsection
 
 
 

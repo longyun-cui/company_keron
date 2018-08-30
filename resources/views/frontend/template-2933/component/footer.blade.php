@@ -34,7 +34,7 @@
 
                         @foreach($partners as $v)
                         <div class="col-xs-3 col-sm-2 col-md-3 partner-option">
-                            <a target="_blank" href="{{ $v->link_url or 'javascript:void(0);' }}">
+                            <a target="_blank" href="{{ $v->link_url or 'javascript:void(0);' }}" rel="nofollow">
                                 <figure>
                                     <div class="image-box"><img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="Image"></div>
                                 </figure>
@@ -71,37 +71,37 @@
 
                         <div class="footer-social">
 
-                            <a target="_blank" href="http://www.wechat.com">
+                            <a rel="nofollow" target="_blank" href="http://www.wechat.com">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-wechat.png') }}" alt="WeChat Logo">
                             </a>
-                            <a target="_blank" href="http://www.linkedin.com/company/keron-international-relocation-movers/">
+                            <a rel="nofollow" target="_blank" href="http://www.linkedin.com/company/keron-international-relocation-movers/">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-linkedin.png') }}" alt="Linkedin Logo">
                             </a>
-                            <a target="_blank" href="https://moveaide.com/movers/keron-international-relocation-shanghai-china-mover-reviews">
+                            <a rel="nofollow" target="_blank" href="https://moveaide.com/movers/keron-international-relocation-shanghai-china-mover-reviews">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-moveaide.png') }}" alt="MoveAide Logo">
                             </a>
-                            <a target="_blank" href="http://www.smartshanghai.com/venue/15561/keron_international_relocation_and_movers_zhongshan_bei_lu">
+                            <a rel="nofollow" target="_blank" href="http://www.smartshanghai.com/venue/15561/keron_international_relocation_and_movers_zhongshan_bei_lu">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-smart.png') }}" alt="Instagram Logo">
                             </a>
-                            <a target="_blank" href="http://www.thatsmags.com/shanghai">
+                            <a rel="nofollow" target="_blank" href="http://www.thatsmags.com/shanghai">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-thats.png') }}" alt="Instagram Logo">
                             </a>
-                            <a target="_blank" href="{{ trans('custom.text.video_url') }}">
+                            <a rel="nofollow" target="_blank" href="{{ trans('custom.text.video_url') }}">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-youku.png') }}" alt="Instagram Logo">
                             </a>
-                            <a target="_blank" href="https://www.baidu.com/">
+                            <a rel="nofollow" target="_blank" href="https://www.baidu.com/">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-baidu.png') }}" alt="Instagram Logo">
                             </a>
-                            <a target="_blank" href="https://plus.google.com/">
+                            <a rel="nofollow" target="_blank" href="https://plus.google.com/">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-google.png') }}" alt="Google Plus Logo">
                             </a>
-                            <a target="_blank" href="https://www.facebook.com/" style="display: none;">
+                            <a rel="nofollow" target="_blank" href="https://www.facebook.com/" style="display: none;">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-facebook.png') }}" alt="Facebook Logo">
                             </a>
-                            <a target="_blank" href="https://twitter.com/" style="display: none;">
+                            <a rel="nofollow" target="_blank" href="https://twitter.com/" style="display: none;">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-twitter.png') }}" alt="Twitter Logo">
                             </a>
-                            <a target="_blank" href="https://instagram.com/" style="display: none;">
+                            <a rel="nofollow" target="_blank" href="https://instagram.com/" style="display: none;">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-instagram.png') }}" alt="Instagram Logo">
                             </a>
 
@@ -167,11 +167,20 @@
                     <div>
                         <small> Copyright&copy;2018. {{ config('company.info.english_name') }} KERON All Rights Reserved.</small><br>
                     </div>
+                    <div>
+                        <small>
+                            <strong>上海一站式搬家</strong> |
+                            <strong>海运物流</strong> |
+                            <strong>厂房搬迁</strong> |
+                            <strong>仓储物流</strong> |
+                            <strong>上门打包搬家公司</strong>
+                        </small>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
 
-<a href="javascript:void(0);" class="js-backtotop _none" style="position:fixed; right:32px; bottom:32px;"><i class="fa fa-chevron-up"></i></a>
+<a href="javascript:void(0);"rel="nofollow" class="js-backtotop _none" style="position:fixed; right:32px; bottom:32px;"><i class="fa fa-chevron-up"></i></a>
 {{--<!-- END: footer -->--}}

@@ -47,6 +47,10 @@ class IndexRepository {
         $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
         $services = RootMenu::where(['category'=>11, 'active'=>1])->orderby('updated_at', 'desc')->get();
+        foreach($services as $service)
+        {
+            $service->custom = json_decode($service->custom);
+        }
 
         if(App::isLocale('en')) $language = 2;
         else $language = 1;
