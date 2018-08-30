@@ -92,18 +92,18 @@
                             <a rel="nofollow" target="_blank" href="https://www.baidu.com/">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-baidu.png') }}" alt="Instagram Logo">
                             </a>
-                            <a rel="nofollow" target="_blank" href="https://plus.google.com/">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-google.png') }}" alt="Google Plus Logo">
-                            </a>
-                            <a rel="nofollow" target="_blank" href="https://www.facebook.com/" style="display: none;">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-facebook.png') }}" alt="Facebook Logo">
-                            </a>
-                            <a rel="nofollow" target="_blank" href="https://twitter.com/" style="display: none;">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-twitter.png') }}" alt="Twitter Logo">
-                            </a>
-                            <a rel="nofollow" target="_blank" href="https://instagram.com/" style="display: none;">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-instagram.png') }}" alt="Instagram Logo">
-                            </a>
+                            {{--<a rel="nofollow" target="_blank" href="https://plus.google.com/">--}}
+                                {{--<img src="{{ asset('/common/images/logo-icon/icon-logo-google.png') }}" alt="Google Plus Logo">--}}
+                            {{--</a>--}}
+                            {{--<a rel="nofollow" target="_blank" href="https://www.facebook.com/" style="display: none;">--}}
+                                {{--<img src="{{ asset('/common/images/logo-icon/icon-logo-facebook.png') }}" alt="Facebook Logo">--}}
+                            {{--</a>--}}
+                            {{--<a rel="nofollow" target="_blank" href="https://twitter.com/" style="display: none;">--}}
+                                {{--<img src="{{ asset('/common/images/logo-icon/icon-logo-twitter.png') }}" alt="Twitter Logo">--}}
+                            {{--</a>--}}
+                            {{--<a rel="nofollow" target="_blank" href="https://instagram.com/" style="display: none;">--}}
+                                {{--<img src="{{ asset('/common/images/logo-icon/icon-logo-instagram.png') }}" alt="Instagram Logo">--}}
+                            {{--</a>--}}
 
                         </div>
                     </div>

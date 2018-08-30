@@ -109,6 +109,7 @@ return [
         'coverage_page_title' => '搬家仓储资讯动态',
         'coverage_page_subtitle' => '',
         'coverage_more' => '更多资讯',
+        'coverage_detail' => '查看详情',
 
         'customer_title' => '我们的客户',
         'customer_subtitle' => '',

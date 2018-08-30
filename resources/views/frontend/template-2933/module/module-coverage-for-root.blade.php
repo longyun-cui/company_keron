@@ -9,32 +9,6 @@
             </div>
         </div>
 
-        <div class="row probootstrap-gutter0 mb40 _none">
-            <div class="col-md-12">
-                <div class="probootstrap-footer-widget">
-                    {{--<h3>Popular Products</h3>--}}
-                    <ul class="probootstrap-product-list">
-                        @foreach($coverages as $v)
-                            <div class="col-md-4 col-sm-6 coverage-item">
-                                <li class="mb20">
-                                    <a href="{{ url('/coverage/'.$v->id) }}">
-                                        <figure class="image-block--">
-                                            <img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="{{ $v->title or '' }}" class="img-responsive">
-                                        </figure>
-                                        <div class="text">
-                                            <h4><b>{{ $v->title or '' }}</b></h4>
-                                            <p>{{ $v->subtitle or '' }}</p>
-                                            <p class="secondary-color rate"><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-half"></i></p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </div>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
-
 
         <div class="row probootstrap-gutter0 mb40">
             <div class="col-md-12">
@@ -56,7 +30,7 @@
                                     <hr>
                                     <div class="clearfix like" style="text-align: center">
                                         <a class="" href="{{ url('/coverage/'.$v->id) }}">
-                                            <span class="btn service-btn">{{ trans('custom.text.coverage_more') }}</span>
+                                            <span class="btn service-btn">{{ trans('custom.text.coverage_detail') }}</span>
                                         </a>
                                     </div>
                                     <div class="text-left with-icon colored _none">

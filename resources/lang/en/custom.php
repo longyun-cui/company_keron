@@ -108,6 +108,7 @@ return [
         'coverage_page_title' => 'News',
         'coverage_page_subtitle' => '',
         'coverage_more' => 'Read More',
+        'coverage_detail' => 'Read More',
 
         'customer_title' => 'Our Clients',
         'customer_subtitle' => '',
