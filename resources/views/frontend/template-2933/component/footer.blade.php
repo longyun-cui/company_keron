@@ -36,7 +36,7 @@
                         <div class="col-xs-3 col-sm-2 col-md-3 partner-option">
                             <a target="_blank" href="{{ $v->link_url or 'javascript:void(0);' }}" rel="nofollow">
                                 <figure>
-                                    <div class="image-box"><img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="Image"></div>
+                                    <div class="image-box"><img src="{{ config('common.host.'.env('APP_ENV').'.cdn').'/'.$v->cover_pic }}" alt="{{ $v->title or '' }}"></div>
                                 </figure>
                             </a>
                         </div>
@@ -52,7 +52,7 @@
                             <li class="mb10">
                                 <div class="text">
                                     <b><i class="fa fa-qrcode" style="visibility:hidden-;"></i></b> &nbsp;&nbsp;
-                                    <span><img src="{{ url(config('company.info.wechat_qrcode')) }}" alt="Wechat_Qrcode" style="height:120px;"></span>
+                                    <span><img src="{{ url(config('company.info.wechat_qrcode')) }}" alt="Wechat Qrcode" style="height:120px;"></span>
                                 </div>
                             </li>
                         </ul>
