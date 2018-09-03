@@ -119,7 +119,7 @@ return [
         'customer_more' => 'Read More',
 
         'contact_title' => 'Contact Us',
-        'contact_subtitle' => 'We will get back to you as soon as possible',
+        'contact_subtitle' => 'Have a question about your move or shipment ? Let us know how we can help you!',
         'contact_link' => 'Contact Us',
         'contact_root_title' => 'Contact Us',
         'contact_root_subtitle' => '',
@@ -139,6 +139,16 @@ return [
         'contact_message_subject' => 'Subject',
         'contact_message_message' => 'Message',
         'contact_message_submit' => 'Submit',
+
+        'contact_address_office_title' => 'Shanghai Office',
+        'contact_address_office1_title' => 'Office',
+        'contact_address_office2_title' => 'Office',
+        'contact_address_warehouse_title' => 'Warehouse base',
+
+        'contact_address_office' => 'No.1958 North Zhongshan rd. Room 2608. Putuo District 200063 Shanghai',
+        'contact_address_office1' => 'No.321 Qixia rd. Pudong District Shanghai',
+        'contact_address_office2' => 'No.196 Yangtai rd. Baoshan District Shanghai',
+        'contact_address_warehouse' => 'No.600 Huanan rd. Qingpu District Shanghai',
 
         'quote_title' => 'Get a Quote',
         'quote_subtitle' => '',

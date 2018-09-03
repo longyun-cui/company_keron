@@ -43,24 +43,40 @@
                 </form>
             </div>
 
-            <div class="col-md-4 col-md-offset-1 probootstrap-animate" style="padding:16px;margin-bottom:16px;border: 2px solid #e6e5e5;border-radius:8px;color:#666;background:#f2f2f2;">
+            <div class="col-md-4 col-md-offset-1 probootstrap-animate" style="padding:8px 16px;margin-bottom:16px;border: 2px solid #e6e5e5;border-radius:8px;color:#666;background:#f2f2f2;">
                 <div class="">
-                    <h2 style="color:#444;"><b>上海</b></h2>
+                    <h3 style="color:#444;"><b>{{ trans('custom.text.contact_address_office_title') }}</b></h3>
                     <ul class="probootstrap-contact-info">
-                        <li><i class="fa fa-location-arrow"></i> <span>{{ config('company.info.address') }}</span></li>
-                        <li><i class="fa fa-phone"></i><span>{{ config('company.info.telephone') }}</span></li>
+                        <li><i class="fa fa-location-arrow"></i> <span>{{ trans('custom.text.contact_address_office') }}</span></li>
+                        {{--<li><i class="fa fa-phone"></i><span>{{ config('company.info.telephone') }}</span></li>--}}
                         <li><i class="fa fa-envelope"></i><span>{{ config('company.info.email') }}</span></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="col-md-4 col-md-offset-1 probootstrap-animate" style="padding:16px;margin-bottom:16px;border: 2px solid #e6e5e5;border-radius:4px;color:#666;background:#f2f2f2">
+            <div class="col-md-4 col-md-offset-1 probootstrap-animate" style="padding:8px 16px;margin-bottom:16px;border: 2px solid #e6e5e5;border-radius:4px;color:#666;background:#f2f2f2">
                 <div class="">
-                    <h2 style="color:#444;"><b>北京</b></h2>
+                    <h3 style="color:#444;"><b>{{ trans('custom.text.contact_address_warehouse_title') }}</b></h3>
                     <ul class="probootstrap-contact-info">
-                        <li><i class="fa fa-location-arrow"></i> <span>{{ config('company.info.address') }}</span></li>
-                        <li><i class="fa fa-phone"></i><span>{{ config('company.info.telephone') }}</span></li>
-                        <li><i class="fa fa-envelope"></i><span>{{ config('company.info.email') }}</span></li>
+                        <li><i class="fa fa-location-arrow"></i> <span>{{ trans('custom.text.contact_address_warehouse') }}</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-md-offset-1 probootstrap-animate" style="padding:8px 16px;margin-bottom:16px;border: 2px solid #e6e5e5;border-radius:4px;color:#666;background:#f2f2f2">
+                <div class="">
+                    <h3 style="color:#444;"><b>{{ trans('custom.text.contact_address_office1_title') }}</b></h3>
+                    <ul class="probootstrap-contact-info">
+                        <li><i class="fa fa-location-arrow"></i> <span>{{ trans('custom.text.contact_address_office1') }}</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-md-offset-1 probootstrap-animate" style="padding:8px 16px;margin-bottom:16px;border: 2px solid #e6e5e5;border-radius:4px;color:#666;background:#f2f2f2">
+                <div class="">
+                    <h3 style="color:#444;"><b>{{ trans('custom.text.contact_address_office2_title') }}</b></h3>
+                    <ul class="probootstrap-contact-info">
+                        <li><i class="fa fa-location-arrow"></i> <span>{{ trans('custom.text.contact_address_office2') }}</span></li>
                     </ul>
                 </div>
             </div>

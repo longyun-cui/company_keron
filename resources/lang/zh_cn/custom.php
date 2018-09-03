@@ -120,7 +120,7 @@ return [
         'customer_more' => '查看全部',
 
         'contact_title' => '联系我们',
-        'contact_subtitle' => '我们会第一时间给您回复',
+        'contact_subtitle' => '无论您有任何问题、意见或建议，可通过以下方式联系我们，我们将竭尽所能为您服务！',
         'contact_link' => '联系我们',
         'contact_root_title' => '联系我们',
         'contact_root_subtitle' => '我们会第一时间给您回复',
@@ -140,6 +140,16 @@ return [
         'contact_message_subject' => '主题',
         'contact_message_message' => '留言',
         'contact_message_submit' => '提交',
+
+        'contact_address_office_title' => '办公室总部',
+        'contact_address_office1_title' => '办公室',
+        'contact_address_office2_title' => '办公室',
+        'contact_address_warehouse_title' => '上海市青浦区华南路600号',
+
+        'contact_address_office' => '上海市普陀区中山北路1958号2608室，200063',
+        'contact_address_office1' => '上海市浦东新区栖霞路321号',
+        'contact_address_office2' => '上海市宝山区杨泰路196号',
+        'contact_address_warehouse' => '上海市青浦区华南路600号',
 
         'quote_title' => '资讯报价',
         'quote_subtitle' => '',
