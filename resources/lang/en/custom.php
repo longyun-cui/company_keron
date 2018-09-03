@@ -141,8 +141,8 @@ return [
         'contact_message_submit' => 'Submit',
 
         'contact_address_office_title' => 'Shanghai Office',
-        'contact_address_office1_title' => 'Office',
-        'contact_address_office2_title' => 'Office',
+        'contact_address_office1_title' => 'Shanghai Office',
+        'contact_address_office2_title' => 'Shanghai Office',
         'contact_address_warehouse_title' => 'Warehouse base',
 
         'contact_address_office' => 'No.1958 North Zhongshan rd. Room 2608. Putuo District 200063 Shanghai',

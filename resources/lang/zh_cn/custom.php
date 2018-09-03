@@ -141,10 +141,10 @@ return [
         'contact_message_message' => '留言',
         'contact_message_submit' => '提交',
 
-        'contact_address_office_title' => '办公室总部',
-        'contact_address_office1_title' => '办公室',
-        'contact_address_office2_title' => '办公室',
-        'contact_address_warehouse_title' => '上海市青浦区华南路600号',
+        'contact_address_office_title' => '上海办公室总部',
+        'contact_address_office1_title' => '上海办公室',
+        'contact_address_office2_title' => '上海办公室',
+        'contact_address_warehouse_title' => '上海仓库总部',
 
         'contact_address_office' => '上海市普陀区中山北路1958号2608室，200063',
         'contact_address_office1' => '上海市浦东新区栖霞路321号',

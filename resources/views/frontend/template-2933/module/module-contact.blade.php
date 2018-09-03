@@ -48,7 +48,7 @@
                     <h3 style="color:#444;"><b>{{ trans('custom.text.contact_address_office_title') }}</b></h3>
                     <ul class="probootstrap-contact-info">
                         <li><i class="fa fa-location-arrow"></i> <span>{{ trans('custom.text.contact_address_office') }}</span></li>
-                        {{--<li><i class="fa fa-phone"></i><span>{{ config('company.info.telephone') }}</span></li>--}}
+                        <li><i class="fa fa-phone"></i><span>{{ config('company.info.telephone') }}</span></li>
                         <li><i class="fa fa-envelope"></i><span>{{ config('company.info.email') }}</span></li>
                     </ul>
                 </div>
@@ -59,6 +59,7 @@
                     <h3 style="color:#444;"><b>{{ trans('custom.text.contact_address_warehouse_title') }}</b></h3>
                     <ul class="probootstrap-contact-info">
                         <li><i class="fa fa-location-arrow"></i> <span>{{ trans('custom.text.contact_address_warehouse') }}</span></li>
+                        <li><i class="fa fa-phone"></i><span>{{ config('company.info.telephone') }}</span></li>
                     </ul>
                 </div>
             </div>
@@ -68,6 +69,7 @@
                     <h3 style="color:#444;"><b>{{ trans('custom.text.contact_address_office1_title') }}</b></h3>
                     <ul class="probootstrap-contact-info">
                         <li><i class="fa fa-location-arrow"></i> <span>{{ trans('custom.text.contact_address_office1') }}</span></li>
+                        <li><i class="fa fa-phone"></i><span>{{ config('company.info.telephone') }}</span></li>
                     </ul>
                 </div>
             </div>
@@ -77,6 +79,7 @@
                     <h3 style="color:#444;"><b>{{ trans('custom.text.contact_address_office2_title') }}</b></h3>
                     <ul class="probootstrap-contact-info">
                         <li><i class="fa fa-location-arrow"></i> <span>{{ trans('custom.text.contact_address_office2') }}</span></li>
+                        <li><i class="fa fa-phone"></i><span>{{ config('company.info.telephone') }}</span></li>
                     </ul>
                 </div>
             </div>
