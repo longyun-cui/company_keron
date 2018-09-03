@@ -16,7 +16,7 @@
     font-style:normal
 }
 html{overflow-x:hidden;font-size:1em}
-body{background:#fff;font-size:16px;font-weight:300;font-family:'Microsoft yahei',Rubik,sans-serif;line-height:1.8;color:#7e8890}
+body{background:#fff;font-size:16px;font-weight:300;font-family:"Hiragino Sans GB",'Microsoft yahei',Rubik,sans-serif;line-height:1.8;color:#7e8890}
 ::selection{background:#000;color:#fff}
 ::-moz-selection{background:#000;color:#fff}
 .heading-with-icon,.probootstrap-product-tour h5,h1,h2,h3,h4{color:#374252;font-family:'Microsoft yahei',Rubik,sans-serif;margin:.5em 0 .5em;font-weight:inherit;line-height:1.2}
@@ -68,7 +68,7 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 .probootstrap-main-nav li.header-phone{}
 .probootstrap-main-nav li.header-phone a{height:100%;line-height:32px;}
 .probootstrap-main-nav li.header-phone i{font-size:24px;height:100%;line-height:24px;}
-.probootstrap-main-nav li.header-phone strong{color:#ea5d5f;font-size:20px;height:32px;line-height:32px;}
+.probootstrap-main-nav li.header-phone strong{color:#ea5d5f;height:32px;line-height:32px;}
 
 .probootstrap-main-nav li.header-wechat{position:relative;padding:0 12px;background:#fff;clear:both;}
 .probootstrap-main-nav li.header-wechat i{color:#3eb94e;}
