@@ -20,7 +20,7 @@
     object-fit: cover;
     object-position: 50% 50%;
 }
-.item-left-right-style .text-container { padding: 32px; color: #555; }
+.item-left-right-style .text-container { padding: 32px; color: #444; }
 
 .item-left-right-style { background: #efefef; }
 .item-left-right-style:nth-of-type(odd) { background: #efefef; }
@@ -31,6 +31,10 @@
 
 .service-item .title-row { text-align:center; }
 .service-item .title-row a { font-size:20px;font-weight:bold;color:#2d4d9b !important; }
+
+@media screen and (max-width:1200px) {
+    .item-left-right-style .image-container { padding-top: 30%; }
+}
 
 @media screen and (max-width:767px) {
     .item-left-right-style { margin-bottom: 8px; }
