@@ -170,7 +170,8 @@
                     <div>
                         <small>
                             <strong>上海一站式搬家</strong> |
-                            <strong>海运物流</strong> |
+                            <strong>企业搬迁</strong> |
+                            <strong>国际货运物流</strong> |
                             <strong>厂房搬迁</strong> |
                             <strong>仓储物流</strong> |
                             <strong>上门打包搬家公司</strong>
