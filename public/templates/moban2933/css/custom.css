@@ -20,7 +20,7 @@
     object-fit: cover;
     object-position: 50% 50%;
 }
-.item-left-right-style .text-container { padding: 32px; color: #444; }
+.item-left-right-style .text-container { padding:32px;color:#444;font-weight:400; }
 
 .item-left-right-style { background: #efefef; }
 .item-left-right-style:nth-of-type(odd) { background: #efefef; }
