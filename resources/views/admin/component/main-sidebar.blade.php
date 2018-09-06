@@ -110,6 +110,12 @@
             </li>
 
             <li class="treeview">
+                <a href="{{ url('/admin/item/list?category=service_detail') }}">
+                    <i class="fa fa-circle-o text-green"></i> <span>项目详情</span>
+                </a>
+            </li>
+
+            <li class="treeview">
                 <a href="{{ url('/admin/item/list?category=faq') }}">
                     <i class="fa fa-circle-o text-green"></i> <span>常见问题</span>
                 </a>

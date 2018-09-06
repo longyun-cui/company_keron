@@ -22,6 +22,7 @@
                     @elseif($category == 'about') 关于我们
                     @elseif($category == 'advantage') 选择KERON
                     @elseif($category == 'service') 服务项目
+                    @elseif($category == 'service_detail') 服务详情
                     @elseif($category == 'faq') 常见问题
                     @elseif($category == 'coverage') 资讯动态
                     @elseif($category == 'cooperation') 合作伙伴
@@ -50,6 +51,10 @@
                     @elseif($category == 'service')
                         <a href="{{url('/admin/item/create?category=service')}}">
                             <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加服务项目</button>
+                        </a>
+                    @elseif($category == 'service_detail')
+                        <a href="{{url('/admin/item/create?category=service_detail')}}">
+                            <button type="button" onclick="" class="btn btn-success pull-right"><i class="fa fa-plus"></i> 添加服务详情</button>
                         </a>
                     @elseif($category == 'faq')
                         <a href="{{url('/admin/item/create?category=faq')}}">
@@ -181,6 +186,7 @@
                             else if(row.category == 2) category = 'advantage';
                             else if(row.category == 9) category = 'cooperation';
                             else if(row.category == 11) category = 'service';
+                            else if(row.category == 67) category = 'service_detail';
                             else if(row.category == 18) category = 'FAQ';
                             else if(row.category == 21) category = 'coverage';
                             else if(row.category == 29) category = 'activity';
@@ -197,6 +203,7 @@
                             else if(data == 5) return '<small class="label bg-green">选择我们</small>';
                             else if(data == 9) return '<small class="label bg-purple">合作加盟</small>';
                             else if(data == 11) return '<small class="label bg-primary">服务项目</small>';
+                            else if(data == 67) return '<small class="label bg-blue">服务详情</small>';
                             else if(data == 12) return '<small class="label bg-teal">未定义</small>';
                             else if(data == 18) return '<small class="label bg-orange">常见问题</small>';
                             else if(data == 21) return '<small class="label bg-maroon">资讯动态</small>';

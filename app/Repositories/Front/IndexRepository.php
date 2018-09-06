@@ -199,7 +199,7 @@ class IndexRepository {
 
         $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
-        if($id != 0) $mine = RootItem::where(['id'=>$id])->first();
+        if($id != 0) $mine = RootItem::with(['children'])->where(['id'=>$id])->first();
         else $mine = RootItem::where(['category'=>11])->orderby('updated_at', 'desc')->first();
         if(isset($mine))
         {

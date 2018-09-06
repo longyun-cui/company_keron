@@ -36,6 +36,7 @@ class ItemRepository {
         else if($category == "advantage") $query->where('category', 5);
         else if($category == "cooperation") $query->where('category', 9);
         else if($category == "service") $query->where('category', 11);
+        else if($category == "service_detail") $query->where('category', 67);
         else if($category == "faq") $query->where('category', 18);
         else if($category == "coverage") $query->where('category', 21);
         else if($category == "activity") $query->where('category', 29);
@@ -87,6 +88,7 @@ class ItemRepository {
         elseif($category == 'advantage') $view_blade = 'admin.item.edit-advantage';
         elseif($category == 'cooperation') $view_blade = 'admin.item.edit-cooperation';
         elseif($category == 'service') $view_blade = 'admin.item.edit-service';
+        elseif($category == 'service_detail') $view_blade = 'admin.item.edit-service-detail';
         elseif($category == 'faq') $view_blade = 'admin.item.edit-faq';
         elseif($category == 'coverage') $view_blade = 'admin.item.edit-coverage';
         elseif($category == 'activity') $view_blade = 'admin.item.edit-activity';
@@ -98,7 +100,15 @@ class ItemRepository {
         elseif($category == 'service') $menus = RootMenu::where(['category'=>11])->get();
         else $menus = [];
 
-        return view($view_blade)->with(['operate'=>'create', 'encode_id'=>encode(0), 'menus'=>$menus]);
+        if($category == 'service_detail')
+        {
+            $services = RootItem::whereHas('menu',
+                function($query) { $query->where(['category'=>11,'type'=>1]); }
+            )->where(['category'=>11])->get();
+        }
+        else $services = [];
+
+        return view($view_blade)->with(['operate'=>'create', 'encode_id'=>encode(0), 'menus'=>$menus, 'services'=>$services]);
     }
 
     // 返回【编辑】视图
@@ -132,6 +142,7 @@ class ItemRepository {
                 elseif($category == '5') $view_blade = 'admin.item.edit-advantage';
                 elseif($category == '9') $view_blade = 'admin.item.edit-cooperation';
                 elseif($category == '11') $view_blade = 'admin.item.edit-service';
+                elseif($category == '67') $view_blade = 'admin.item.edit-service-detail';
                 elseif($category == '18') $view_blade = 'admin.item.edit-faq';
                 elseif($category == '21') $view_blade = 'admin.item.edit-coverage';
                 elseif($category == '29') $view_blade = 'admin.item.edit-activity';
@@ -143,7 +154,16 @@ class ItemRepository {
                 elseif($category == '11') $menus = RootMenu::where(['category'=>11])->get();
                 else $menus = [];
 
-                return view($view_blade)->with(['operate'=>'edit', 'encode_id'=>$id, 'menus'=>$menus, 'data'=>$mine]);
+                if($category == '67')
+                {
+                    $services = RootItem::whereHas('menu',
+                        function($query) { $query->where(['category'=>11,'type'=>1]); }
+                    )->where(['category'=>11])->get();
+                }
+                else $services = [];
+
+
+                return view($view_blade)->with(['operate'=>'edit', 'encode_id'=>$id, 'menus'=>$menus, 'services'=>$services, 'data'=>$mine]);
             }
             else return response("该产品不存在！", 404);
         }

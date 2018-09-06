@@ -360,7 +360,7 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 .probootstrap-contact-info,.with-icon{padding:0;margin:0 0 16px}
 .probootstrap-contact-info li,.with-icon li{padding:0;margin:8px 0;list-style:none;line-height:24px;display:table}
 .probootstrap-contact-info li>i,.probootstrap-contact-info li>span,.with-icon li>i,.with-icon li>span{vertical-align:top;display:table-cell}
-.probootstrap-contact-info li>i,.with-icon li>i{font-size:20px;position:relative;top:4px;width:30px}
+.probootstrap-contact-info li>i,.with-icon li>i{font-size:16px;position:relative;top:4px;width:30px}
 .with-icon li i{top:4px;font-size:15px}
 .with-icon.colored i{color:#ff7676}
 .flexslider,.flexslider .slides>li,.slider-height{height:800px}

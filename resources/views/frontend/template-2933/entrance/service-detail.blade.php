@@ -40,6 +40,7 @@
         'banner_page_background'=>'/custom/images/banner-service.jpg'
     ])
 
-    @include('frontend.template-2933.module.module-item', ['item'=>$service])
+    {{--@include('frontend.template-2933.module.module-item', ['item'=>$service])--}}
+    @include('frontend.template-2933.module.module-service-for-detail', ['item'=>$service])
 
 @endsection

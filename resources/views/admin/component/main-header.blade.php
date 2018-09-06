@@ -59,6 +59,11 @@
                                 </a>
                             </li>
                             <li class="header">
+                                <a href="{{url('/admin/item/create?category=service_detail')}}">
+                                    <i class="fa fa-plus text-green"></i> 服务详情
+                                </a>
+                            </li>
+                            <li class="header">
                                 <a href="{{url('/admin/item/create?category=faq')}}">
                                     <i class="fa fa-plus text-green"></i> 常见问题
                                 </a>
