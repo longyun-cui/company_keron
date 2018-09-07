@@ -4,14 +4,20 @@
     <head>
 
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" type="image/ico" href="{{ url('favicon.ico') }}">
+        <link rel="shortcut icon" type="image/png" href="{{ url('favicon.png') }}">
+        <link rel="icon" sizes="16x16 32x32 64x64" href="{{ url('favicon.ico') }}">
+        <link rel="icon" type="image/png" sizes="196x196" href="{{ url('favicon.png') }}">
 
         <title>@yield('head_title')</title>
         <meta name="author" content="@yield('meta_author')" />
         <meta name="description" content="@yield('meta_description')" />
         <meta name="keywords" content="@yield('meta_keywords')" />
 
-        <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {{--<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">--}}
 
         <link rel="stylesheet" href="{{ asset('/templates/moban2933/css/styles-merged.css') }}">
         <link rel="stylesheet" href="{{ asset('/templates/moban2933/css/style.min.css') }}">
