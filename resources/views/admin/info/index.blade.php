@@ -207,6 +207,19 @@
                         </div>
                     </div>
                 </div>
+                {{--联系我们 Banner--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">联系我们 Banner：</label>
+                    <div class="col-md-8 fileinput-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                @if(!empty($data->custom2->contact_banner))
+                                    <img src="{{url(config('common.host.'.env('APP_ENV').'.cdn').'/'.$data->custom2->contact_banner)}}" alt="" />
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {{--LOGO--}}
                 <div class="form-group _none">
                     <label class="control-label col-md-2">LOGO：</label>

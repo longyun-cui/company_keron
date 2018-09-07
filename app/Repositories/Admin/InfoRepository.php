@@ -296,6 +296,26 @@ class InfoRepository {
                     }
                     else throw new Exception("upload-image-fail");
                 }
+                // 联系我们 Banner
+                if(!empty($post_data["contact_banner"]))
+                {
+                    $custom2 = json_decode($mine->custom2,true);
+                    // 删除原封面图片
+                    $mine_pic = isset($custom2["contact_banner"]) ? $custom2["contact_banner"] : '';
+                    if(!empty($mine_pic) && file_exists(storage_path("resource/" . $mine_pic)))
+                    {
+                        unlink(storage_path("resource/" . $mine_pic));
+                    }
+
+                    $result = upload_storage($post_data["contact_banner"]);
+                    if($result["result"])
+                    {
+                        $custom2["contact_banner"] = $result["local"];
+                        $mine->custom2 = json_encode($custom2);
+                        $mine->save();
+                    }
+                    else throw new Exception("upload-image-fail");
+                }
                 // 询价 Banner
                 if(!empty($post_data["quote_banner"]))
                 {
