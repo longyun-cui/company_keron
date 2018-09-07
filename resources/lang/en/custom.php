@@ -118,12 +118,12 @@ return [
         'customer_page_subtitle' => '',
         'customer_more' => 'Read More',
 
-        'contact_title' => 'Contact Us',
+        'contact_title' => 'Let\'s Connect',
         'contact_subtitle' => 'Have a question about your move or shipment ? Let us know how we can help you!',
-        'contact_link' => 'Contact Us',
-        'contact_root_title' => 'Contact Us',
+        'contact_link' => 'Let\'s Connect',
+        'contact_root_title' => 'Let\'s Connect',
         'contact_root_subtitle' => '',
-        'contact_page_title' => 'CONTACT US',
+        'contact_page_title' => 'Let\'s Connect',
         'contact_page_subtitle' => '',
 
         'activity_title' => 'Preferential Activity',
