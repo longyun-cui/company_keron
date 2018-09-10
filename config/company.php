@@ -20,7 +20,7 @@
             'telephone' => '4008-215-527',
             'mobile' => '186-2151-9928',
             'email' => 'mail@keronmoving.com',
-            'wechat_id' => 'keron_moving',
+            'wechat_id' => 'KERONwechat',
             'wechat_qrcode' => '/custom/images/wechat.png',
             'weibo_name' => '',
             'weibo_address' => '',
