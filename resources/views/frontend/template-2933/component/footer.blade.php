@@ -83,14 +83,14 @@
                             <a rel="nofollow" target="_blank" href="http://www.smartshanghai.com/venue/15561/keron_international_relocation_and_movers_zhongshan_bei_lu">
                                 <img src="{{ asset('/common/images/logo-icon/icon-logo-smart.png') }}" alt="Instagram Logo">
                             </a>
-                            <a rel="nofollow" target="_blank" href="http://www.thatsmags.com/shanghai">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-thats.png') }}" alt="Instagram Logo">
+                            <a rel="nofollow" target="_blank" href="http://www.thatsmags.com/shanghai/directory/1795108/keron-international-relocation-and-movers">
+                                <img src="{{ asset('/common/images/logo-icon/icon-logo-thats.png') }}" alt="Thatsmags Logo">
                             </a>
                             <a rel="nofollow" target="_blank" href="{{ trans('custom.text.video_url') }}">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-youku.png') }}" alt="Instagram Logo">
+                                <img src="{{ asset('/common/images/logo-icon/icon-logo-youku.png') }}" alt="Youku Logo">
                             </a>
                             <a rel="nofollow" target="_blank" href="https://www.baidu.com/">
-                                <img src="{{ asset('/common/images/logo-icon/icon-logo-baidu.png') }}" alt="Instagram Logo">
+                                <img src="{{ asset('/common/images/logo-icon/icon-logo-baidu.png') }}" alt="Baidu Logo">
                             </a>
                             {{--<a rel="nofollow" target="_blank" href="https://plus.google.com/">--}}
                                 {{--<img src="{{ asset('/common/images/logo-icon/icon-logo-google.png') }}" alt="Google Plus Logo">--}}
