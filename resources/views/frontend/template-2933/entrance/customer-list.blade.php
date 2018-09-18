@@ -2,9 +2,9 @@
 
 
 {{--html.head--}}
-@section('head_title'){{ trans('custom.text.faq_title') }} | {{ trans('custom.info.short_name') }}@endsection
+@section('head_title'){{ trans('custom.text.customer_title') }} | {{ trans('custom.info.short_name') }}@endsection
 @section('meta_author')@endsection
-@section('meta_title'){{ trans('custom.text.faq_title') }} | {{ trans('custom.info.short_name') }}@endsection
+@section('meta_title'){{ trans('custom.text.customer_title') }} | {{ trans('custom.info.short_name') }}@endsection
 @section('meta_description'){{ config('common.meta_description') }}@endsection
 @section('meta_keywords'){{ config('common.meta_keywords') }}@endsection
 
