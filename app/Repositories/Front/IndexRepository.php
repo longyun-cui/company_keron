@@ -224,7 +224,7 @@ class IndexRepository {
 
         $partners = RootItem::where(['category'=>9, 'active'=>1])->orderby('updated_at', 'desc')->get();
 
-        $items = RootItem::where(['category'=>18, 'active'=>1])->orderby('updated_at', 'desc')->paginate(16);
+        $items = RootItem::where(['category'=>18, 'active'=>1])->orderby('order', 'desc')->get();
         foreach($items as $item)
         {
             $item->custom = json_decode($item->custom);

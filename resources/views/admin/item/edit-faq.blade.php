@@ -60,6 +60,13 @@
                     </div>
                 </div>
 
+                {{--排序--}}
+                <div class="form-group">
+                    <label class="control-label col-md-2">排序</label>
+                    <div class="col-md-8 ">
+                        <div><input type="text" class="form-control" name="order" placeholder="请输入数字" value="{{$data->order or ''}}"></div>
+                    </div>
+                </div>
                 {{--标题--}}
                 <div class="form-group">
                     <label class="control-label col-md-2">标题</label>

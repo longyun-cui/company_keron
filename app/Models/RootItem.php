@@ -7,7 +7,7 @@ class RootItem extends Model
     //
     protected $table = "root_item";
     protected $fillable = [
-        'sort', 'category', 'type', 'admin_id', 'menu_id', 'item_id', 'active',
+        'sort', 'category', 'type', 'admin_id', 'menu_id', 'item_id', 'active', 'order',
         'name', 'title', 'subtitle', 'description', 'content', 'custom', 'custom2', 'custom3', 'link_url', 'cover_pic',
         'title_en', 'subtitle_en', 'description_en', 'content_en',
         'visit_num', 'share_num'

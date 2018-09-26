@@ -217,6 +217,7 @@ class ItemRepository {
                 $post_data['custom'] = json_encode($post_data['custom']);
             }
 
+//            dd($post_data);
             $bool = $mine->fill($post_data)->save();
             if($bool)
             {
