@@ -17,6 +17,44 @@ class LanguageMiddleware
 
     public function handle($request, Closure $next)
     {
+        $request_language = request('language','default');
+        if($request_language == 'en')
+        {
+            view()->share('chinese_active','_none');
+            view()->share('english_active','');
+            view()->share('english_suffix','_en');
+
+            view()->share('view_title','title_en');
+            view()->share('view_subtitle','subtitle_en');
+            view()->share('view_description','description_en');
+            view()->share('view_content','content_en');
+
+            setCookie('language', $request_language);
+            App::setLocale($request_language);
+            $params['cookie_language'] = $request_language;
+            $request->attributes->add($params);
+
+            return $next($request);
+        }
+        else if($request_language == 'zh_cn')
+        {
+            view()->share('chinese_active','');
+            view()->share('english_active','_none');
+            view()->share('english_suffix','');
+
+            view()->share('view_title','title');
+            view()->share('view_subtitle','subtitle');
+            view()->share('view_description','description');
+            view()->share('view_content','content');
+
+            setCookie('language', $request_language);
+            App::setLocale($request_language);
+            $params['cookie_language'] = $request_language;
+            $request->attributes->add($params);
+
+            return $next($request);
+        }
+
         if(isset($_COOKIE['language']))
         {
             $language = $_COOKIE['language'];

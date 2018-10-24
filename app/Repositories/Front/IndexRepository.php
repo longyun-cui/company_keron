@@ -270,6 +270,11 @@ class IndexRepository {
 
         if(isset($_COOKIE['language']) &&  $_COOKIE['language']=="en") $type = 2;
         else $type = 1;
+
+        $cookie_language = request()->get('cookie_language');
+        if($cookie_language == 'en') $type = 2;
+        else if($cookie_language == 'zh_cn') $type = 1;
+
         $coverages = RootItem::where(['category'=>21, 'type'=>$type, 'active'=>1])->orderby('updated_at', 'desc')->paginate(12);
         foreach($coverages as $item)
         {
