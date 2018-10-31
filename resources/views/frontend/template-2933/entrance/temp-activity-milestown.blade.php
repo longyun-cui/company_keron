@@ -22,7 +22,7 @@
 {{--custom-content--}}
 @section('custom-content')
 
-    <section class="probootstrap-section probootstrap-section-dark" style="background-color:#856D35;text-align:center;">
+    <section class="probootstrap-section probootstrap-section-dark" style="padding:0;background-color:#000;text-align:center;">
 
         <div>
             <a href="/?language=en">
@@ -43,6 +43,10 @@
 {{--script--}}
 @section('custom-style')
 <style>
-    body { background-color:#856D35;text-align:center; }
+    body {
+        /*background-color:#856D35;*/
+        background-color:#000;
+        text-align:center;
+    }
 </style>
 @endsection
