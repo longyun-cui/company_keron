@@ -545,4 +545,14 @@ class IndexRepository {
 
 
 
+
+    // 【关于我们】【列表】
+    public function view_temp_activity_with_milestown()
+    {
+        $html = view('frontend.template-2933.entrance.temp-activity-milestown')->__toString();
+        return $html;
+    }
+
+
+
 }

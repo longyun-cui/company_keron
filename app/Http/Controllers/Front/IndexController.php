@@ -132,4 +132,13 @@ class IndexController extends Controller
 
 
 
+
+    // 保存【询价】表单
+    public function view_temp_activity_with_milestown()
+    {
+        return $this->repo->view_temp_activity_with_milestown();
+    }
+
+
+
 }

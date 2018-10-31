@@ -99,6 +99,9 @@ Route::group(['namespace' => 'Front', 'middleware' => ['info','language']], func
     Route::post('message/quote', $controller.'@message_quote');
 
 
+    Route::get('temp/activity/keron-milestown', $controller.'@view_temp_activity_with_milestown');
+
+
 });
 
 
