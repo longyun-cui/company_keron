@@ -25,14 +25,30 @@
     <section class="probootstrap-section probootstrap-section-dark" style="padding:0;background-color:#000;text-align:center;">
 
         <div>
-            <a href="/?language=en">
-                <img src="{{ asset('/custom/images/activity-1.jpeg') }}" alt="Images">
-            </a>
+            <div class="col-md-4 col-lg-4 hidden-xs" style="padding:0">
+                <img src="{{ asset('/custom/images/activity-1-1.jpeg') }}" alt="Images">
+            </div>
+            <div class="col-md-4 col-lg-4" style="padding:0">
+                <a href="/?language=en">
+                    <img src="{{ asset('/custom/images/activity-1-2.jpeg') }}" alt="Images">
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-4 hidden-xs" style="padding:0">
+                <img src="{{ asset('/custom/images/activity-1-3.jpeg') }}" alt="Images">
+            </div>
         </div>
         <div>
-            <a href="http://www.milestown.cn/index.html">
-                <img src="{{ asset('/custom/images/activity-2.jpeg') }}" alt="Images">
-            </a>
+            <div class="col-md-4 col-lg-4 hidden-xs" style="padding:0">
+                <img src="{{ asset('/custom/images/activity-2-1.jpeg') }}" alt="Images">
+            </div>
+            <div class="col-md-4 col-lg-4" style="padding:0">
+                <a href="http://www.milestown.cn/index.html">
+                    <img src="{{ asset('/custom/images/activity-2.jpeg') }}" alt="Images">
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-4 hidden-xs" style="padding:0">
+                <img src="{{ asset('/custom/images/activity-2-3.jpeg') }}" alt="Images">
+            </div>
         </div>
 
     </section>
