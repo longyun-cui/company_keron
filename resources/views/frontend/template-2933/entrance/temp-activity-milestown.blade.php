@@ -43,7 +43,7 @@
             </div>
             <div class="col-md-4 col-lg-4" style="padding:0">
                 <a href="http://www.milestown.cn/index.html">
-                    <img src="{{ asset('/custom/images/activity-2.jpeg') }}" alt="Images">
+                    <img src="{{ asset('/custom/images/activity-2-2.jpeg') }}" alt="Images">
                 </a>
             </div>
             <div class="col-md-4 col-lg-4 hidden-xs" style="padding:0">
