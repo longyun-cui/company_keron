@@ -17,6 +17,8 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta name="360-site-verification" content="32c2973fd745092c2d50645ce30ca0d3" />
+
         {{--<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">--}}
 
         <link rel="stylesheet" href="{{ asset('/templates/moban2933/css/styles-merged.css') }}">
