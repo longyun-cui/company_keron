@@ -20,6 +20,7 @@ return [
         'website_name' => '',
         'name' => '上海龙臻国际物流有限公司',
         'short_name' => '上海龙臻国际物流',
+        'short_name1' => '上海龙臻国际物流有限公司',
         'brand' => 'KERON',
         'description' => '',
         'slogan' => "Ensuring Your Move's Success !",

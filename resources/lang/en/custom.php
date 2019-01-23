@@ -20,6 +20,7 @@ return [
         'website_name' => '',
         'name' => 'KERON International Relocation & Movers',
         'short_name' => 'KERON International',
+        'short_name1' => 'KERON International',
         'brand' => 'KERON',
         'description' => '',
         'slogan' => "Ensuring Your Move's Success !",
