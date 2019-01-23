@@ -52,7 +52,7 @@ return [
         'footer_focus_title' => 'Follow Us',
         'footer_contact_title' => 'Contact',
 
-        'banner_root_title' => 'One-stop resettlement service provider of family & commercial space services',
+        'banner_root_title' => 'One-stop resettlement service provider of family & commercial space',
 
         'view_more' => 'Read More',
         'view_detail' => 'View Detail',
