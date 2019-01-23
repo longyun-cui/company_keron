@@ -4,6 +4,7 @@
 
         <a href="{{ url('/') }}" class="probootstrap-logo">
             <img src="{{ url('/custom/images/logo-white.png') }}" alt="上海国际搬家公司" style="height:40px;margin-top:-4px;">
+            <span class="hidden-xs">{{ trans('custom.info.short_name') }}</span>
         </a>
 
         <a href="javascript:void(0);" rel="nofollow" class="probootstrap-burger-menu visible-xs visible-sm"><i>Menu</i></a>

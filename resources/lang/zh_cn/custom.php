@@ -19,7 +19,7 @@ return [
         'website' => '',
         'website_name' => '',
         'name' => '上海龙臻国际物流有限公司',
-        'short_name' => 'KERON',
+        'short_name' => '上海龙臻国际物流',
         'brand' => 'KERON',
         'description' => '',
         'slogan' => "Ensuring Your Move's Success !",
@@ -51,6 +51,8 @@ return [
         'footer_wechat_title' => '微信公众号',
         'footer_focus_title' => '关注我们',
         'footer_contact_title' => '联系方式',
+
+        'banner_root_title' => '一站式家庭&企业搬迁安置服务商',
 
         'view_more' => '了解更多',
         'view_detail' => '查看详情',

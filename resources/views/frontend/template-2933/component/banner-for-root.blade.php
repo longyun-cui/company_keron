@@ -37,7 +37,8 @@
             <div class="probootstrap-intro-text">
                 <div class="banner-title-box">
                     <div class="banner-title-bin">
-                        <h1 class="banner-title-row probootstrap-animate">{{ trans('custom.info.name') }}</h1>
+                        {{--<h1 class="banner-title-row probootstrap-animate">{{ trans('custom.info.name') }}</h1>--}}
+                        <h1 class="banner-title-row probootstrap-animate">{{ trans('custom.text.banner_root_title') }}</h1>
                         <div style="display:none;">上海一站式搬家、上海厂房搬迁公司、上海仓储物流公司</div>
                         <div class="banner-title-row probootstrap-subtitle probootstrap-animate">
                             <h2 style="margin-bottom:0;">

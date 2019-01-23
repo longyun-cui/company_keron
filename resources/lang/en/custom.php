@@ -19,7 +19,7 @@ return [
         'website' => '',
         'website_name' => '',
         'name' => 'KERON International Relocation & Movers',
-        'short_name' => 'KERON',
+        'short_name' => 'KERON International',
         'brand' => 'KERON',
         'description' => '',
         'slogan' => "Ensuring Your Move's Success !",
@@ -50,6 +50,8 @@ return [
         'footer_wechat_title' => 'WeChat Official Account',
         'footer_focus_title' => 'Follow Us',
         'footer_contact_title' => 'Contact',
+
+        'banner_root_title' => 'One-stop resettlement service provider of family & commercial space services',
 
         'view_more' => 'Read More',
         'view_detail' => 'View Detail',
