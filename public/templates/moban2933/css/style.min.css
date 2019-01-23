@@ -31,13 +31,13 @@ a:active,a:focus,a:hover{color:#000;text-decoration:none}
 .probootstrap-header{padding:20px 0;width:100%;height:72px;z-index:99;position:fixed;background: rgba(0,0,0,0.6);}
 .probootstrap-header .full-screen{ width:100%;height:32px;line-height:32px; }
 .probootstrap-feature-first{position:relative;background:#ecedee}
-.probootstrap-logo{float:left;color:#fff;padding-left:32px;font-size:20px;display:block;text-transform:uppercase;font-weight:500}
+.probootstrap-logo{float:left;color:#fff;padding-left:16px;font-size:20px;display:block;text-transform:uppercase;font-weight:500}
 .probootstrap-logo img{margin-top:-20px;}
 .probootstrap-logo:active,.probootstrap-logo:focus,.probootstrap-logo:hover{color:#fff}
 @media screen and (max-width:768px){
     .probootstrap-logo{padding-left:0}
 }
-.probootstrap-nav{height:100%;padding-right:32px;float:right}
+.probootstrap-nav{height:100%;padding-right:16px;float:right}
 .probootstrap-mobile-menu-active .probootstrap-nav{
     position:fixed;display:block!important;overflow-y:auto;
     top:0;right:0;bottom:0;z-index:9991100;height:100vh;width:300px;
