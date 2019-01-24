@@ -8,7 +8,7 @@
                     <div class="paragraphs-items paragraphs-items-field-content paragraphs-items-field-content-full paragraphs-items-full">
                         <div class="ct ct-text-headline margin-bottom-40 container-100">
                             <div class="container container-small text-center">
-                                <h2 class="price_h2">Start your move or Shipment</h2>
+                                <h2 class="price_h2">Start your move or shipment</h2>
                                 <div class="text" style="text-align: left;">
                                     <p class="mgb10">Enter your information below and we will get back to you about your move or shipment to, from or within Greater China.</p>
                                     <p>	I would like to receive a service offer for:</p>
