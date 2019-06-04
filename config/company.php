@@ -28,7 +28,7 @@
 
         'email_receiver' => [
             'local' => 'longyun-cui@163.com',
-            'online' => 'chan.rui@keronmoving.com',
+            'online' => 'stan.ying@keronmoving.com',
         ],
 
         'trans' => [
