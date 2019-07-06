@@ -7,6 +7,7 @@ use App\Models\RootItem;
 use App\Models\RootMessage;
 
 use App\Repositories\Common\CommonRepository;
+use App\Repositories\MailRepository;
 
 use App, Response, Auth, Validator, DB, Exception, Cache;
 use QrCode;
@@ -510,6 +511,8 @@ class IndexRepository {
             $email_data['way'] = config('company.trans.'.$custom['find_way']);
 
 
+            // 调用MailService
+            /*
             $url = config('common.MailService.'.env('APP_ENV')).'/keron/email/quote';
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
@@ -525,6 +528,13 @@ class IndexRepository {
                 $response = json_decode($response,true);
                 if(!$response['success']) throw new Exception("send-email-failed");
             }
+            */
+
+            // 程序内发邮件
+            $mail_repo = new MailRepository;
+            $flag = $mail_repo->send_email_quote($email_data);
+            if(count($flag) >= 1) throw new Exception("send-email-failed");
+
 
             DB::commit();
             if($post_data['language'] == 'en') $msg = 'Submitted successfully!';
