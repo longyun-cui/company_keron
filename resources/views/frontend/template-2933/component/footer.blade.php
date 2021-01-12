@@ -177,6 +177,9 @@
                             <strong>上门打包搬家公司</strong>
                         </small>
                     </div>
+                    <div>
+                        <a target="_blank" href="https://beian.miit.gov.cn" style="color:#ccc;"><small>沪ICP备20018423号</small></a>
+                    </div>
                 </div>
             </div>
         </div>
