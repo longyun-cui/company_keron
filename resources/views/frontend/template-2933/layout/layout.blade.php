@@ -30,7 +30,8 @@
         <link href="{{ asset('/templates/moban2933/plugins/slick-nav/slicknav.css') }}" rel="stylesheet">
 
         <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="https://cdn.bootcss.com/layer/3.0.3/skin/moon/style.min.css" rel="stylesheet">
+        {{--<link href="https://cdn.bootcss.com/layer/3.0.3/skin/moon/style.min.css" rel="stylesheet">--}}
+        <link rel="stylesheet" href="{{ asset('/resource/component/css/layer-style-3.0.3.min.css') }}">
         <link href="https://cdn.bootcss.com/lightcase/2.5.0/css/lightcase.min.css" rel="stylesheet">
         <link href="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.css" rel="stylesheet">
         <link href="https://cdn.bootcss.com/Swiper/4.2.2/css/swiper.min.css" rel="stylesheet">
@@ -82,7 +83,8 @@
         {{--<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>--}}
         <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
         <script src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.min.js"></script>
-        <script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
+        {{--<script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>--}}
+        <script src="{{ asset('/resource/component/js/layer-3.0.3.min.js') }}"></script>
         <script src="https://cdn.bootcss.com/lightcase/2.5.0/js/lightcase.min.js"></script>
         <script src="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.js"></script>
         <script src="https://cdn.bootcss.com/Swiper/4.2.2/js/swiper.min.js"></script>
